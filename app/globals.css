@@ -16,12 +16,34 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.react-player__preview{
+  position: relative;
+}
+.react-player__preview svg{
+  z-index: 2;
+}
+.react-player__preview::before{
+  content: '';
+  background: #082F1D;
+  opacity: 0.25;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.slick-dots{
+  bottom: -50px !important;
+}
+.slick-dots li button{
+  padding: 0 !important;
+}
+.slick-dots li button::before{
+  font-size: 18px !important;
+  color: #ECE3CB !important;
+  opacity: .7 !important;
+}
+.slick-dots li.slick-active button:before{
+  color: #FDB3C4 !important;
 }

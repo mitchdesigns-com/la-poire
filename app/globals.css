@@ -47,3 +47,7 @@
 .slick-dots li.slick-active button:before{
   color: #FDB3C4 !important;
 }
+.slick-slider {
+  touch-action: auto;
+  -ms-touch-action: auto;
+  }

@@ -34,7 +34,7 @@ const classes: ButtonClasses = {
     uppercase: 'uppercase',
     size: {
         small: 'px-2 py-1 text-sm',
-        normal: 'px-20 py-2',
+        normal: 'px-20 py-2 md:text-base text-sm',
         large: 'px-8 py-3 text-lg'
     },
     variant: {

@@ -7,12 +7,12 @@ import { motion } from "@/app/lib/motion";
 
 export default function AboutSection() {
   return (
-    <div className="bg-greenBlack pt-130 pb-50">
+    <div className="bg-greenBlack md:pt-130 pt-40 pb-50">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center md:flex-nowrap flex-wrap">
           <div className="w-auto">
             <p
-              className={`text-4xl ${pt_serif.className} text-white w-[700px] font-normal`}
+              className={`md:text-4xl text-2xl ${pt_serif.className} text-white md:w-[700px] w-full font-normal`}
             >
               La Poire&apos;s{" "}
               <span className="text-goldLight">four brands</span> in{" "}
@@ -25,7 +25,7 @@ export default function AboutSection() {
             </p>
           </div>
           <motion.div
-            className="w-[502px] h-[202]"
+            className="w-[502px] h-[202] md:p-0 p-4"
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.2, delay: 1 * 0.2 }}
@@ -34,7 +34,7 @@ export default function AboutSection() {
             <Joy />
           </motion.div>
         </div>
-        <div className="mt-56 opacity-30 pointer-events-none">
+        <div className="mt-56 opacity-30 pointer-events-none hidden">
           <button className="flex items-center justify-between text-white gap-.5 text-sm uppercase font-semibold">
             more about La Poire{" "}
             <span className="w-6 h-6 inline-block">

@@ -47,7 +47,7 @@ export default function MoreAbout() {
     },
   ];
   return (
-    <div className="pt-100 px-70">
+    <div className="md:pt-100 md:px-70 px-4 pt-20">
       <div className="container mx-auto">
         {hasWindow && (
           <div className="w-full aspect-video">
@@ -62,7 +62,7 @@ export default function MoreAbout() {
           </div>
         )}
         <div className="flex flex-col gap-70 py-30">
-          <div className="flex justify-between items-center text-black">
+          <div className="flex justify-between items-center text-black md:flex-nowrap flex-wrap-reverse md:gap-0 gap-20">
             <div>
               <h3 className="text-2xl">Distinctive Excellence</h3>
               <p className="text-xl font-light">
@@ -84,7 +84,7 @@ export default function MoreAbout() {
             {moreAboutData.map((item, index) => (
               <motion.div
                 key={index}
-                className="w-320"
+                className="md:w-320"
                 initial={{ opacity: 0, x: -200 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.2, delay: index * 0.2 }}

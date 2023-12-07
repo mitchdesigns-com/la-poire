@@ -5,7 +5,7 @@ import Button from "../Button";
 
 export default function Header() {
   return (
-    <div className="header-page pb-20 pt-34">
+    <div className="header-page pb-20 pt-34 px-4">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <div>

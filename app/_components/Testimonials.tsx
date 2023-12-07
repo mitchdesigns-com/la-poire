@@ -80,7 +80,7 @@ export default function Testimonials() {
   return (
     <div className="pb-100">
       <div className="container mx-auto">
-        <div className="flex items-end justify-center gap-95">
+        <div className="flex items-end justify-center md:gap-95 md:flex-nowrap flex-wrap gap-20 md:px-0 px-4">
           <motion.div
             initial={{ opacity: 0, scale: 1, x: 100 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
@@ -101,7 +101,7 @@ export default function Testimonials() {
             transition={{ duration: 0.2, delay: 1 * 0.2 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl font-semibold pr-70">
+            <h2 className="md:text-5xl text-3xl font-semibold md:pr-70">
               When people taste, <span className="text-pink">joy</span> speaks!
             </h2>
             <div className="mt-32">

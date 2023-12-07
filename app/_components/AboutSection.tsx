@@ -7,7 +7,7 @@ import { motion } from "@/app/lib/motion";
 
 export default function AboutSection() {
   return (
-    <div className="bg-greenBlack md:pt-130 pt-40 pb-50">
+    <div className="bg-greenBlack md:pt-130 pt-40 pb-50 px-4">
       <div className="container mx-auto">
         <div className="flex justify-between items-center md:flex-nowrap flex-wrap">
           <div className="w-auto">

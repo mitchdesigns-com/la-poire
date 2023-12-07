@@ -18,7 +18,7 @@ const HeroText = () => (
 );
 
 const CompanyInfo = ({ cardData }: any) => (
-  <div className="flex justify-between py-14 w-full md:flex-row flex-col">
+  <div className="flex justify-between py-14 w-full md:flex-row flex-col md:px-0 px-4">
     <div className="flex">
       <div className={`md:w-28 md:text-start text-center`}>
         <motion.p
@@ -107,7 +107,7 @@ export default function LandingHero() {
 
   return (
     <div className="md:pt-8 pt-4">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="bg-[url(/images/group-40.png)] bg-cover md:h-688 h-460">
           <div className="py-8 md:px-240 px-4 flex justify-center items-center w-full h-full">
             <HeroText />

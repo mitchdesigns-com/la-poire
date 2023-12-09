@@ -53,7 +53,7 @@ const CompanyInfo = ({ cardData }: any) => (
 );
 
 const CompanyStats = () => (
-  <div className=" md:flex-row flex-col md:gap-0 gap-10 w-full">
+  <div className="flex md:flex-row flex-col md:gap-0 gap-10 w-full">
     <div className="md:w-460 w-full">
       <h3 className="text-xl text-white mb-5">Flavors Trusted by Millions</h3>
       <p className="text-white text-sm font-light">
@@ -61,8 +61,8 @@ const CompanyStats = () => (
         deliver unparalleled happiness and flavor.
       </p>
     </div>
-    <div className="flex justify-between md:gap-44 gap-20 md:flex-row flex-col md:pt-0 pt-20">
-      <StatItem value="5" label="brands" />
+    <div className="flex justify-between md:gap-44 gap-10 md:pt-0 pt-20">
+      <StatItem value="6" label="brands" />
       <StatItem value="126" label="Locations" />
       <StatItem value="870" label="Employees" />
     </div>
@@ -72,7 +72,7 @@ const CompanyStats = () => (
 const StatItem = ({ value, label }: any) => (
   <>
     <div className="flex flex-col justify-center items-center text-center">
-      <span className="md:text-7xl text-5xl text-goldLight min-w-[140px]">
+      <span className="md:text-7xl text-2xl text-goldLight md:min-w-[140px]">
         <Counter value={value} />
       </span>
       <span className="uppercase text-sm text-gray2">{label}</span>

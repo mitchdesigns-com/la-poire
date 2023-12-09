@@ -81,19 +81,31 @@ export default function Testimonials() {
     <div className="pb-100">
       <div className="container mx-auto">
         <div className="flex items-end justify-center md:gap-95 md:flex-nowrap flex-wrap gap-20 md:px-0 px-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 1, x: 100 }}
-            whileInView={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.2, delay: 1 * 0.2 }}
-            viewport={{ once: true }}
-          >
-            <Image
-              src="/images/testimonials-hero.webp"
-              alt="img alt"
-              width={531}
-              height={753}
-            />
-          </motion.div>
+          <div>
+            <div className="relative">
+              <motion.span
+                className="absolute bottom-0 left-[75px] right-[42px] top-[70px] bg-pink z-[1]"
+                initial={{ opacity: 0, y: -100 }}
+                whileInView={{ opacity: 1, y: 0}}
+                transition={{ duration: 0.2, delay: 0.9 }}
+                viewport={{ once: true }}
+              ></motion.span>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5, y: -100 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.2, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <Image
+                  src="/images/testimonials-hero.webp"
+                  alt="img alt"
+                  width={531}
+                  height={753}
+                  className="z-[2] relative"
+                />
+              </motion.div>
+            </div>
+          </div>
           <motion.div
             className="w-[533px]"
             initial={{ opacity: 0, scale: 1, x: -100 }}

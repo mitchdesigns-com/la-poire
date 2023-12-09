@@ -28,13 +28,13 @@ interface ButtonClasses {
 }
 
 const classes: ButtonClasses = {
-    base: 'focus:outline-none transition ease-in-out duration-300 font-medium tracking-[0.01em]',
+    base: 'focus:outline-none transition ease-in-out duration-300 font-medium',
     disabled: 'opacity-50 cursor-not-allowed',
     pill: 'rounded-full',
     uppercase: 'uppercase',
     size: {
         small: 'px-2 py-1 text-sm',
-        normal: 'px-20 py-2 md:text-base text-sm',
+        normal: 'px-34 py-2 md:text-sm md:leading-[21px] tracking-[0.02em] text-sm',
         large: 'px-8 py-3 text-lg'
     },
     variant: {

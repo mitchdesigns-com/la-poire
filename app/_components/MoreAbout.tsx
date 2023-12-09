@@ -57,7 +57,7 @@ export default function MoreAbout() {
               url="https://www.youtube.com/watch?v=G1LRs3-dmTw"
               playing
               light="/images/more-about.webp"
-              playIcon={<PlayBtn />}
+              playIcon={<span className="md:w-[140px] md:h-[141px] w-[100px] h-[100px] z-10"><PlayBtn /></span>}
             />
           </div>
         )}
@@ -80,13 +80,13 @@ export default function MoreAbout() {
               </p>
             </div>
           </div>
-          <div className="flex grid-cols-3 gap-y-26 justify-between flex-wrap gap-x-56">
+          <div className="flex md:grid-cols-3 grid-cols-2 gap-y-26 justify-between flex-wrap md:gap-x-56 gap-5">
             {moreAboutData.map((item, index) => (
               <motion.div
                 key={index}
-                className="md:w-320"
-                initial={{ opacity: 0, x: -200 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="md:w-320 w-[calc(50%-10px)]"
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >

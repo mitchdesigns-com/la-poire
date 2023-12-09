@@ -14,8 +14,8 @@ export default function Footer() {
             height="46"
           />
         </Link>
-        <span className="bg-gray5 h-[2px] w-full block" />
-        <p className="text-gray5 text-sm tracking-normal">
+        <span className="bg-gray5 h-[2px] w-full block opacity-50" />
+        <p className="text-gray5 text-sm tracking-normal opacity-50">
           © {new Date().getFullYear()} La Poire Group • All Rights Reserved •{" "}
           <Link
             href="https://www.mitchdesigns.com/"

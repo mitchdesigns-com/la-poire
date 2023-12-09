@@ -7,7 +7,7 @@ import Testimonials from "./Testimonials";
 
 export default function Landing() {
   return (
-    <div className="overflow-hidden">
+    <div>
       <LandingHero />
       <OurBrands />
       <AboutSection />

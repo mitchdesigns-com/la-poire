@@ -1,4 +1,4 @@
-import { Poppins, PT_Serif } from 'next/font/google'
+import { Poppins, PT_Serif,Gabarito } from 'next/font/google'
 
 export const poppins = Poppins({
     subsets: ["latin"],
@@ -13,4 +13,11 @@ export const pt_serif = PT_Serif({
     display: "swap",
     variable: "--font-pt_serif",
     weight: ["400", "700"],
+})
+export const gabarito = Gabarito({
+    subsets: ["latin"],
+    style: ["normal"],
+    display: "swap",
+    variable: "--font-gabarito",
+    weight: ["500"],
 })

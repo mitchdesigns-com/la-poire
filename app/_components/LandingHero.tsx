@@ -1,5 +1,5 @@
 "use client";
-import { pt_serif } from "../fonts";
+import { pt_serif,gabarito } from "../fonts";
 import Counter from "./Counter";
 import CardBackground from "./Widgets/CardBackground";
 import { motion } from "@/app/lib/motion";
@@ -53,7 +53,7 @@ const CompanyInfo = ({ cardData }: any) => (
 );
 
 const CompanyStats = () => (
-  <div className="flex md:flex-row flex-col md:gap-0 gap-10 w-full">
+  <div className="flex md:flex-row flex-col md:gap-0 gap-10 w-full items-center">
     <div className="md:w-460 w-full">
       <h3 className="text-xl text-white mb-5">Flavors Trusted by Millions</h3>
       <p className="text-white text-sm font-light">
@@ -61,8 +61,8 @@ const CompanyStats = () => (
         deliver unparalleled happiness and flavor.
       </p>
     </div>
-    <div className="flex justify-between md:gap-44 gap-10 md:pt-0 pt-20">
-      <StatItem value="6" label="brands" />
+    <div className="flex justify-between md:gap-44 gap-10 md:pt-0 pt-20 md:pl-[55px] items-stretch">
+      <StatItem value="5" label="brands" />
       <StatItem value="126" label="Locations" />
       <StatItem value="870" label="Employees" />
     </div>
@@ -72,12 +72,12 @@ const CompanyStats = () => (
 const StatItem = ({ value, label }: any) => (
   <>
     <div className="flex flex-col justify-center items-center text-center">
-      <span className="md:text-7xl text-2xl text-goldLight md:min-w-[140px]">
+      <span className={`md:text-7xl text-2xl text-goldLight font-medium ${gabarito.className}`}>
         <Counter value={value} />
       </span>
       <span className="uppercase text-sm text-gray2">{label}</span>
     </div>
-    <span className="bg-gray md:w-[1px] md:h-full w-auto h-[1px] last-of-type:hidden" />
+    <span className="bg-gray md:w-[1px] md:h-[75px] mt-[13px] w-auto h-[1px] last-of-type:hidden block" />
   </>
 );
 
@@ -106,7 +106,7 @@ export default function LandingHero() {
   ];
 
   return (
-    <div className="md:pt-8 pt-4">
+    <div className="">
       <div className="container mx-auto">
         <div className="bg-[url(/images/group-40.png)] bg-cover md:h-688 h-460">
           <div className="py-8 md:px-240 px-4 flex justify-center items-center w-full h-full">
@@ -115,7 +115,7 @@ export default function LandingHero() {
         </div>
         <div className="flex flex-col items-end relative">
           <CompanyInfo cardData={cardData} />
-          <div className="flex justify-end bg-black w-auto relative md:pt-22 md:pb-56 md:pl-6 p-4 max-w-full">
+          <div className="flex justify-end bg-black w-[1004px] relative md:pt-22 md:pb-56 md:pl-6 p-4 pr-0 max-w-full">
             <span className="absolute bg-black w-[100vw] h-[1410px] bottom-0 left-0 z-[-1] pointer-events-none select-none md:block hidden" />
             <CompanyStats />
           </div>

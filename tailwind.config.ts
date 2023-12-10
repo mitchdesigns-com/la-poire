@@ -53,8 +53,8 @@ const config: Config = {
         lineHeight: '19px'
       }],
       'sm': ['14px', {
-        lineHeight: '21px',
-        letterSpacing: '.8px',
+        lineHeight: '150%',
+        letterSpacing: '0.05em',
       }],
       'l': ['18px', {
         lineHeight: '27px',

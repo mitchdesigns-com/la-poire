@@ -5,7 +5,7 @@ import Button from "../Button";
 
 export default function Header() {
   return (
-    <header className="header-page pb-20 pt-34 px-4">
+    <header className="header-page md:py-34 py-14 px-4">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <div>
@@ -18,12 +18,11 @@ export default function Header() {
               />
             </Link>
           </div>
-          <div>
-            {/* <Button bg={"gold"} btnText={"Contact Us"} textColor={"white"} /> */}
+          {/* <div>
             <Button variant="primary" size="normal" pill uppercase>
               Contact Us
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

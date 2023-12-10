@@ -12,10 +12,10 @@ export default function Landing() {
       <OurBrands />
       <AboutSection />
       <MoreAbout />
-      <div className="container mx-auto mt-30 md:mb-95 mb-30">
+      {/* <div className="container mx-auto mt-30 md:mb-95 mb-30">
         <span className="bg-gray3 h-[5px] w-full block" />
-      </div>
-      <Testimonials />
+      </div> */}
+      {/* <Testimonials /> */}
       <Newsletter />
     </div>
   );

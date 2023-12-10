@@ -30,12 +30,13 @@ const TestimonialItem = ({ quote, author, location }: any) => (
 export default function Testimonials() {
   const settings = {
     dots: true,
+    // infinite: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    vertical: true,
-    verticalSwiping: true,
-    swipeToSlide: true,
+    // vertical: true,
+    // verticalSwiping: true,
+    // swipeToSlide: true,
   };
 
   const testimonialsData = [
@@ -86,7 +87,7 @@ export default function Testimonials() {
               <motion.span
                 className="absolute bottom-0 left-[75px] right-[42px] top-[70px] bg-pink z-[1]"
                 initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0}}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: 0.9 }}
                 viewport={{ once: true }}
               ></motion.span>
@@ -107,7 +108,7 @@ export default function Testimonials() {
             </div>
           </div>
           <motion.div
-            className="w-[533px]"
+            className="md:w-[533px] w-full"
             initial={{ opacity: 0, scale: 1, x: -100 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.2, delay: 1 * 0.2 }}
@@ -117,14 +118,28 @@ export default function Testimonials() {
               When people taste, <span className="text-pink">joy</span> speaks!
             </h2>
             <div className="mt-32">
-              <div className="flex flex-col gap-3">
-                <Slider {...settings}>
-                  {testimonialsData.map((testimonial, index) => (
-                    <TestimonialItem key={index} {...testimonial} />
-                  ))}
-                </Slider>
-              </div>
-              <div></div>
+              <Slider {...settings}>
+                {/* Map over the testimonialsData and split it into chunks of 3 */}
+                {(
+                  testimonialsData.reduce((chunks: any[], item, index) => {
+                    const chunkIndex = Math.floor(index / 3);
+
+                    if (!chunks[chunkIndex]) {
+                      chunks[chunkIndex] = [];
+                    }
+
+                    chunks[chunkIndex].push(item);
+
+                    return chunks;
+                  }, []) as any[]
+                ).map((chunk, chunkIndex) => (
+                  <div className="flex flex-col gap-3" key={chunkIndex}>
+                    {chunk.map((testimonial: any, index: number) => (
+                      <TestimonialItem key={index} {...testimonial} />
+                    ))}
+                  </div>
+                ))}
+              </Slider>
             </div>
           </motion.div>
         </div>

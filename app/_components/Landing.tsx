@@ -12,7 +12,7 @@ export default function Landing() {
       <OurBrands />
       <AboutSection />
       <MoreAbout />
-      <div className="container mx-auto mt-30 mb-95">
+      <div className="container mx-auto mt-30 md:mb-95 mb-30">
         <span className="bg-gray3 h-[5px] w-full block" />
       </div>
       <Testimonials />

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Button from "./Button";
 import Field from "./Field";
+import SubscriptionForm from "./SubscriptionForm";
 
 export default function Newsletter() {
   const [show] = useState(true);
@@ -66,6 +67,7 @@ export default function Newsletter() {
                 sprinkle of joy in your inbox.
               </p>
               <div className="flex flex-col gap-10 items-stretch w-full mt-10">
+              <SubscriptionForm/>
                 <Field text="Full Name" placeholder="Full Name" />
                 <Field text="Email Address" placeholder="Email Address" />
                 <Button variant="primary" size="normal" pill uppercase>

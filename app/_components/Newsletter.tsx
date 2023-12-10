@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Button from "./Button";
 import Field from "./Field";
-import SubscriptionForm from "./SubscriptionForm";
+import CampaignMonitorForm from "./CampaignMonitorForm";
 
 export default function Newsletter() {
   const [show] = useState(true);
@@ -58,22 +58,15 @@ export default function Newsletter() {
                 className="max-w-[calc(50%-5px)]"
               />
             </motion.div>
-            <div className="flex bg-white flex-col h-[362px] text-center px-30 items-center justify-center">
-              <h3 className="text-3xl px-30">
-                Stay in the Loop with La Poire!
+            <div className="flex bg-white flex-col h-[362px] text-center md:px-30 px-4 items-center justify-center">
+              <h3 className="text-3xl md:px-30 px-0">
+                Stay in the Loop with <span>La Poire!</span>
               </h3>
               <p className="mt-5 text-greenBlack text-sm">
                 Subscribe now for delicious updates, exclusive offers, and a
                 sprinkle of joy in your inbox.
               </p>
-              <div className="flex flex-col gap-10 items-stretch w-full mt-10">
-              <SubscriptionForm/>
-                <Field text="Full Name" placeholder="Full Name" />
-                <Field text="Email Address" placeholder="Email Address" />
-                <Button variant="primary" size="normal" pill uppercase>
-                  Subscribe Now
-                </Button>
-              </div>
+              <CampaignMonitorForm/>
             </div>
             <motion.div
               className="flex gap-10 w-full"

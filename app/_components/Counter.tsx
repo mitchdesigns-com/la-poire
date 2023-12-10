@@ -1,11 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 
-/**
- *
- * @param root0
- * @param root0.value
- */
 export default function Counter({
   value,
   direction = "up",
@@ -13,8 +8,9 @@ export default function Counter({
   value: number;
   direction?: "up" | "down";
 }) {
+  console.log("Counter value:", value);
   const ref = useRef<HTMLSpanElement>(null);
-  const motionValue = useMotionValue(direction === "down" ? value : 0);
+  const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {
     damping: 1000,
     stiffness: 1000,
@@ -27,17 +23,21 @@ export default function Counter({
     }
   }, [motionValue, isInView, direction, value]);
 
-  useEffect(
-    () =>
-      springValue.on("change", (latest) => {
-        if (ref.current) {
-          ref.current.textContent = Intl.NumberFormat("en-US").format(
-            latest.toFixed(0)
-          );
-        }
-      }),
-    [springValue]
-  );
+  useEffect(() => {
+    const updateTextContent = (latest: number) => {
+      if (ref.current) {
+        ref.current.textContent = Intl.NumberFormat("en-US").format(
+          parseFloat(latest.toFixed(0))
+        );
+      }
+    };
+
+    const changeListener = springValue.on("change", updateTextContent);
+
+    return () => {
+      changeListener();
+    };
+  }, [springValue]);
 
   return <span ref={ref} />;
 }

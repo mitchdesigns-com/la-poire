@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="header-page md:py-34 py-14 px-4">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center">
+        <div className="flex md:justify-between justify-center items-center">
           <div>
             <Link href="/">
               <Image

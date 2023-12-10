@@ -8,7 +8,6 @@ export default function Counter({
   value: number;
   direction?: "up" | "down";
 }) {
-  console.log("Counter value:", value);
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {

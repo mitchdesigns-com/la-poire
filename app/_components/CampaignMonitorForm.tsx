@@ -22,7 +22,7 @@ const SubscribeForm = () => {
               autoComplete="Email"
               aria-label="Email"
               placeholder="Email Address"
-              className="border border-gray4 py-10 px-14 placeholder:text-gray text-black text-sm rounded-md w-full"
+              className="js-cm-email-input border border-gray4 py-10 px-14 placeholder:text-gray text-black text-sm rounded-md w-full"
               id="fieldEmail"
               name="cm-buyjrjh-buyjrjh"
               required

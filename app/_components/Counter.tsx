@@ -9,14 +9,14 @@ export default function Counter({
   value: number;
   direction?: "up" | "down";
 }) {
-  console.log('value',value)
+  // console.log('value',value)
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {
     damping: 1000,
     stiffness: 1000,
   });
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (isInView) {
@@ -40,5 +40,5 @@ export default function Counter({
     };
   }, [springValue]);
 
-  return <span ref={ref} />;
+  return (<span ref={ref} ></span>);
 }

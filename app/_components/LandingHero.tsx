@@ -62,9 +62,9 @@ const CompanyStats = () => (
       </p>
     </div>
     <div className="flex md:justify-between justify-center md:gap-44 gap-22 md:pt-0 pt-20 items-stretch w-auto">
-      <StatItem value="5" label="brands" />
-      <StatItem value="126" label="Locations" />
-      <StatItem value="880" label="Employees" />
+      <StatItem value={5} label="brands" />
+      <StatItem value={126} label="Locations" />
+      <StatItem value={880} label="Employees" />
     </div>
   </div>
 );

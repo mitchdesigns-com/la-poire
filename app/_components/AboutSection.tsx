@@ -10,7 +10,7 @@ export default function AboutSection() {
   return (
     <div className="bg-greenBlack md:py-130 py-40 px-4">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center md:flex-nowrap flex-wrap-reverse">
+        <div className="flex justify-between items-center md:flex-nowrap flex-wrap-reverse gap-40 md:gap-0">
           <div className="w-auto">
             <p
               className={`md:text-4xl text-2xl ${pt_serif.className} text-white md:w-[700px] w-full font-normal`}
@@ -38,7 +38,7 @@ export default function AboutSection() {
             </p>
           </div>
           <motion.div
-            className="w-[502px] h-[202] md:p-0 p-4"
+            className="w-[502px] h-[202] md:p-0"
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.2, delay: 1 * 0.2 }}

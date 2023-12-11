@@ -54,7 +54,7 @@ export default function MoreAbout() {
             <ReactPlayer
               width="100%"
               height="100%"
-              url="https://www.youtube.com/watch?v=G1LRs3-dmTw"
+              url="https://www.youtube.com/watch?v=K2fHBRPT1VY"
               playing
               light="/images/more-about.webp"
               playIcon={<span className="md:w-[140px] md:h-[141px] w-[100px] h-[100px] z-10"><PlayBtn /></span>}

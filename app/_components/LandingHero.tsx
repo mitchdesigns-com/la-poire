@@ -36,7 +36,7 @@ const CompanyInfo = ({ cardData }: any) => (
         </motion.p>
       </div>
     </div>
-    <div className="flex gap-2 overflow-x-auto no-scrollbar md:m-0 -mx-4 md:p-0 p-4">
+    <div className="flex gap-2 overflow-x-auto no-scrollbar md:m-0 md:-mr-4 md:pr-4 -mx-4 md:p-0 p-4">
       {cardData.map((card: any, index: number) => (
         <motion.div
           key={index}
@@ -53,7 +53,7 @@ const CompanyInfo = ({ cardData }: any) => (
 );
 
 const CompanyStats = () => (
-  <div className="flex md:flex-row flex-col md:gap-0 gap-10 w-full items-center">
+  <div className="flex lg:flex-row flex-col flex-wrap gap-10 w-full items-center justify-between">
     <div className="md:w-460 w-full">
       <h3 className="text-xl text-white mb-5">Flavors Trusted by Millions</h3>
       <p className="text-white text-sm font-light">
@@ -61,7 +61,7 @@ const CompanyStats = () => (
         deliver unparalleled happiness and flavor.
       </p>
     </div>
-    <div className="flex md:justify-between justify-center md:gap-44 gap-10 md:pt-0 pt-20 md:pl-[55px] items-stretch w-full">
+    <div className="flex md:justify-between justify-center md:gap-44 gap-22 md:pt-0 pt-20 items-stretch w-auto">
       <StatItem value="5" label="brands" />
       <StatItem value="126" label="Locations" />
       <StatItem value="880" label="Employees" />
@@ -77,7 +77,7 @@ const StatItem = ({ value, label }: any) => (
       </span>
       <span className="uppercase text-sm text-gray2">{label}</span>
     </div>
-    <span className="bg-gray md:w-[1px] md:h-[75px] mt-[13px] w-auto h-[1px] last-of-type:hidden block" />
+    <span className="bg-gray w-[1px] h-[75px] mt-[13px] last-of-type:hidden block" />
   </>
 );
 
@@ -107,7 +107,7 @@ export default function LandingHero() {
 
   return (
     <div className="">
-      <div className="container mx-auto">
+      <div className="container mx-auto md:px-4">
         <div className="bg-[url(/images/group-40.png)] bg-cover md:h-688 h-460">
           <div className="py-8 md:px-240 px-4 flex justify-center items-center w-full h-full">
             <HeroText />
@@ -115,8 +115,8 @@ export default function LandingHero() {
         </div>
         <div className="flex flex-col items-end relative">
           <CompanyInfo cardData={cardData} />
-          <div className="flex justify-end bg-black w-[1004px] relative md:pt-22 md:pb-56 md:pl-6 p-4 pr-0 max-w-full">
-            <span className="absolute bg-black w-[100vw] h-[1410px] bottom-0 left-0 z-[-1] pointer-events-none select-none md:block hidden" />
+          <div className="flex justify-end bg-black w-[1004px] md:max-w-[calc(100vw-388px)] relative md:pt-22 md:pb-56 md:pl-6 p-4 pr-0 max-w-full">
+            <span className="absolute bg-black w-[100vw] h-[3000vh] bottom-0 left-0 z-[-1] pointer-events-none select-none md:block hidden" />
             <CompanyStats />
           </div>
         </div>

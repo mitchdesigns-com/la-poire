@@ -13,7 +13,7 @@ const HeroText = () => (
     viewport={{ once: true }}
   >
     la poire, <span className="text-goldLight">every day </span> deserves <br />
-    a mooment of <span className="text-goldLight">joy!</span>
+    a moment of <span className="text-goldLight">joy!</span>
   </motion.h1>
 );
 

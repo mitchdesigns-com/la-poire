@@ -5,7 +5,7 @@ import React from "react";
 export default function Footer() {
   return (
     <div className="bg-black">
-      <div className="flex container mx-auto md:pt-64 pt-4 pb-4 flex-col justify-center items-center gap-4 text-center">
+      <div className="flex container mx-auto md:pt-64 pt-4 pb-4 flex-col justify-center items-center gap-4 text-center border-none">
         <Link href="/" className="inline-block md:my-0 my-20">
           <Image
             src="/images/logo-white.webp"

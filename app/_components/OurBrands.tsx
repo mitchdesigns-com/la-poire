@@ -17,6 +17,7 @@ export default function OurBrands() {
             src="/images/brands/brand_01.webp"
             alt="brand logo alt"
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             style={{ objectFit: "contain" }}
           />
         </motion.div>
@@ -31,6 +32,7 @@ export default function OurBrands() {
             src="/images/brands/brand_02.webp"
             alt="brand logo alt"
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             style={{ objectFit: "contain" }}
           />
         </motion.div>
@@ -45,6 +47,7 @@ export default function OurBrands() {
             src="/images/brands/brand_03.webp"
             alt="brand logo alt"
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             style={{ objectFit: "contain" }}
           />
         </motion.div>
@@ -59,6 +62,7 @@ export default function OurBrands() {
             src="/images/brands/brand_04.webp"
             alt="brand logo alt"
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             style={{ objectFit: "contain" }}
           />
         </motion.div>

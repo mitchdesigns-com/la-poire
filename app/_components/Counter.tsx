@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+"use client"
 import { useInView, useMotionValue, useSpring } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export default function Counter({
   value,
@@ -26,7 +27,7 @@ export default function Counter({
     const updateTextContent = (latest: number) => {
       if (ref.current) {
         ref.current.textContent = Intl.NumberFormat("en-US").format(
-          parseFloat(latest.toFixed(0))
+          Number(latest.toFixed(0))
         );
       }
     };

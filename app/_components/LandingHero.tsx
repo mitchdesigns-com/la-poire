@@ -1,8 +1,8 @@
 "use client";
-import { pt_serif,gabarito } from "../fonts";
+import { motion } from "@/app/lib/motion";
+import { gabarito, pt_serif } from "../fonts";
 import Counter from "./Counter";
 import CardBackground from "./Widgets/CardBackground";
-import { motion } from "@/app/lib/motion";
 
 const HeroText = () => (
   <motion.h1
@@ -61,10 +61,10 @@ const CompanyStats = () => (
         deliver unparalleled happiness and flavor.
       </p>
     </div>
-    <div className="flex justify-between md:gap-44 gap-10 md:pt-0 pt-20 md:pl-[55px] items-stretch">
+    <div className="flex md:justify-between justify-center md:gap-44 gap-10 md:pt-0 pt-20 md:pl-[55px] items-stretch w-full">
       <StatItem value="5" label="brands" />
       <StatItem value="126" label="Locations" />
-      <StatItem value="870" label="Employees" />
+      <StatItem value="880" label="Employees" />
     </div>
   </div>
 );
@@ -72,7 +72,7 @@ const CompanyStats = () => (
 const StatItem = ({ value, label }: any) => (
   <>
     <div className="flex flex-col justify-center items-center text-center">
-      <span className={`md:text-7xl text-2xl text-goldLight font-medium ${gabarito.className}`}>
+      <span className={`md:text-7xl text-[11vw] text-goldLight font-medium ${gabarito.className}`}>
         <Counter value={value} />
       </span>
       <span className="uppercase text-sm text-gray2">{label}</span>

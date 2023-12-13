@@ -108,7 +108,7 @@ export default function LandingHero() {
   return (
     <div className="">
       <div className="container mx-auto md:px-4">
-        <div className="bg-[url(/images/group-40.png)] bg-cover md:h-688 h-460">
+        <div className="bg-[url(/images/landing-hero.webp)] bg-cover md:h-688 h-460">
           <div className="py-8 md:px-240 px-4 flex justify-center items-center w-full h-full">
             <HeroText />
           </div>

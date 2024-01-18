@@ -1,6 +1,10 @@
 "use client";
 import Image from "next/image";
 import HeroWithTitles from "../HeroWithTitles";
+import Link from "next/link";
+import LongArrow from "../Icons/LongArrow";
+import SectionTitles from "../UI/SectionTitles";
+import Newsletter from "../Newsletter";
 
 export default function Jobs() {
   const data = {
@@ -95,8 +99,98 @@ export default function Jobs() {
             excellence and creativity. Join us in creating delightful
             experiences for our customers.
           </p>
+          <ul className="max-w-6xl mx-auto mt-[90px] text-gray3">
+            <li>
+              <Link
+                href="/job/single"
+                className="flex items-center justify-between border-b pt-[27px] pb-20"
+              >
+                <div className="flex flex-col">
+                  <span className="text-[34px] font-bold">Pastry Chef</span>
+                  <span>In Office</span>
+                </div>
+                <span className="w-[26px] inline-block"><LongArrow /></span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/job/single"
+                className="flex items-center justify-between border-b pt-[27px] pb-20"
+              >
+                <div className="flex flex-col">
+                  <span className="text-[34px] font-bold">Barista</span>
+                  <span>In Office</span>
+                </div>
+                <span className="w-[26px] inline-block"><LongArrow /></span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/job/single"
+                className="flex items-center justify-between border-b pt-[27px] pb-20"
+              >
+                <div className="flex flex-col">
+                  <span className="text-[34px] font-bold">
+                    Front-of-House Manager
+                  </span>
+                  <span>In Office</span>
+                </div>
+                <span className="w-[26px] inline-block"><LongArrow /></span>
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
+
+      <div className="pt-[200px] px-4 pb-140">
+        <div className="container mx-auto">
+          <section className="text-center text-black">
+            <SectionTitles
+              title={"Employee Testimonials"}
+              sub_title={
+                "Discover the Heartbeat of La Poire through the Experiences and Stories of Our Valued Team Members"
+              }
+            />
+          </section>
+          <div className="grid grid-cols-3 mt-[60px] gap-[60px]">
+            <div className="flex flex-col items-center justify-center text-center bg-yellow2 px-[26px] py-50">
+              <Image src="/images/stars.webp" width={99} height={18} alt="" />
+              <p className="mb-10 mt-18 text-gray5">
+                {
+                  "Franchising with La Poire is not just a business venture; it's an immersion into Egypt's rich culinary culture. Become part of our growth story and carry "
+                }
+              </p>
+              <span className="text-xs font-semibold text-gray">
+                Joe - UI & UX Designer
+              </span>
+            </div>
+            <div className="flex flex-col items-center justify-center text-center bg-yellow2 px-[26px] py-50 scale-110">
+              <Image src="/images/stars.webp" width={99} height={18} alt="" />
+              <p className="mb-10 mt-18 text-gray5">
+                {
+                  "Franchising with La Poire is not just a business venture; it's an immersion into Egypt's rich culinary culture. Become part of our growth story and carry "
+                }
+              </p>
+              <span className="text-xs font-semibold text-gray">
+                Joe - UI & UX Designer
+              </span>
+            </div>
+            <div className="flex flex-col items-center justify-center text-center bg-yellow2 px-[26px] py-50">
+              <Image src="/images/stars.webp" width={99} height={18} alt="" />
+              <p className="mb-10 mt-18 text-gray5">
+                {
+                  "Franchising with La Poire is not just a business venture; it's an immersion into Egypt's rich culinary culture. Become part of our growth story and carry "
+                }
+              </p>
+              <span className="text-xs font-semibold text-gray">
+                Joe - UI & UX Designer
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Newsletter />
     </div>
   );
 }

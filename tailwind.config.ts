@@ -136,6 +136,7 @@ const config: Config = {
         'bej': '#ECE3CB',
         'blue': '#0C479D',
         'red': '#ED1C24',
+        'yellow2':'#FFF8C7'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

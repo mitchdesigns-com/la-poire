@@ -4,7 +4,7 @@ import { cls } from '../utils/helpers'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: 'primary' | 'secondary' | 'danger';
-    size?: 'small' | 'normal' | 'large';
+    size?: 'small' | 'normal' | 'large' | 'square';
     pill?: boolean;
     uppercase?: boolean;
     submit?: 'submit' | 'button';
@@ -18,6 +18,7 @@ interface ButtonClasses {
     size: {
         small: string;
         normal: string;
+        square: string;
         large: string;
     };
     variant: {
@@ -35,11 +36,12 @@ const classes: ButtonClasses = {
     size: {
         small: 'px-2 py-1 text-sm',
         normal: 'px-34 py-2 md:text-sm md:leading-[21px] tracking-[0.02em] text-sm',
+        square:'p-4',
         large: 'px-8 py-3 text-lg'
     },
     variant: {
         primary: 'bg-gold hover:bg-goldHover focus:ring-2 focus:ring-gold focus:ring-opacity-50 text-white',
-        secondary: 'bg-gray-200 hover:bg-gray-800 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 text-gray-900 hover:text-white',
+        secondary: 'bg-bej hover:bg-black focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 text-gray-900 hover:text-white',
         danger: 'bg-red-500 hover:bg-red-800 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 text-white'
     }
 }
@@ -49,7 +51,7 @@ const Button = forwardRef(
         {
             children,
             type = 'button',
-            className,
+            className="",
             variant = 'primary',
             size = 'normal',
             pill,
@@ -85,7 +87,7 @@ Button.propTypes = {
     uppercase: PropTypes.bool,
     disabled: PropTypes.bool,
     variant: PropTypes.oneOf(['primary', 'secondary', 'danger']),
-    size: PropTypes.oneOf(['small', 'normal', 'large']),
+    size: PropTypes.oneOf(['small', 'normal', 'large','square']),
 }
 Button.displayName = 'Button';
 export default Button;

@@ -19,5 +19,5 @@ export const gabarito = Gabarito({
     style: ["normal"],
     display: "swap",
     variable: "--font-gabarito",
-    weight: ["500"],
+    weight: ["400", "500"],
 })

@@ -10,7 +10,7 @@ export default function CurveBorder() {
     >
       <path
         d="M1 13.9798C59.5 5.1201 105 -1.37994 195 5.12008"
-        stroke="#EAD388"
+        stroke="currentColor"
         strokeWidth="3"
       />
     </svg>

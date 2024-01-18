@@ -1,0 +1,23 @@
+{
+    "data": {
+        "id": 1,
+        "attributes": {
+            "Title": "La poire Brands Universe",
+            "Subtitle": "Delve into the heart of La Poire's iconic brands - Egypt's finest in food joy",
+            "Description": "Discover the heart of Egypt through La Poire's esteemed brands: La Poire Patisserie, La Poire Café, La Poire Corner, La Poire Bistro, On The Run, Stavolta Ice Cream, and Mobil Gas Station. Together, they capture the diverse palate and energy of Egypt. Embark on a journey with us to savor the essence of La Poire's legacy in Egypt.",
+            "MoreAbout": "In the heart of <b>Egypt</b>, there's a story waiting to unfold, one where you are the protagonist. As you journey through the bustling streets and quiet corners, La Poire presents itself as a companion, ready to serenade your senses. Each of our cherished brands, from the inviting aromas of La Poire Patisserie and La Poire Café, to the bustling energy of On The Run, the irresistible allure of Stavolta Ice Cream, the sophisticated charm of La Poire Bistro, the convenience of La Poire Corner, and the dependable presence of Mobil Gas Station; they all beckon, offering moments of pure joy and happiness. \n\nImagine a day where every craving, every desire, finds its match. Whether it's the urge for a delicate pastry, a quick refuel, or the simple pleasure of creamy ice cream under the Egyptian sun, La Poire stands ready. These aren't just eateries or stops; they're experiences, crafted with you at the center, setting the stage for unforgettable culinary adventures in Egypt.\n\nIn the tapestry of life, some moments stand out, painted with the hues of emotion and memory. And as you weave your personal story in this majestic land, La Poire promises to be there, enriching each chapter with flavors, fragrances, and feelings. From dawn's first light at the Mobil Gas Station to the whispered secrets of the night with Stavolta's ice cream, we're intertwined in your Egyptian saga, making every experience a tale worth retelling.",
+            "createdAt": "2023-12-15T12:09:02.591Z",
+            "updatedAt": "2023-12-27T23:38:33.658Z",
+            "publishedAt": "2023-12-15T12:09:04.341Z",
+            "SEO": {
+                "id": 3,
+                "metaTitle": "La poire Brands",
+                "metaDescription": "In the heart of Egypt, there's a story waiting to unfold, one where you are the protagonist",
+                "metaImage": {
+                    "data": null
+                }
+            }
+        }
+    },
+    "meta": {}
+}

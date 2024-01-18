@@ -1,5 +1,36 @@
 import axios from "axios";
 
+
+const sendRequest = async (endpoint: any, requestData: any, method = "GET") => {
+  try {
+    const apiUrl = `${process.env.NEXT_PUBLIC_STRAPI_URL}/${endpoint}`;
+    const requestBody = {
+      ...requestData,
+    };
+
+    const response = await fetch(apiUrl, {
+      method: method,
+      body: method === "POST" ? JSON.stringify(requestBody) : null,
+    });
+
+    if (response.ok) {
+      const responseData = await response.json();
+      // console.log('Response status:', response.status);
+      // console.log('Response OK');
+      // console.log('Response>>', response.json());
+      // console.log('Response status text:', response.statusText);
+      // console.log('Response headers:', response.headers);
+      // console.log('Response data:', responseData);    
+      return responseData;
+    }
+    return null;
+  } catch (error) {
+    // console.log("An error occurred", error);
+    return null;
+  }
+};
+
+
 const subscribeToCampaignMonitor = async (
   fullName: string,
   emailAddress: string
@@ -33,4 +64,9 @@ const subscribeToCampaignMonitor = async (
   }
 };
 
-export { subscribeToCampaignMonitor };
+
+const fetchLanding = async () => {
+  return sendRequest("landing-pages?populate[0]=heroImage,metadata.metaImage", {});
+};
+
+export { subscribeToCampaignMonitor,fetchLanding };

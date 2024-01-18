@@ -6,9 +6,15 @@ import ArrowLeft from "./Icons/ArrowLeft";
 import { motion } from "@/app/lib/motion";
 import CurveBorder from "./Icons/CurveBorder";
 
-export default function AboutSection() {
+export default function AboutSection({color}:any) {
+  let baseColor = "bg-greenBlack";
+  let textColor = "text-goldLight";
+  if(color==="pink"){
+    baseColor = "bg-pinkLight";
+    textColor = "text-pinkDark";
+  }
   return (
-    <div className="bg-greenBlack md:py-130 py-40 px-4">
+    <div className={`md:py-130 py-40 px-4 ${baseColor}`}>
       <div className="container mx-auto">
         <div className="flex justify-between items-center md:flex-nowrap flex-wrap-reverse gap-40 md:gap-0">
           <div className="w-auto">
@@ -16,7 +22,7 @@ export default function AboutSection() {
               className={`md:text-4xl text-2xl ${pt_serif.className} text-white md:w-[700px] w-full font-normal`}
             >
               La Poire&apos;s{" "}
-              <span className="text-goldLight relative">
+              <span className={`${textColor} relative`}>
                 four brands{" "}
                 <motion.span
                   className="absolute left-0 right-0 top-full"
@@ -28,17 +34,17 @@ export default function AboutSection() {
                   <CurveBorder />
                 </motion.span>
               </span>{" "}
-              in <span className="text-goldLight">Egypt</span> symbolize a
-              fusion of <span className="text-goldLight">joy</span> and
+              in <span className={`${textColor}`}>Egypt</span> symbolize a
+              fusion of <span className={`${textColor}`}>joy</span> and
               happiness in every cherished{" "}
-              <span className="text-goldLight">moment</span>. Through our
+              <span className={`${textColor}`}>moment</span>. Through our
               unwavering commitment, we{" "}
-              <span className="text-goldLight">transform</span> fleeting moments
+              <span className={`${textColor}`}>transform</span> fleeting moments
               into memorable, delightful experiences.
             </p>
           </div>
           <motion.div
-            className="w-[502px] h-[202] md:p-0"
+            className={`w-[502px] h-[202] md:p-0 ${textColor}`}
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.2, delay: 1 * 0.2 }}

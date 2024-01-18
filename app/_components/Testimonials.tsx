@@ -8,7 +8,7 @@ import { motion } from "@/app/lib/motion";
 
 const TestimonialItem = ({ quote, author, location }: any) => (
   <div className="py-1">
-    <div className="border border-dashed border-pink2 pt-6 pb-14 px-4 flex flex-col gap-2 relative">
+    <div className="border border-dashed border-pink2 pt-48 pb-14 px-4 flex flex-col gap-2 relative">
       <span
         className={`absolute top-1 left-1 text-pink2 font-bold text-[50px] ${pt_serif.className}`}
       >

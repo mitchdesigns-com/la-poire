@@ -69,6 +69,7 @@ export default function About() {
         description={data.herodescription}
       />
       <TimeLine />
+      
       <div className="bg-goldLight py-64 px-4 mb-[278px]">
         <div className="container mx-auto">
           <div className="flex flex-col gap-50 justify-center items-center">

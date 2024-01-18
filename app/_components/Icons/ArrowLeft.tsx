@@ -11,14 +11,14 @@ export default function ArrowLeft() {
     >
       <path
         d="M10 24H38"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="square"
         strokeLinejoin="round"
       />
       <path
         d="M24 10L38 24L24 38"
-        stroke="white"
+        stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="square"
         strokeLinejoin="round"

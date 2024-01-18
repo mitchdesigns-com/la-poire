@@ -1,7 +1,9 @@
-import React from 'react'
+import Jobs from "../_components/Pages/Jobs";
 
 export default function JobPage() {
   return (
-    <div>JobPage</div>
-  )
+    <div>
+      <Jobs />
+    </div>
+  );
 }

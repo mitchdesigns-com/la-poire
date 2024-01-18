@@ -16,7 +16,7 @@ export default function AboutSection({color}:any) {
   return (
     <div className={`md:py-130 py-40 px-4 ${baseColor}`}>
       <div className="container mx-auto">
-        <div className="flex justify-between items-center md:flex-nowrap flex-wrap-reverse gap-40 md:gap-0">
+        <div className="flex flex-wrap-reverse items-center justify-between gap-40 md:flex-nowrap md:gap-0">
           <div className="w-auto">
             <p
               className={`md:text-4xl text-2xl ${pt_serif.className} text-white md:w-[700px] w-full font-normal`}
@@ -53,10 +53,10 @@ export default function AboutSection({color}:any) {
             <Joy />
           </motion.div>
         </div>
-        <div className="mt-56 opacity-30 pointer-events-none hidden">
+        <div className="hidden mt-56 pointer-events-none opacity-30">
           <button className="flex items-center justify-between text-white gap-.5 text-sm uppercase font-semibold">
             more about La Poire{" "}
-            <span className="w-6 h-6 inline-block">
+            <span className="inline-block w-6 h-6">
               <ArrowLeft />
             </span>
           </button>

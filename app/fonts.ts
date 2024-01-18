@@ -1,10 +1,16 @@
-import { Poppins, PT_Serif,Gabarito } from 'next/font/google'
+import { Poppins, PT_Serif, Gabarito, Roboto } from 'next/font/google'
 
 export const poppins = Poppins({
     subsets: ["latin"],
     display: "swap",
     variable: "--font-poppins",
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+})
+export const roboto = Roboto({
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-roboto",
+    weight: ["400","700"],
 })
 
 export const pt_serif = PT_Serif({

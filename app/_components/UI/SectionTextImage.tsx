@@ -20,6 +20,11 @@ export default function SectionTextImage({
     bgColor2 = "bg-greenBlack";
     textColor = "text-black";
   }
+  if (color === "white") {
+    bgColor = "bg-white";
+    bgColor2 = "bg-greenBlack";
+    textColor = "text-black";
+  }
   return (
     <div className={`${bgColor} py-110 px-4`}>
       <div className="container mx-auto">
@@ -36,9 +41,7 @@ export default function SectionTextImage({
           }`} /> */}
             <Image src={image_src} alt="" width={640} height={455} className="relative"/>
           </div>
-          <div className="">
             {children}
-          </div>
         </div>
       </div>
     </div>

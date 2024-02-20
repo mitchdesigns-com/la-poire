@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function BigWidget({ data, index }: any) {
   const isEven = index % 2 === 0;
-
+  // console.log("data", data);
   return (
     <div className="py-20 md:py-[80px]">
       <div className="container mx-auto">
@@ -13,7 +13,10 @@ export default function BigWidget({ data, index }: any) {
             isEven ? "flex-row" : "flex-row-reverse"
           }`}
         >
-          <Link href={`/brands/${data.slug}`} className="relative aspect-[928/619] bg-white md:w-[calc(100%-400px)]">
+          <Link
+            href={`/brands/${data.slug}`}
+            className="relative aspect-[928/619] bg-white md:w-[calc(100%-400px)]"
+          >
             {data.HeroImage.data?.attributes.url && (
               <Image
                 alt=""
@@ -48,15 +51,39 @@ export default function BigWidget({ data, index }: any) {
                 className={`absolute top-0 bottom-0 left-0 w-[5px] rounded-xl bg-${data.BrandColor}`}
               ></span>
               <span>{data?.Logo?.data?.attributes?.formats?.url}</span>
-              <Image
-                src={
-                  process.env.NEXT_PUBLIC_API_URL +
-                  data.Logo.data.attributes.url
-                }
-                alt="img alt"
-                width={data.Logo.data.attributes.width}
-                height={data.Logo.data.attributes.height}
-              />
+              {data.Logo.data.attributes.formats ? (
+                data.Logo.data.attributes.formats.medium && data.Logo.data.attributes.formats.medium.width < 500 ? (
+                  <Image
+                    src={
+                      process.env.NEXT_PUBLIC_API_URL +
+                      data.Logo.data.attributes.formats.medium.url
+                    }
+                    alt="img alt"
+                    width={data.Logo.data.attributes.formats.medium.width}
+                    height={data.Logo.data.attributes.formats.medium.height}
+                  />
+                ) : (
+                  <Image
+                    src={
+                      process.env.NEXT_PUBLIC_API_URL +
+                      data.Logo.data.attributes.formats.thumbnail.url
+                    }
+                    alt="img alt"
+                    width={data.Logo.data.attributes.formats.thumbnail.width}
+                    height={data.Logo.data.attributes.formats.thumbnail.height}
+                  />
+                )
+              ) : (
+                <Image
+                  src={
+                    process.env.NEXT_PUBLIC_API_URL +
+                    data.Logo.data.attributes.url
+                  }
+                  alt="img alt"
+                  width={data.Logo.data.attributes.width}
+                  height={data.Logo.data.attributes.height}
+                />
+              )}
             </div>
             <p className="text-xs text-gray">{data.SmallWidgetShort}</p>
           </div>

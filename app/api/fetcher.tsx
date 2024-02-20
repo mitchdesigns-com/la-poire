@@ -42,6 +42,18 @@ export const fetchingFranchisePage = async () => {
   const endpoint = "franchise-page?populate=deep";
   return sendRequest(endpoint);
 };
+export const fetchingJobsPage = async () => {
+  const endpoint = "jobs-page?populate=deep";
+  return sendRequest(endpoint);
+};
+export const fetchingBlogsPage = async () => {
+  const endpoint = "blogs?populate=deep";
+  return sendRequest(endpoint);
+};
+export const fetchingAllJobs = async () => {
+  const endpoint = "jobs?populate=deep";
+  return sendRequest(endpoint);
+};
 export const fetchingBrandsPage = async () => {
   const endpoint = "brands-page?populate=deep";
   return sendRequest(endpoint);
@@ -63,6 +75,12 @@ const fetchingBrandsSEO = async (slug: string) => {
 };
 const fetchingSingleBrand = async (slug: string) => {
   return sendRequest(`our-brands?filters[slug][$eq]=${slug}&populate=deep`, {});
+};
+export const fetchingSingleBlog = async (slug: string) => {
+  return sendRequest(`blogs?filters[slug][$eq]=${slug}&populate=deep`, {});
+};
+export const fetchingSingleJob = async (slug: string) => {
+  return sendRequest(`jobs?filters[slug][$eq]=${slug}&populate=deep`, {});
 };
 
 export { fetchingBrandsSEO, fetchingSingleBrand };

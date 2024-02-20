@@ -1,10 +1,34 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import ArrowLeft from "../Icons/ArrowLeft";
 import BreadCrumb from "../UI/BreadCrumb";
-import Image from "next/image";
 
-export default function SingleBlog() {
+// interface BlogData {
+//   BodyContent: any;
+//   Title: string;
+//   Subtitle: string;
+//   Description: string;
+//   slug: string;
+//   MoreAbout: any;
+//   // Add other properties if needed
+// }
+export default function SingleBlog({ data }: any) {
+  // const [dataFetched, setDataFetched] = useState<BlogData | null>(null);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await fetchingSingleBlog(params);
+  //     setDataFetched(result?.data[0]?.attributes);
+  //   };
+
+  //   fetchData();
+  // }, [params]);
+  const dataFetched = data;
+  // console.log("dataFetched", dataFetched);
+  if (!dataFetched) {
+    return null;
+  }
   const list = [
     {
       title: "Home",
@@ -20,12 +44,12 @@ export default function SingleBlog() {
   ];
   return (
     <div className="px-4 pt-120">
-      <div className="max-w-[1000px] w-full mx-auto">
+      <div className="mx-auto w-full max-w-[1000px]">
         <Link
           href="/blog"
           className="inline-flex items-center gap-[7px] text-gray5"
         >
-          <span className="inline-block w-20 h-20 rotate-180">
+          <span className="inline-block h-20 w-20 rotate-180">
             <ArrowLeft />
           </span>
           Back to All News
@@ -39,89 +63,46 @@ export default function SingleBlog() {
             By John Smith, Published on November 15, 2023
           </span>
         </div>
-        <div className="relative aspect-video -mx-[140px]">
+        <div className="relative -mx-[140px] aspect-video">
           <Image src="/images/blog-hero.webp" fill alt="" />
         </div>
+
         <div className="blog-content">
-          <h2>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt{" "}
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. <b>Ut enim</b> ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </p>
-          <h2>Lorem ipsum dolor sit amet</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. <b>Ut enim</b> ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </p>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/blog-hero.webp" alt="" />
-          <h2>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt{" "}
-          </h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. <b>Ut enim</b> ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </p>
-          <blockquote>
-            <p>
-              “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt”
-            </p>
-          </blockquote>
-          <h6>-Malak Mitch</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          {dataFetched.BodyContent.map((item: any, index: any) => (
+            <React.Fragment key={index}>
+              {item.type === "heading" && (
+                <>
+                  {item.level === 2 && (
+                    <h2
+                      dangerouslySetInnerHTML={{
+                        __html: item.children[0].text,
+                      }}
+                    />
+                  )}
+                  {item.level === 3 && <h3>{item.children[0].text}</h3>}
+                  {item.level === 4 && <h4>{item.children[0].text}</h4>}
+                  {item.level === 5 && <h5>{item.children[0].text}</h5>}
+                  {item.level === 6 && <h6>{item.children[0].text}</h6>}
+                </>
+              )}
+              {item.type === "paragraph" && <p>{item.children[0].text}</p>}
+              {item.type === "quote" && (
+                <blockquote>
+                  <p>{item.children[0].text}</p>
+                </blockquote>
+              )}
+              {item.type === "image" && (
+                <div>
+                  <Image
+                    src={`${item.image.url}`}
+                    alt={""}
+                    width={item.image.width}
+                    height={item.image.height}
+                  />
+                </div>
+              )}
+            </React.Fragment>
+          ))}
         </div>
       </div>
     </div>

@@ -2,8 +2,8 @@ import HeroWithTitles from "../HeroWithTitles";
 import Newsletter from "../Newsletter";
 import BlogList from "../UI/BlogList";
 
-export default function News() {
-  const data = {
+export default function News({data}:any) {
+  const dataHero = {
     herotitle: "News & Blog",
     herosubtitle: "Latest Scoops & Sweet Stories from La Poire",
     herodescription: "",
@@ -12,13 +12,13 @@ export default function News() {
     <div>
       <HeroWithTitles
         bgColor={"white"}
-        title={data.herotitle}
-        subtitle={data.herosubtitle}
-        description={data.herodescription}
+        title={dataHero.herotitle}
+        subtitle={dataHero.herosubtitle}
+        description={dataHero.herodescription}
         max_width
         height_auto
       />
-      <BlogList />
+      <BlogList data={data} />
       <Newsletter />
     </div>
   );

@@ -93,7 +93,7 @@ export default function About() {
       <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
     )
   );
-  console.log("dataAbout", data);
+  // console.log("dataAbout", data);
   return (
     <div>
       <HeroWithTitles

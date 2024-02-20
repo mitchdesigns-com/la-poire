@@ -5,7 +5,7 @@ import { SITE_TITLE } from "../config";
 
 export async function  generateMetadata({ params }: any) {
   const categoryInfo = await fetchingBrandsSEO(params);
-  const seo = categoryInfo.data.attributes?.SEO;
+  const seo = categoryInfo?.data.attributes?.SEO;
   const pageTitle = 'About';
   const pageDescription = "metaDescription";
   const pageKeywords = `key`;

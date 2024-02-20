@@ -48,7 +48,7 @@ export default function ExploreMore({ parentSlug }: any) {
                     : item.attributes.Logo.data.attributes.height
                 }
                 src={
-                  // process.env.NEXT_PUBLIC_API_URL +
+                  process.env.NEXT_PUBLIC_API_URL +
                   item.attributes.Logo.data?.attributes.url
                 }
               />

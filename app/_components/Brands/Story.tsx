@@ -24,7 +24,7 @@ export default function Story({ data }: any) {
               fill
               className="object-cover"
               src={
-                // process.env.NEXT_PUBLIC_API_URL +
+                process.env.NEXT_PUBLIC_API_URL +
                 data.HeroImage.data?.attributes.url
               }
             />
@@ -36,7 +36,7 @@ export default function Story({ data }: any) {
               <Image
                 alt=""
                 src={
-                  // process.env.NEXT_PUBLIC_API_URL +
+                  process.env.NEXT_PUBLIC_API_URL +
                   data.Logo.data?.attributes.url
                 }
                 // width={data.Logo.data.attributes.width}

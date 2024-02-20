@@ -38,6 +38,7 @@ export default function Brands() {
   const brandsData = data?.data?.attributes??brandsMock.data?.attributes;
   const brands = brandsList??brandsAllMock;
   // console.log("brandsData", brandsData);
+  // console.log("brands", brands);
   return (
     <div>
       <HeroWithTitles

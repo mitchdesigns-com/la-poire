@@ -15,7 +15,7 @@ export default function OurPromise({ data }: any) {
         <div className="flex gap-[47px]">
           <Image
             src={
-              // process.env.NEXT_PUBLIC_API_URL +
+              process.env.NEXT_PUBLIC_API_URL +
               data.OurPromiseImage_1.data.attributes.url
             }
             alt="img alt"
@@ -28,7 +28,7 @@ export default function OurPromise({ data }: any) {
           </div>
           <Image
             src={
-              // process.env.NEXT_PUBLIC_API_URL +
+              process.env.NEXT_PUBLIC_API_URL +
               data.OurPromiseImage_2.data.attributes.url
             }
             alt="img alt"

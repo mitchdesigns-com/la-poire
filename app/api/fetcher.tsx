@@ -13,7 +13,7 @@ const sendRequest = async (
       ...options,
       headers: {
         ...options.headers,
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
+        // Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_TOKEN}`,
       },
     });
 
@@ -34,6 +34,14 @@ const sendRequest = async (
   }
 };
 
+export const fetchingAboutPage = async () => {
+  const endpoint = "about-page?populate=deep";
+  return sendRequest(endpoint);
+};
+export const fetchingFranchisePage = async () => {
+  const endpoint = "franchise-page?populate=deep";
+  return sendRequest(endpoint);
+};
 export const fetchingBrandsPage = async () => {
   const endpoint = "brands-page?populate=deep";
   return sendRequest(endpoint);

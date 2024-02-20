@@ -19,7 +19,7 @@ export default function TheExperience({ data }: any) {
             fill
             className="object-cover"
             src={
-              // process.env.NEXT_PUBLIC_API_URL +
+              process.env.NEXT_PUBLIC_API_URL +
               data.TheExperienceImage.data?.attributes.url
             }
           />

@@ -3,19 +3,16 @@
 import SectionTitles from "./SectionTitles";
 import TimeLineProgress from "./TimeLineProgress";
 
-export default function TimeLine() {
+export default function TimeLine({ data }: any) {
   return (
-    <div className="bg-greenBlack py-80 px-4">
+    <div className="bg-greenBlack px-4 py-80">
       <div className="container mx-auto">
-        <section className="text-white">
-          <SectionTitles
-            title={"La Poire's Time-Honored History"}
-            sub_title={"From Humble Beginnings to National Stardom"}
-          />
+        <section className="text-start text-white">
+          <SectionTitles title={data.title} sub_title={data.desc} />
         </section>
       </div>
       <div className="-mx-4">
-        <TimeLineProgress />
+        <TimeLineProgress progress={data.process} />
       </div>
     </div>
   );

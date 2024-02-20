@@ -14,20 +14,38 @@ import AboutSection from "../AboutSection";
 import OurTeam from "../UI/OurTeam";
 import Newsletter from "../Newsletter";
 import SectionTextImage from "../UI/SectionTextImage";
+import { fetchingAboutPage } from "@/app/api/fetcher";
 
 export default function About() {
+  const [data, setData] = useState<any | null>(null);
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
       setHasWindow(true);
     }
   }, []);
-  const data = {
-    herotitle: "About La Poire Group",
-    herosubtitle: "Crafting Culinary Masterpieces Since 1975",
-    herodescription:
-      "Venture into the world of La Poire Group, where tradition meets innovation. From our humble beginnings in the serene Cairo neighborhood of Garden City to becoming Egypt's culinary titan, our journey has been marked by passion, dedication, and an insatiable quest for excellence. Dive deeper to learn about the essence that makes La Poire not just a brand, but a beloved household name.",
-  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetchingAboutPage();
+        setData(result.data.attributes);
+      } catch (error) {
+        console.error("Error fetching home page data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  if (!data) {
+    return null;
+  }
+  // const data = {
+  //   herotitle: "About La Poire Group",
+  //   herosubtitle: "Crafting Culinary Masterpieces Since 1975",
+  //   herodescription:
+  //     "Venture into the world of La Poire Group, where tradition meets innovation. From our humble beginnings in the serene Cairo neighborhood of Garden City to becoming Egypt's culinary titan, our journey has been marked by passion, dedication, and an insatiable quest for excellence. Dive deeper to learn about the essence that makes La Poire not just a brand, but a beloved household name.",
+  // };
   const moreAboutData = [
     {
       img: "/images/more-about/more-about_01.webp",
@@ -60,36 +78,57 @@ export default function About() {
       desc: "La Poire's commitment to environmental and societal well-being, coupled with business expansion, ensures a sustainable and positive impact on the communities they serve.",
     },
   ];
+  const timeLineData = {
+    title: data.TimelineTitle,
+    desc: data.TimelineSubtitle,
+    process: data.Timeline,
+  };
+  const ourMissionVisionData = {
+    missionDescription: data.OurMissionDescription,
+    visionDescription: data.OurVisionDescription,
+  };
+
+  const storyParagraphs = data.StoryDescription.split("\n\n").map(
+    (paragraph: string, index: number) => (
+      <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
+    )
+  );
+  console.log("dataAbout", data);
   return (
     <div>
       <HeroWithTitles
         bgColor={"white"}
-        title={data.herotitle}
-        subtitle={data.herosubtitle}
-        description={data.herodescription}
+        title={data.Title}
+        subtitle={data.Subtitle}
+        description={data.Description}
       />
-      <TimeLine />
-      
-      <div className="bg-goldLight py-64 px-4 mb-[278px]">
+      <TimeLine data={timeLineData} />
+
+      <div className="mb-[278px] bg-goldLight px-4 py-64">
         <div className="container mx-auto">
-          <div className="flex flex-col gap-50 justify-center items-center">
+          <div className="flex flex-col items-center justify-center gap-50">
             <Image
-              src="/images/Group-Logo.webp"
+              src={
+                process.env.NEXT_PUBLIC_API_URL + data.Logo.data?.attributes.url
+              }
               alt=""
-              width={252}
-              height={51}
+              width={data.Logo.data.attributes.width}
+              height={data.Logo.data.attributes.height}
             />
-            <MissionVision />
+            <MissionVision data={ourMissionVisionData} />
             {hasWindow && (
-              <div className="w-full aspect-video -mb-[278px]">
+              <div className="-mb-[278px] aspect-video w-full">
                 <ReactPlayer
                   width="100%"
                   height="100%"
-                  url="https://www.youtube.com/watch?v=K2fHBRPT1VY"
+                  url={`https://www.youtube.com/watch?v=${data.YoutubeID}`}
                   playing
-                  light="/images/more-about.webp"
+                  light={
+                    process.env.NEXT_PUBLIC_API_URL +
+                    data.YoutubeCover.data?.attributes.url
+                  }
                   playIcon={
-                    <span className="md:w-[140px] md:h-[141px] w-[100px] h-[100px] z-10">
+                    <span className="z-10 h-[100px] w-[100px] md:h-[141px] md:w-[140px]">
                       <PlayBtn />
                     </span>
                   }
@@ -99,113 +138,70 @@ export default function About() {
           </div>
         </div>
       </div>
-      <OurBrands />
+
+      <OurBrands images={data.OurBrandsLogos.data} />
 
       <div className="container mx-auto max-w-[1000px]">
         <div className="px-4 py-44">
           <div className="flex gap-[52px]">
-            <div className="w-[312px] pr-5 shrink-0 flex-grow-0">
+            <div className="w-[312px] shrink-0 flex-grow-0 pr-5">
               <Image
                 alt=""
                 src={
-                  // process.env.NEXT_PUBLIC_API_URL +
-                  "/images/about-brand.webp"
+                  process.env.NEXT_PUBLIC_API_URL +
+                  data.StoryImage.data?.attributes.url
                 }
-                // width={data.Logo.data.attributes.width}
-                // height={data.Logo.data.attributes.height}
-                width={312}
-                height={390}
+                width={data.StoryImage.data.attributes.width}
+                height={data.StoryImage.data.attributes.height}
               />
             </div>
             <div>
-              <h3 className="text-2xl font-bold">{"Brand Story"}</h3>
-              <h4 className="text-xl font-light">
-                {"The Enchanting Tale of La Poire"}
-              </h4>
+              <h3 className="text-2xl font-bold">{data.StoryTitle}</h3>
+              <h4 className="text-xl font-light">{data.StorySubTitle}</h4>
               <div
                 className={`space-y-34 mt-34 ${pt_serif.className} text-greenBlack leading-[28px]`}
               >
-                <p>
-                  Once upon a time, in the serene Cairo neighborhood of{" "}
-                  <b>Garden City</b>, a vision came to life in <b>1975</b>.
-                  Nestled amidst the gentle hum of the streets, <b>La Poire</b>{" "}
-                  opened its first store, inspired by the time-honored
-                  traditions of French patisseries and the rich heritage of
-                  Egyptian baking. A dream that blossomed from the fusion of
-                  these two worlds.
-                </p>
-                <p>
-                  La Poire wasn&apos;t just a name; it became an emotion, a
-                  symbol of exquisite taste and craftsmanship. With a singular
-                  vision, we embarked on a mission: to create the most
-                  unpretentious yet sophisticated pastry and cafe chains across{" "}
-                  <b>Egypt</b>. A haven where the art of balancing textures and
-                  flavors wasn&apos;t just a technique but a pledge – a
-                  commitment to sprinkle moments of sheer joy into every single
-                  day.`
-                </p>
-                <p>
-                  Walking into a La Poire store was like stepping into a
-                  storybook. Simplicity and elegance spoke in whispers, setting
-                  the stage for the true stars - our delectable delights. The
-                  French-inspired design, accentuating our tempting treats,
-                  greeted every visitor, making choices tantalizingly tough.
-                </p>
-                <p>
-                  Imagine starting your day with the buttery embrace of a
-                  chocolate-filled croissant, or celebrating special moments
-                  with our signature La Poirette cake, which would undoubtedly
-                  steal the spotlight at any gathering. And during the sacred
-                  month of Ramadan, the warmth and tradition of our basbousa
-                  offered solace and connection. Indeed, La Poire became the
-                  answer to every culinary desire, ensuring that no matter where
-                  your cravings led, there was always a piece of perfection
-                  waiting just for you.
-                </p>
+                {storyParagraphs}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto mt-30 md:mb-95 mb-30">
-        <span className="bg-gray3 h-[5px] w-full block" />
+      <div className="container mx-auto mb-30 mt-30 md:mb-95">
+        <span className="block h-[5px] w-full bg-gray3" />
       </div>
 
       <div className="container mx-auto">
         <div className="flex flex-col gap-70 py-30">
-          <div className="flex justify-between items-center text-black md:flex-nowrap flex-wrap-reverse md:gap-0 gap-20">
+          <div className="flex flex-wrap-reverse items-center justify-between gap-20 text-black md:flex-nowrap md:gap-0">
             <div>
-              <h3 className="text-2xl">Distinctive Excellence</h3>
-              <p className="text-xl font-light">
-                The Pillars of Our Prestige: Six Reasons We Shine
-              </p>
+              <h3 className="text-2xl">{data.FeaturesTitle}</h3>
+              <p className="text-xl font-light">{data.FeaturesSubtitle}</p>
             </div>
             <div className="w-634">
               <p className={`${pt_serif.className} italic text-base`}>
-                Dive into the essence of what makes La Poire group exceptional.
-                With a tapestry woven from pioneering legacies to unparalleled
-                quality, our unique selling propositions distinguish us in
-                Egypt&apos;s culinary landscape. Discover the cornerstones that
-                have shaped our journey, transforming ordinary moments into
-                extraordinary experiences.
+                {data.FeaturesDescription}
               </p>
             </div>
           </div>
-          <div className="flex md:grid-cols-3 grid-cols-2 gap-y-26 justify-between flex-wrap md:gap-x-56 gap-5">
-            {moreAboutData.map((item, index) => (
+          <div className="flex grid-cols-2 flex-wrap justify-between gap-5 gap-y-26 md:grid-cols-3 md:gap-x-56">
+            {data.FeatureItem.map((item: any, index: number) => (
               <motion.div
                 key={index}
-                className="md:w-320 w-[calc(50%-10px)]"
+                className="w-[calc(50%-10px)] md:w-320"
                 initial={{ opacity: 0, y: -10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
                 <MoreAboutItem
-                  img={item.img}
-                  title={item.title}
-                  desc={item.desc}
+                  img={
+                    process.env.NEXT_PUBLIC_API_URL +
+                    item.Image.data?.attributes.url
+                  }
+                  title={item.Title}
+                  desc={item.Description}
                 />
               </motion.div>
             ))}
@@ -214,71 +210,29 @@ export default function About() {
       </div>
 
       <AboutSection color="pink" />
+
       <OurTeam />
-      <SectionTextImage
-        image_position={""}
-        image_src={"/images/SectionTextImage_1.webp"}
-        color={""}
-      >
-        <div className="flex flex-col text-white max-w-[515px]">
-          <h2 className="text-5xl font-semibold">
-            Our Factory, Where Culinary Dreams Take Shape
-          </h2>
-          <h4 className="text-goldLight mt-10">
-            rafting Excellence Behind the Scenes
-          </h4>
-          <p className="text-base mt-30">
-            Nestled in the heart of Egypt, our state-of-the-art factory is the
-            birthplace of La Poire&apos;s renowned delicacies. With a perfect
-            blend of tradition and innovation, our skilled artisans and
-            cutting-edge machinery come together to ensure every creation is
-            nothing short of perfection.
-          </p>
-        </div>
-      </SectionTextImage>
-      <SectionTextImage
-        image_position={"left"}
-        image_src={"/images/SectionTextImage_1.webp"}
-        color={"bej"}
-      >
-        <div className="flex flex-col text-black">
-          <h2 className="text-5xl font-semibold">
-            <span className="text-green">Franchising</span> Opportunities with
-            La Poire Group
-          </h2>
-          <h4 className="text-green mt-10">
-            rafting Excellence Behind the Scenes
-          </h4>
-          <p className="text-base mt-30">
-            Nestled in the heart of Egypt, our state-of-the-art factory is the
-            birthplace of La Poire&apos;s renowned delicacies. With a perfect
-            blend of tradition and innovation, our skilled artisans and
-            cutting-edge machinery come together to ensure every creation is
-            nothing short of perfection.
-          </p>
-        </div>
-      </SectionTextImage>
-      <SectionTextImage
-        image_position={""}
-        image_src={"/images/SectionTextImage_1.webp"}
-        color={""}
-      >
-        <div className="flex flex-col text-white max-w-[515px]">
-          <h2 className="text-5xl font-semibold">
-            Giving Back to Beloved Egypt
-          </h2>
-          <h4 className="text-goldLight mt-10">
-            Sustainable Practices, Lasting Impact
-          </h4>
-          <p className="text-base mt-30">
-            La Poire recognizes the importance of giving back. Our commitment to
-            sustainability and community welfare drives our operations. By
-            integrating eco-friendly practices, supporting local artisans, and
-            participating in community upliftment projects, we ensure that our
-            success is Egypt&apos;s success.
-          </p>
-        </div>
-      </SectionTextImage>
+
+      {data.SectionTextImage.map((item: any, index: number) => (
+        <SectionTextImage
+          key={index}
+          image_position={item.image_position}
+          image_src={
+            item.Image.data?.attributes.url
+              ? process.env.NEXT_PUBLIC_API_URL +
+                item.Image.data?.attributes.url
+              : "/images/placeholder.webp"
+          }
+          color={item.Color}
+        >
+          <div className="flex max-w-[515px] flex-col text-white">
+            <h2 className="text-5xl font-semibold">{item.Title}</h2>
+            <h4 className="mt-10 text-goldLight">{item.Subtitle}</h4>
+            <p className="mt-30 text-base">{item.Description}</p>
+          </div>
+        </SectionTextImage>
+      ))}
+
       <Newsletter />
     </div>
   );

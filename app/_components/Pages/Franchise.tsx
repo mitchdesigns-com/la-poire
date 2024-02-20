@@ -11,8 +11,10 @@ import Testimonials from "../Testimonials";
 import RequestSection from "../UI/RequestSection";
 import FAQsSection from "../UI/FAQsSection";
 import Newsletter from "../Newsletter";
+import { fetchingFranchisePage } from "@/app/api/fetcher";
 
 export default function Franchise() {
+  const [data, setData] = useState<any | null>(null);
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -20,13 +22,21 @@ export default function Franchise() {
     }
   }, []);
 
-  const data = {
-    herotitle:
-      "Unravel <span><b>Franchise Opportunities</b></span> in Egypt's Culinary Landscape",
-    herosubtitle: "A Partnership Rooted in Excellence",
-    herodescription:
-      "Franchising with La Poire is not just a business venture; it's an immersion into Egypt's rich culinary culture. Become part of our growth story and carry forward the tradition of quality and joy we've nurtured for decades.",
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetchingFranchisePage();
+        setData(result.data.attributes);
+      } catch (error) {
+        console.error("Error fetching home page data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  if (!data) {
+    return null;
+  }
   const moreAboutData = [
     {
       img: "/images/franchise/franchise_01.webp",
@@ -63,9 +73,9 @@ export default function Franchise() {
     <div>
       <HeroWithTitles
         bgColor={"white"}
-        title={data.herotitle}
-        subtitle={data.herosubtitle}
-        description={data.herodescription}
+        title={data.Title}
+        subtitle={data.Subtitle}
+        description={data.Description}
         max_width
       />
 
@@ -74,25 +84,26 @@ export default function Franchise() {
           <div className="flex flex-col gap-50">
             <section className="text-center text-white">
               <SectionTitles
-                tagline={"Why Franchise with La Poire"}
-                title={"The Gold Standard in Franchising"}
-                sub_title={"Where Vision Meets Expertise"}
+                tagline={data.SectionTitles.TagLine}
+                title={data.SectionTitles.Title}
+                sub_title={data.SectionTitles.Subtitle}
               />
             </section>
-            <div className="flex md:grid-cols-3 grid-cols-2 gap-y-[80px] justify-between flex-wrap md:gap-x-56 gap-5">
-              {moreAboutData.map((item, index) => (
+            <div className="flex grid-cols-2 flex-wrap justify-between gap-5 gap-y-[80px] md:grid-cols-3 md:gap-x-56">
+              {data.MoreAboutData.map((item:any, index:number) => (
                 <motion.div
                   key={index}
-                  className="md:w-320 w-[calc(50%-10px)]"
+                  className="w-[calc(50%-10px)] md:w-320"
                   initial={{ opacity: 0, y: -10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.2, delay: index * 0.2 }}
                   viewport={{ once: true }}
                 >
                   <MoreAboutItem
-                    img={item.img}
-                    title={item.title}
-                    desc={item.desc}
+                    img={process.env.NEXT_PUBLIC_API_URL +
+                      item.Image.data?.attributes.url}
+                    title={item.Title}
+                    desc={item.Description}
                     colorAlt
                   />
                 </motion.div>
@@ -102,33 +113,34 @@ export default function Franchise() {
         </div>
       </div>
 
-      <div className="bg-goldLight py-64 px-4 mb-[278px]">
+      <div className="mb-[278px] bg-goldLight px-4 py-64">
         <div className="container mx-auto">
-          <div className="flex flex-col items-center justify-center gap-20 mb-7">
+          <div className="mb-7 flex flex-col items-center justify-center gap-20">
             <section className="text-center text-black">
               <SectionTitles
-                tagline={"How to Franchise"}
+                tagline={data.FranchiseSectionTitle.TagLine}
                 taglineAlt
-                title={"Begin Your La Poire Journey"}
-                sub_title={"Seamless Steps to Success"}
+                title={data.FranchiseSectionTitle.Title}
+                sub_title={data.FranchiseSectionTitle.Subtitle}
               />
             </section>
-            <p className="max-w-3xl mx-auto text-sm text-center text-gray5">
-              {
-                "Franchising with us is a streamlined process. Whether you're in Egypt or expanding our legacy abroad, our team guides you through every phase, ensuring a smooth transition and setup for your new venture."
-              }
+            <p className="mx-auto max-w-3xl text-center text-sm text-gray5">
+              {data.FranchiseSectionTitle.Description}
             </p>
           </div>
           {hasWindow && (
-            <div className="w-full aspect-video -mb-[278px]">
+            <div className="-mb-[278px] aspect-video w-full">
               <ReactPlayer
                 width="100%"
                 height="100%"
-                url="https://www.youtube.com/watch?v=K2fHBRPT1VY"
+                url={`https://www.youtube.com/watch?v=${data.YoutubeID}`}
                 playing
-                light="/images/more-about.webp"
+                light={
+                  process.env.NEXT_PUBLIC_API_URL +
+                  data.YoutubeCover.data?.attributes.url
+                }
                 playIcon={
-                  <span className="md:w-[140px] md:h-[141px] w-[100px] h-[100px] z-10">
+                  <span className="z-10 h-[100px] w-[100px] md:h-[141px] md:w-[140px]">
                     <PlayBtn />
                   </span>
                 }
@@ -138,10 +150,10 @@ export default function Franchise() {
         </div>
       </div>
 
-      <OurBrands title="Our Franchised Brands" />
+      <OurBrands title="Our Franchised Brands" images={data.Logos.data} />
 
-      <div className="container mx-auto mt-30 md:mb-95 mb-30">
-        <span className="bg-gray3 h-[5px] w-full block" />
+      <div className="container mx-auto mb-30 mt-30 md:mb-95">
+        <span className="block h-[5px] w-full bg-gray3" />
       </div>
       <Testimonials />
 

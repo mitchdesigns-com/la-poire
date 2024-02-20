@@ -12,7 +12,7 @@ export default function ProductWidget({ data }: any) {
           fill
           className="object-cover"
           src={
-            // process.env.NEXT_PUBLIC_API_URL +
+            process.env.NEXT_PUBLIC_API_URL +
             data.thumbnail.data?.attributes.url
           }
         />

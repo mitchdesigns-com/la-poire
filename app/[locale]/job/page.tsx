@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import Jobs from "@/app/_components/Pages/Jobs";
 import { fetchingJobsPage } from "@/app/api/fetcher";
 

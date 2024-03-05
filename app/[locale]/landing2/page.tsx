@@ -1,4 +1,4 @@
-// import Landing2 from "@/app/_components/Landing2";
+export const runtime = "edge";
 
 import { Landing2 } from "@/app/_components/Landing2";
 

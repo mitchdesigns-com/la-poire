@@ -1,4 +1,4 @@
-import React from "react";
+export const runtime = "edge";
 import News from "@/app/_components/Pages/News";
 import { fetchingBlogsPage } from "@/app/api/fetcher";
 

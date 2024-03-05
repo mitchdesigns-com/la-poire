@@ -139,7 +139,7 @@ export default function About() {
         </div>
       </div>
 
-      <OurBrands images={data.OurBrandsLogos.data} />
+      <OurBrands brandsList={data.OurBrandsLogos.data} />
 
       <div className="container mx-auto max-w-[1000px]">
         <div className="px-4 py-44">

@@ -150,7 +150,7 @@ export default function Franchise() {
         </div>
       </div>
 
-      <OurBrands title="Our Franchised Brands" images={data.Logos.data} />
+      <OurBrands title="Our Franchised Brands" brandsList={data.Logos.data} />
 
       <div className="container mx-auto mb-30 mt-30 md:mb-95">
         <span className="block h-[5px] w-full bg-gray3" />

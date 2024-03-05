@@ -1,4 +1,4 @@
-import Franchise from "../_components/Pages/Franchise";
+import Franchise from "@/app/_components/Pages/Franchise";
 
 export default function FranchisePage() {
   return (

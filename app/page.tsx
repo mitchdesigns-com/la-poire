@@ -1,7 +1,6 @@
-import Landing from "./_components/Landing";
+import {redirect} from 'next/navigation';
 
-export default function Home() {
-  return (
-    <Landing/>
-  )
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+  redirect('/');
 }

@@ -1,5 +1,5 @@
-import Jobs from "../_components/Pages/Jobs";
-import { fetchingJobsPage } from "../api/fetcher";
+import Jobs from "@/app/_components/Pages/Jobs";
+import { fetchingJobsPage } from "@/app/api/fetcher";
 
 export default async function JobPage() {
   const dataFetched = await fetchingJobsPage();

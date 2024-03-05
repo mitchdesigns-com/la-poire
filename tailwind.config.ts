@@ -13,12 +13,14 @@ const config: Config = {
       screens: {
         lg: '100%',
         xl: '100%',
+        '1xl': '1280px',
         '2xl': '1440px',
       },
     },
     spacing: {
       '0': '0',
       '.5': '4px',
+      '.75': '5px',
       '1': '8px',
       '2': '12px',
       '5': '5px',

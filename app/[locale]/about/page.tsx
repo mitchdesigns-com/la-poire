@@ -1,7 +1,7 @@
 export const runtime = "edge";
-import About from "../_components/Pages/About";
-import { fetchingBrandsSEO } from "../api/fetcher";
-import { SITE_TITLE } from "../config";
+import About from "@/app/_components/Pages/About";
+import { fetchingBrandsSEO } from "@/app/api/fetcher";
+import { SITE_TITLE } from "@/app/config";
 
 export async function  generateMetadata({ params }: any) {
   const categoryInfo = await fetchingBrandsSEO(params);

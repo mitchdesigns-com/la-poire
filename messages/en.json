@@ -1,0 +1,15 @@
+{
+    "common": {
+      "title": "Hello world! EN"
+    },
+    "nav":{
+      "home":"Homepage",
+      "about":"About us",
+      "brands":"Brands",
+      "franchise":"Franchise",
+      "blog":"News & Blog",
+      "job":"Job",
+      "contact": "Contact Us"
+    }
+  }
+  

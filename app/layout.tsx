@@ -1,29 +1,14 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Header from "./_components/Header/Header";
-import { cls } from "./utils/helpers";
-import { poppins } from "./fonts";
-import Footer from "./_components/Footer/Footer";
+import {ReactNode} from 'react';
+// import './globals.css';
+// import './base.css';
+// import './css-ios-pwa-viewport.css';
 
-export const metadata: Metadata = {
-  title: "La Poire",
-  description: "La Poire Landing Page",
+type Props = {
+  children: ReactNode;
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body className={cls(`${poppins.className} bg-white`)}>
-        <div className="overflow-hidden">
-          <Header />
-          {children}
-          <Footer />
-        </div>
-      </body>
-    </html>
-  );
+// Since we have a `not-found.tsx` page on the root, a layout file
+// is required, even if it's just passing children through.
+export default function RootLayout({children}: Props) {
+  return children;
 }

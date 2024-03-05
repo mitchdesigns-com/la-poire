@@ -4,7 +4,7 @@ import { cls } from "../utils/helpers";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "danger" | "border" | "borderGold";
-  size?: "small" | "normal" | "large" | "square";
+  size?: "small" | "normal" | "large" | "square" | "normalSm";
   pill?: boolean;
   uppercase?: boolean;
   submit?: "submit" | "button";
@@ -18,6 +18,7 @@ interface ButtonClasses {
   size: {
     small: string;
     normal: string;
+    normalSm: string;
     square: string;
     large: string;
   };
@@ -31,13 +32,14 @@ interface ButtonClasses {
 }
 
 const classes: ButtonClasses = {
-  base: "focus:outline-none transition ease-in-out duration-300 font-medium",
+  base: "focus:outline-none transition ease-in-out duration-300 font-medium whitespace-nowrap",
   disabled: "opacity-50 cursor-not-allowed",
   pill: "rounded-full",
   uppercase: "uppercase",
   size: {
     small: "px-2 py-1 text-sm",
     normal: "px-34 py-2 md:text-sm md:leading-[21px] tracking-[0.02em] text-sm",
+    normalSm: "1xl:px-34 px-20 1xl:py-2 py-1 1xl:text-sm 1xl:leading-[21px] tracking-[0.02em] text-xs",
     square: "p-4",
     large: "px-8 py-3 text-lg",
   },
@@ -59,8 +61,7 @@ const Button = forwardRef(
     {
       children,
       type = "button",
-      className = "",
-      variant = "primary",
+      className = "", variant ="primary",
       size = "normal",
       pill,
       uppercase,
@@ -103,7 +104,7 @@ Button.propTypes = {
     "border",
     "borderGold",
   ]),
-  size: PropTypes.oneOf(["small", "normal", "large", "square"]),
+  size: PropTypes.oneOf(["small", "normal", "large", "square","normalSm"]),
 };
 Button.displayName = "Button";
 export default Button;

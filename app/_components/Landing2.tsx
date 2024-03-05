@@ -6,30 +6,30 @@ import Newsletter from "./Newsletter";
 
 export const Landing2 = (): JSX.Element => {
   return (
-    <div className="bg-[#ffffff] flex flex-row justify-center w-full">
-      <div className="bg-[#ffffff] overflow-hidden w-[1512px] h-[5768px] relative">
-        <div className="absolute w-[1448px] h-[1408px] top-0 left-[64px]">
-          <div className="absolute w-[1444px] h-[1408px] top-0 left-[4px]">
-            <div className="absolute w-[1073px] h-[1408px] top-0 left-[371px] bg-black" />
-            <div className="absolute w-[1377px] h-[1172px] top-[180px] left-0">
-              <div className="inline-flex items-center gap-[57px] absolute top-[1071px] left-[419px]">
-                <div className="inline-flex flex-col items-start gap-[5px] relative flex-[0_0_auto]">
-                  <div className="relative w-fit mt-[-1.00px] font-heading-h6 font-[number:var(--heading-h6-font-weight)] text-white text-[length:var(--heading-h6-font-size)] tracking-[var(--heading-h6-letter-spacing)] leading-[var(--heading-h6-line-height)] whitespace-nowrap [font-style:var(--heading-h6-font-style)]">
+    <div className="flex w-full flex-row justify-center bg-[#ffffff]">
+      <div className="relative h-[5768px] w-[1512px] overflow-hidden bg-[#ffffff]">
+        <div className="absolute left-[64px] top-0 h-[1408px] w-[1448px]">
+          <div className="absolute left-[4px] top-0 h-[1408px] w-[1444px]">
+            <div className="absolute left-[371px] top-0 h-[1408px] w-[1073px] bg-black" />
+            <div className="absolute left-0 top-[180px] h-[1172px] w-[1377px]">
+              <div className="absolute left-[419px] top-[1071px] inline-flex items-center gap-[57px]">
+                <div className="relative inline-flex flex-[0_0_auto] flex-col items-start gap-[5px]">
+                  <div className="font-heading-h6 relative mt-[-1.00px] w-fit whitespace-nowrap text-[length:var(--heading-h6-font-size)] font-[number:var(--heading-h6-font-weight)] leading-[var(--heading-h6-line-height)] tracking-[var(--heading-h6-letter-spacing)] text-white [font-style:var(--heading-h6-font-style)]">
                     Flavors Trusted by Millions
                   </div>
-                  <p className="relative w-[461px] font-text-small-light font-[number:var(--text-small-light-font-weight)] text-white text-[length:var(--text-small-light-font-size)] tracking-[var(--text-small-light-letter-spacing)] leading-[var(--text-small-light-line-height)] [font-style:var(--text-small-light-font-style)]">
+                  <p className="font-text-small-light relative w-[461px] text-[length:var(--text-small-light-font-size)] font-[number:var(--text-small-light-font-weight)] leading-[var(--text-small-light-line-height)] tracking-[var(--text-small-light-letter-spacing)] text-white [font-style:var(--text-small-light-font-style)]">
                     Over 16 million people find joy in every bite, trusting our
                     brands to deliver unparalleled happiness and flavor.
                   </p>
                 </div>
-                <div className="inline-flex items-center gap-[43px] relative flex-[0_0_auto]">
+                <div className="relative inline-flex flex-[0_0_auto] items-center gap-[43px]">
                   <BigNum
                     className="!flex-[0_0_auto]"
                     text="5"
                     text1="BRANDS"
                   />
                   <img
-                    className="relative w-px h-[75px] object-cover"
+                    className="w-px relative h-[75px] object-cover"
                     alt="Line"
                     src="line-3.svg"
                   />
@@ -39,7 +39,7 @@ export const Landing2 = (): JSX.Element => {
                     text1="LOCATIONS"
                   />
                   {/* <img
-                    className="relative w-px h-[75px] object-cover"
+                    className="w-px relative h-[75px] object-cover"
                     alt="Line"
                     src="line-5.svg"
                   /> */}
@@ -50,82 +50,82 @@ export const Landing2 = (): JSX.Element => {
                   />
                 </div>
               </div>
-              <div className="inline-flex items-start gap-[12px] absolute top-[701px] left-[278px]">
-                <div className="relative w-[264.77px] h-[334px]">
-                  <div className="relative w-[267px] h-[334px]">
+              <div className="absolute left-[278px] top-[701px] inline-flex items-start gap-[12px]">
+                <div className="relative h-[334px] w-[264.77px]">
+                  <div className="relative h-[334px] w-[267px]">
                     <img
-                      className="absolute w-[265px] h-[334px] top-0 left-0"
+                      className="absolute left-0 top-0 h-[334px] w-[265px]"
                       alt="Mask group"
                       src="/images/mask-group-2.png"
                     />
-                    <div className="absolute w-[214px] h-[40px] top-[274px] left-[53px]">
-                      <div className="relative w-[212px] h-[40px]">
-                        <div className="absolute w-[212px] h-[40px] top-0 left-0 bg-green opacity-80" />
+                    <div className="absolute left-[53px] top-[274px] h-[40px] w-[214px]">
+                      <div className="relative h-[40px] w-[212px]">
+                        <div className="absolute left-0 top-0 h-[40px] w-[212px] bg-green opacity-80" />
                         {/* <img
-                          className="left-[176px] absolute w-[24px] h-[24px] top-[8px]"
+                          className="absolute left-[176px] top-[8px] h-[24px] w-[24px]"
                           alt="Arrow up right"
                           src="arrow-up-right.svg"
                         /> */}
-                        <div className="absolute top-[6px] left-[11px] font-text-medium-semi-bold font-[number:var(--text-medium-semi-bold-font-weight)] text-[#ffffff] text-[length:var(--text-medium-semi-bold-font-size)] tracking-[var(--text-medium-semi-bold-letter-spacing)] leading-[var(--text-medium-semi-bold-line-height)] whitespace-nowrap [font-style:var(--text-medium-semi-bold-font-style)]">
+                        <div className="font-text-medium-semi-bold absolute left-[11px] top-[6px] whitespace-nowrap text-[length:var(--text-medium-semi-bold-font-size)] font-[number:var(--text-medium-semi-bold-font-weight)] leading-[var(--text-medium-semi-bold-line-height)] tracking-[var(--text-medium-semi-bold-letter-spacing)] text-[#ffffff] [font-style:var(--text-medium-semi-bold-font-style)]">
                           La Poire Patisserie
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="relative w-[264.77px] h-[334px] bg-[url(/images/mask-group-2.png)] bg-[100%_100%]">
-                  <div className="relative w-[220px] h-[40px] top-[274px] left-[47px]">
-                    <div className="relative w-[218px] h-[40px]">
-                      <div className="absolute w-[218px] h-[40px] top-0 left-0 bg-green opacity-80" />
+                <div className="relative h-[334px] w-[264.77px] bg-[url(/images/mask-group-2.png)] bg-[100%_100%]">
+                  <div className="relative left-[47px] top-[274px] h-[40px] w-[220px]">
+                    <div className="relative h-[40px] w-[218px]">
+                      <div className="absolute left-0 top-0 h-[40px] w-[218px] bg-green opacity-80" />
                       {/* <img
-                        className="absolute w-[24px] h-[24px] top-[8px] left-[185px]"
+                        className="absolute left-[185px] top-[8px] h-[24px] w-[24px]"
                         alt="Arrow up right"
                         src="image.svg"
                       /> */}
-                      <div className="absolute top-[6px] left-[11px] font-text-medium-semi-bold font-[number:var(--text-medium-semi-bold-font-weight)] text-[#ffffff] text-[length:var(--text-medium-semi-bold-font-size)] tracking-[var(--text-medium-semi-bold-letter-spacing)] leading-[var(--text-medium-semi-bold-line-height)] whitespace-nowrap [font-style:var(--text-medium-semi-bold-font-style)]">
+                      <div className="font-text-medium-semi-bold absolute left-[11px] top-[6px] whitespace-nowrap text-[length:var(--text-medium-semi-bold-font-size)] font-[number:var(--text-medium-semi-bold-font-weight)] leading-[var(--text-medium-semi-bold-line-height)] tracking-[var(--text-medium-semi-bold-letter-spacing)] text-[#ffffff] [font-style:var(--text-medium-semi-bold-font-style)]">
                         La Poire Bistro
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="relative w-[264.77px] h-[334px]">
-                  <div className="relative w-[267px] h-[334px]">
+                <div className="relative h-[334px] w-[264.77px]">
+                  <div className="relative h-[334px] w-[267px]">
                     <img
-                      className="absolute w-[265px] h-[334px] top-0 left-0"
+                      className="absolute left-0 top-0 h-[334px] w-[265px]"
                       alt="Mask group"
                       src="/images/mask-group-2.png"
                     />
-                    <div className="absolute w-[156px] h-[40px] top-[274px] left-[111px]">
-                      <div className="relative w-[154px] h-[40px]">
-                        <div className="absolute w-[154px] h-[40px] top-0 left-0 bg-beanos opacity-80" />
+                    <div className="absolute left-[111px] top-[274px] h-[40px] w-[156px]">
+                      <div className="relative h-[40px] w-[154px]">
+                        <div className="bg-beanos absolute left-0 top-0 h-[40px] w-[154px] opacity-80" />
                         {/* <img
-                          className="left-[124px] absolute w-[24px] h-[24px] top-[8px]"
+                          className="absolute left-[124px] top-[8px] h-[24px] w-[24px]"
                           alt="Arrow up right"
                           src="arrow-up-right-2.svg"
                         /> */}
-                        <div className="absolute top-[6px] left-[13px] font-text-medium-semi-bold font-[number:var(--text-medium-semi-bold-font-weight)] text-[#ffffff] text-[length:var(--text-medium-semi-bold-font-size)] tracking-[var(--text-medium-semi-bold-letter-spacing)] leading-[var(--text-medium-semi-bold-line-height)] whitespace-nowrap [font-style:var(--text-medium-semi-bold-font-style)]">
+                        <div className="font-text-medium-semi-bold absolute left-[13px] top-[6px] whitespace-nowrap text-[length:var(--text-medium-semi-bold-font-size)] font-[number:var(--text-medium-semi-bold-font-weight)] leading-[var(--text-medium-semi-bold-line-height)] tracking-[var(--text-medium-semi-bold-letter-spacing)] text-[#ffffff] [font-style:var(--text-medium-semi-bold-font-style)]">
                           Beano’s Cafe
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="relative w-[265.99px] h-[334px]">
-                  <div className="relative w-[268px] h-[334px]">
+                <div className="relative h-[334px] w-[265.99px]">
+                  <div className="relative h-[334px] w-[268px]">
                     <img
-                      className="absolute w-[266px] h-[334px] top-0 left-0"
+                      className="absolute left-0 top-0 h-[334px] w-[266px]"
                       alt="Mask group"
                       src="/images/mask-group-2.png"
                     />
-                    <div className="absolute w-[220px] h-[40px] top-[274px] left-[48px]">
-                      <div className="relative w-[218px] h-[40px]">
-                        <div className="absolute w-[218px] h-[40px] top-0 left-0 bg-black opacity-80" />
+                    <div className="absolute left-[48px] top-[274px] h-[40px] w-[220px]">
+                      <div className="relative h-[40px] w-[218px]">
+                        <div className="absolute left-0 top-0 h-[40px] w-[218px] bg-black opacity-80" />
                         {/* <img
-                          className="absolute w-[24px] h-[24px] top-[8px] left-[185px]"
+                          className="absolute left-[185px] top-[8px] h-[24px] w-[24px]"
                           alt="Arrow up right"
                           src="arrow-up-right-3.svg"
                         /> */}
-                        <div className="absolute top-[6px] left-[12px] font-text-medium-semi-bold font-[number:var(--text-medium-semi-bold-font-weight)] text-[#ffffff] text-[length:var(--text-medium-semi-bold-font-size)] tracking-[var(--text-medium-semi-bold-letter-spacing)] leading-[var(--text-medium-semi-bold-line-height)] whitespace-nowrap [font-style:var(--text-medium-semi-bold-font-style)]">
+                        <div className="font-text-medium-semi-bold absolute left-[12px] top-[6px] whitespace-nowrap text-[length:var(--text-medium-semi-bold-font-size)] font-[number:var(--text-medium-semi-bold-font-weight)] leading-[var(--text-medium-semi-bold-line-height)] tracking-[var(--text-medium-semi-bold-letter-spacing)] text-[#ffffff] [font-style:var(--text-medium-semi-bold-font-style)]">
                           Stavolta Ice Cream
                         </div>
                       </div>
@@ -133,124 +133,124 @@ export const Landing2 = (): JSX.Element => {
                   </div>
                 </div>
               </div>
-              <p className="absolute w-[207px] top-[701px] left-[2px] [font-family:'PT_Serif-Regular',Helvetica] font-normal text-transparent text-[16px] tracking-[0] leading-[33.6px]">
-                <span className="[font-family:'PT_Serif-Italic',Helvetica] italic text-[#000000]">
+              <p className="absolute left-[2px] top-[701px] w-[207px] text-[16px] font-normal leading-[33.6px] tracking-[0] text-transparent [font-family:'PT_Serif-Regular',Helvetica]">
+                <span className="italic text-[#000000] [font-family:'PT_Serif-Italic',Helvetica]">
                   La Poire&#39;s five brands infuse{" "}
                 </span>
-                <span className="[font-family:'PT_Serif-BoldItalic',Helvetica] font-bold italic text-[#00754a]">
+                <span className="font-bold italic text-[#00754a] [font-family:'PT_Serif-BoldItalic',Helvetica]">
                   joy
                 </span>
-                <span className="[font-family:'PT_Serif-Italic',Helvetica] italic text-[#000000]">
+                <span className="italic text-[#000000] [font-family:'PT_Serif-Italic',Helvetica]">
                   {" "}
                   into every product, embodying our{" "}
                 </span>
-                <span className="[font-family:'PT_Serif-BoldItalic',Helvetica] font-bold italic text-[#00754a]">
+                <span className="font-bold italic text-[#00754a] [font-family:'PT_Serif-BoldItalic',Helvetica]">
                   Economy of Scope
                 </span>
-                <span className="[font-family:'PT_Serif-Italic',Helvetica] italic text-[#000000]">
+                <span className="italic text-[#000000] [font-family:'PT_Serif-Italic',Helvetica]">
                   {" "}
                   and elevating moments in Egypt.
                 </span>
               </p>
-              <div className="absolute w-[1376px] h-[687px] top-0 left-0">
-                <div className="relative w-[1374px] h-[687px] bg-[url(/images/group-40.png)] bg-[100%_100%]">
-                  <p className="absolute w-[892px] top-[291px] left-[241px] font-heading-h1 font-[number:var(--heading-h1-font-weight)] text-transparent text-[length:var(--heading-h1-font-size)] text-center tracking-[var(--heading-h1-letter-spacing)] leading-[var(--heading-h1-line-height)] [font-style:var(--heading-h1-font-style)]">
-                    <span className="text-[#ffffff] font-heading-h1 [font-style:var(--heading-h1-font-style)] font-[number:var(--heading-h1-font-weight)] tracking-[var(--heading-h1-letter-spacing)] leading-[var(--heading-h1-line-height)] text-[length:var(--heading-h1-font-size)]">
+              <div className="absolute left-0 top-0 h-[687px] w-[1376px]">
+                <div className="relative h-[687px] w-[1374px] bg-[url(/images/group-40.png)] bg-[100%_100%]">
+                  <p className="font-heading-h1 absolute left-[241px] top-[291px] w-[892px] text-center text-[length:var(--heading-h1-font-size)] font-[number:var(--heading-h1-font-weight)] leading-[var(--heading-h1-line-height)] tracking-[var(--heading-h1-letter-spacing)] text-transparent [font-style:var(--heading-h1-font-style)]">
+                    <span className="font-heading-h1 text-[length:var(--heading-h1-font-size)] font-[number:var(--heading-h1-font-weight)] leading-[var(--heading-h1-line-height)] tracking-[var(--heading-h1-letter-spacing)] text-[#ffffff] [font-style:var(--heading-h1-font-style)]">
                       la poire,{" "}
                     </span>
-                    <span className="text-[#ead388] font-heading-h1 [font-style:var(--heading-h1-font-style)] font-[number:var(--heading-h1-font-weight)] tracking-[var(--heading-h1-letter-spacing)] leading-[var(--heading-h1-line-height)] text-[length:var(--heading-h1-font-size)]">
+                    <span className="font-heading-h1 text-[length:var(--heading-h1-font-size)] font-[number:var(--heading-h1-font-weight)] leading-[var(--heading-h1-line-height)] tracking-[var(--heading-h1-letter-spacing)] text-[#ead388] [font-style:var(--heading-h1-font-style)]">
                       every day
                     </span>
-                    <span className="text-[#ffffff] font-heading-h1 [font-style:var(--heading-h1-font-style)] font-[number:var(--heading-h1-font-weight)] tracking-[var(--heading-h1-letter-spacing)] leading-[var(--heading-h1-line-height)] text-[length:var(--heading-h1-font-size)]">
+                    <span className="font-heading-h1 text-[length:var(--heading-h1-font-size)] font-[number:var(--heading-h1-font-weight)] leading-[var(--heading-h1-line-height)] tracking-[var(--heading-h1-letter-spacing)] text-[#ffffff] [font-style:var(--heading-h1-font-style)]">
                       {" "}
                       deserves a moment of{" "}
                     </span>
-                    <span className="text-[#ead388] font-heading-h1 [font-style:var(--heading-h1-font-style)] font-[number:var(--heading-h1-font-weight)] tracking-[var(--heading-h1-letter-spacing)] leading-[var(--heading-h1-line-height)] text-[length:var(--heading-h1-font-size)]">
+                    <span className="font-heading-h1 text-[length:var(--heading-h1-font-size)] font-[number:var(--heading-h1-font-weight)] leading-[var(--heading-h1-line-height)] tracking-[var(--heading-h1-letter-spacing)] text-[#ead388] [font-style:var(--heading-h1-font-style)]">
                       joy!
                     </span>
                   </p>
                 </div>
               </div>
             </div>
-            <div className="inline-flex items-center justify-center gap-[10px] px-[34px] py-[12px] absolute top-[34px] left-[1212px] bg-gold rounded-[30px] overflow-hidden">
-              <div className="relative w-fit mt-[-1.00px] font-text-small-semi-bold-up font-[number:var(--text-small-semi-bold-up-font-weight)] text-[#ffffff] text-[length:var(--text-small-semi-bold-up-font-size)] tracking-[var(--text-small-semi-bold-up-letter-spacing)] leading-[var(--text-small-semi-bold-up-line-height)] whitespace-nowrap [font-style:var(--text-small-semi-bold-up-font-style)]">
+            <div className="absolute left-[1212px] top-[34px] inline-flex items-center justify-center gap-[10px] overflow-hidden rounded-[30px] bg-gold px-[34px] py-[12px]">
+              <div className="font-text-small-semi-bold-up relative mt-[-1.00px] w-fit whitespace-nowrap text-[length:var(--text-small-semi-bold-up-font-size)] font-[number:var(--text-small-semi-bold-up-font-weight)] leading-[var(--text-small-semi-bold-up-line-height)] tracking-[var(--text-small-semi-bold-up-letter-spacing)] text-[#ffffff] [font-style:var(--text-small-semi-bold-up-font-style)]">
                 CONTACT US
               </div>
             </div>
           </div>
           {/* <img
-            className="absolute w-[166px] h-[46px] top-[33px] left-0 object-cover"
+            className="absolute left-0 top-[33px] h-[46px] w-[166px] object-cover"
             alt="La poire group gold"
             src="la-poire-group-gold-logo-1.png"
           /> */}
         </div>
-        <div className="inline-flex flex-col items-center gap-[40px] absolute top-[1508px] left-[443px]">
-          <div className="relative w-fit mt-[-1.00px] font-text-large-light font-[number:var(--text-large-light-font-weight)] text-[#000000] text-[length:var(--text-large-light-font-size)] text-center tracking-[var(--text-large-light-letter-spacing)] leading-[var(--text-large-light-line-height)] whitespace-nowrap [font-style:var(--text-large-light-font-style)]">
+        <div className="absolute left-[443px] top-[1508px] inline-flex flex-col items-center gap-[40px]">
+          <div className="font-text-large-light relative mt-[-1.00px] w-fit whitespace-nowrap text-center text-[length:var(--text-large-light-font-size)] font-[number:var(--text-large-light-font-weight)] leading-[var(--text-large-light-line-height)] tracking-[var(--text-large-light-letter-spacing)] text-[#000000] [font-style:var(--text-large-light-font-style)]">
             Our Brands
           </div>
-          <div className="inline-flex items-center gap-[40px] relative flex-[0_0_auto]">
+          <div className="relative inline-flex flex-[0_0_auto] items-center gap-[40px]">
             {/* <img
-              className="w-[104.4px] h-[123.12px] relative object-cover"
+              className="relative h-[123.12px] w-[104.4px] object-cover"
               alt="Image"
               src="image-41.png"
             />
             <img
-              className="w-[131.2px] h-[56px] relative object-cover"
+              className="relative h-[56px] w-[131.2px] object-cover"
               alt="Image"
               src="image-40.png"
             />
             <img
-              className="w-[140.8px] h-[29.04px] relative object-cover"
+              className="relative h-[29.04px] w-[140.8px] object-cover"
               alt="Image"
               src="image-39.png"
             />
             <img
-              className="w-[129.6px] h-[98.4px] relative object-cover"
+              className="relative h-[98.4px] w-[129.6px] object-cover"
               alt="Image"
               src="image-43.png"
             /> */}
           </div>
         </div>
-        <div className="absolute w-[1223px] h-[939px] top-[4023px] left-[144px]">
-          <p className="absolute w-[452px] top-[84px] left-[692px] font-heading-h2 font-[number:var(--heading-h2-font-weight)] text-transparent text-[length:var(--heading-h2-font-size)] tracking-[var(--heading-h2-letter-spacing)] leading-[var(--heading-h2-line-height)] [font-style:var(--heading-h2-font-style)]">
-            <span className="text-[#000000] font-heading-h2 [font-style:var(--heading-h2-font-style)] font-[number:var(--heading-h2-font-weight)] tracking-[var(--heading-h2-letter-spacing)] leading-[var(--heading-h2-line-height)] text-[length:var(--heading-h2-font-size)]">
+        <div className="absolute left-[144px] top-[4023px] h-[939px] w-[1223px]">
+          <p className="font-heading-h2 absolute left-[692px] top-[84px] w-[452px] text-[length:var(--heading-h2-font-size)] font-[number:var(--heading-h2-font-weight)] leading-[var(--heading-h2-line-height)] tracking-[var(--heading-h2-letter-spacing)] text-transparent [font-style:var(--heading-h2-font-style)]">
+            <span className="font-heading-h2 text-[length:var(--heading-h2-font-size)] font-[number:var(--heading-h2-font-weight)] leading-[var(--heading-h2-line-height)] tracking-[var(--heading-h2-letter-spacing)] text-[#000000] [font-style:var(--heading-h2-font-style)]">
               When people taste,{" "}
             </span>
-            <span className="text-[#fdb3c4] font-heading-h2 [font-style:var(--heading-h2-font-style)] font-[number:var(--heading-h2-font-weight)] tracking-[var(--heading-h2-letter-spacing)] leading-[var(--heading-h2-line-height)] text-[length:var(--heading-h2-font-size)]">
+            <span className="font-heading-h2 text-[length:var(--heading-h2-font-size)] font-[number:var(--heading-h2-font-weight)] leading-[var(--heading-h2-line-height)] tracking-[var(--heading-h2-letter-spacing)] text-[#fdb3c4] [font-style:var(--heading-h2-font-style)]">
               joy
             </span>
-            <span className="text-[#000000] font-heading-h2 [font-style:var(--heading-h2-font-style)] font-[number:var(--heading-h2-font-weight)] tracking-[var(--heading-h2-letter-spacing)] leading-[var(--heading-h2-line-height)] text-[length:var(--heading-h2-font-size)]">
+            <span className="font-heading-h2 text-[length:var(--heading-h2-font-size)] font-[number:var(--heading-h2-font-weight)] leading-[var(--heading-h2-line-height)] tracking-[var(--heading-h2-letter-spacing)] text-[#000000] [font-style:var(--heading-h2-font-style)]">
               {" "}
               speaks!
             </span>
           </p>
-          <div className="absolute w-[530px] h-[751px] top-[94px] left-[64px]">
+          <div className="absolute left-[64px] top-[94px] h-[751px] w-[530px]">
             <div className="relative h-[751px]">
-              <div className="absolute w-[413px] h-[682px] top-[70px] left-[75px] bg-[#fdb3c4]" />
+              <div className="absolute left-[75px] top-[70px] h-[682px] w-[413px] bg-[#fdb3c4]" />
               {/* <img
-                className="absolute w-[530px] h-[751px] top-0 left-0"
+                className="absolute left-0 top-0 h-[751px] w-[530px]"
                 alt="Hipster teenager in"
                 src="hipster-teenager-in-sunglasses-2022-11-04-16-15-38-utc-2.png"
               /> */}
             </div>
           </div>
-          <div className="inline-flex items-start gap-[10px] absolute top-[871px] left-[920px]">
-            <div className="w-[18px] h-[18px] rounded-[9px] relative bg-pink" />
-            <div className="relative w-[18px] h-[18px] bg-bej rounded-[9px]" />
-            <div className="relative w-[18px] h-[18px] bg-bej rounded-[9px]" />
+          <div className="absolute left-[920px] top-[871px] inline-flex items-start gap-[10px]">
+            <div className="relative h-[18px] w-[18px] rounded-[9px] bg-pink" />
+            <div className="relative h-[18px] w-[18px] rounded-[9px] bg-bej" />
+            <div className="relative h-[18px] w-[18px] rounded-[9px] bg-bej" />
           </div>
-          <div className="inline-flex flex-col items-center gap-[16px] absolute top-[251px] left-[690px]">
+          <div className="absolute left-[690px] top-[251px] inline-flex flex-col items-center gap-[16px]">
             <Testimonial />
             <Testimonial />
             <Testimonial />
           </div>
         </div>
-        <div className="absolute w-[1512px] h-[714px] top-[1801px] left-0">
-          <div className="absolute w-[1512px] h-[714px] top-0 left-0 bg-black-green">
-            <div className="inline-flex items-center gap-[100px] relative top-[129px] left-[107px]">
-              <div className="relative w-[699px] h-[432px]">
-                <div className="relative w-[697px] h-[432px]">
-                  <p className="absolute w-[697px] top-0 left-0 [font-family:'PT_Serif-Regular',Helvetica] font-normal text-transparent text-[40px] tracking-[0] leading-[72.0px]">
+        <div className="absolute left-0 top-[1801px] h-[714px] w-[1512px]">
+          <div className="bg-black-green absolute left-0 top-0 h-[714px] w-[1512px]">
+            <div className="relative left-[107px] top-[129px] inline-flex items-center gap-[100px]">
+              <div className="relative h-[432px] w-[699px]">
+                <div className="relative h-[432px] w-[697px]">
+                  <p className="absolute left-0 top-0 w-[697px] text-[40px] font-normal leading-[72.0px] tracking-[0] text-transparent [font-family:'PT_Serif-Regular',Helvetica]">
                     <span className="text-[#ffffff]">La Poire&#39;s </span>
                     <span className="text-[#ead388]">four brands</span>
                     <span className="text-[#ffffff]"> in </span>
@@ -275,56 +275,56 @@ export const Landing2 = (): JSX.Element => {
                     </span>
                   </p>
                   {/* <img
-                    className="absolute w-[194px] h-[14px] top-[63px] left-[180px]"
+                    className="absolute left-[180px] top-[63px] h-[14px] w-[194px]"
                     alt="Vector"
                     src="vector-1.svg"
                   /> */}
                 </div>
               </div>
               {/* <img
-                className="relative w-[501.16px] h-[200.84px]"
+                className="relative h-[200.84px] w-[501.16px]"
                 alt="Joy"
                 src="joy.png"
               /> */}
             </div>
           </div>
-          <div className="inline-flex items-center gap-[4px] absolute top-[616px] left-[103px]">
-            <div className="relative w-fit font-text-small-semi-bold-up font-[number:var(--text-small-semi-bold-up-font-weight)] text-white text-[length:var(--text-small-semi-bold-up-font-size)] tracking-[var(--text-small-semi-bold-up-letter-spacing)] leading-[var(--text-small-semi-bold-up-line-height)] whitespace-nowrap [font-style:var(--text-small-semi-bold-up-font-style)]">
+          <div className="absolute left-[103px] top-[616px] inline-flex items-center gap-[4px]">
+            <div className="font-text-small-semi-bold-up relative w-fit whitespace-nowrap text-[length:var(--text-small-semi-bold-up-font-size)] font-[number:var(--text-small-semi-bold-up-font-weight)] leading-[var(--text-small-semi-bold-up-line-height)] tracking-[var(--text-small-semi-bold-up-letter-spacing)] text-white [font-style:var(--text-small-semi-bold-up-font-style)]">
               MORE ABOUT LA POIRE
             </div>
             {/* <img
-              className="relative w-[48px] h-[48px]"
+              className="relative h-[48px] w-[48px]"
               alt="Arrow right"
               src="arrow-right.svg"
             /> */}
           </div>
         </div>
-        <div className="inline-flex flex-col items-start gap-[10px] absolute top-[4962px] left-0">
-          <div className="relative w-[1512px] h-[929px] bg-black" />
+        <div className="absolute left-0 top-[4962px] inline-flex flex-col items-start gap-[10px]">
+          <div className="relative h-[929px] w-[1512px] bg-black" />
           {/* <Footer
-            className="!absolute !left-[36px] !bg-transparent !top-[600px]"
+            className="!absolute !left-[36px] !top-[600px] !bg-transparent"
             hasMenuBar={false}
             laPoireGroupGold="la-poire-group-gold-logo-white-1-2.png"
           /> */}
           <Newsletter />
         </div>
-        <div className="inline-flex flex-col items-start gap-[30px] absolute top-[2615px] left-[70px]">
+        <div className="absolute left-[70px] top-[2615px] inline-flex flex-col items-start gap-[30px]">
           {/* <img
-            className="relative w-[1372px] h-[686px]"
+            className="relative h-[686px] w-[1372px]"
             alt="Group"
             src="group-33.png"
           /> */}
-          <div className="flex flex-col w-[1369px] items-start gap-[70px] relative flex-[0_0_auto]">
-            <div className="flex w-[1369px] items-center justify-between relative flex-[0_0_auto]">
-              <div className="inline-flex flex-col items-start relative flex-[0_0_auto]">
-                <div className="relative w-fit mt-[-1.00px] font-heading-h5 font-[number:var(--heading-h5-font-weight)] text-black text-[length:var(--heading-h5-font-size)] text-center tracking-[var(--heading-h5-letter-spacing)] leading-[var(--heading-h5-line-height)] whitespace-nowrap [font-style:var(--heading-h5-font-style)]">
+          <div className="relative flex w-[1369px] flex-[0_0_auto] flex-col items-start gap-[70px]">
+            <div className="relative flex w-[1369px] flex-[0_0_auto] items-center justify-between">
+              <div className="relative inline-flex flex-[0_0_auto] flex-col items-start">
+                <div className="font-heading-h5 relative mt-[-1.00px] w-fit whitespace-nowrap text-center text-[length:var(--heading-h5-font-size)] font-[number:var(--heading-h5-font-weight)] leading-[var(--heading-h5-line-height)] tracking-[var(--heading-h5-letter-spacing)] text-black [font-style:var(--heading-h5-font-style)]">
                   Distinctive Excellence
                 </div>
-                <p className="relative w-fit font-text-large-light font-[number:var(--text-large-light-font-weight)] text-black text-[length:var(--text-large-light-font-size)] tracking-[var(--text-large-light-letter-spacing)] leading-[var(--text-large-light-line-height)] whitespace-nowrap [font-style:var(--text-large-light-font-style)]">
+                <p className="font-text-large-light relative w-fit whitespace-nowrap text-[length:var(--text-large-light-font-size)] font-[number:var(--text-large-light-font-weight)] leading-[var(--text-large-light-line-height)] tracking-[var(--text-large-light-letter-spacing)] text-black [font-style:var(--text-large-light-font-style)]">
                   The Pillars of Our Prestige: Six Reasons We Shine
                 </p>
               </div>
-              <p className="relative w-[634px] mt-[-1.00px] [font-family:'PT_Serif-Italic',Helvetica] font-normal italic text-black text-[16px] tracking-[0] leading-[33.6px]">
+              <p className="relative mt-[-1.00px] w-[634px] text-[16px] font-normal italic leading-[33.6px] tracking-[0] text-black [font-family:'PT_Serif-Italic',Helvetica]">
                 Dive into the essence of what makes La Poire group exceptional.
                 With a tapestry woven from pioneering legacies to unparalleled
                 quality, our unique selling propositions distinguish us in
@@ -333,127 +333,127 @@ export const Landing2 = (): JSX.Element => {
                 extraordinary experiences.
               </p>
             </div>
-            <div className="flex flex-col w-[1369px] items-start gap-[26px] relative flex-[0_0_auto]">
-              <div className="flex w-[1369px] items-start justify-between relative flex-[0_0_auto]">
-                <div className="inline-flex flex-col items-start gap-[10px] relative flex-[0_0_auto]">
+            <div className="relative flex w-[1369px] flex-[0_0_auto] flex-col items-start gap-[26px]">
+              <div className="relative flex w-[1369px] flex-[0_0_auto] items-start justify-between">
+                <div className="relative inline-flex flex-[0_0_auto] flex-col items-start gap-[10px]">
                   {/* <img
-                    className="absolute w-[40px] h-[40px] top-[25px] left-[27px]"
+                    className="absolute left-[27px] top-[25px] h-[40px] w-[40px]"
                     alt="Vector"
                     src="vector.svg"
                   /> */}
                   {/* <img
-                    className="relative w-[61px] h-[61px] mt-[-0.50px] ml-[-0.50px]"
+                    className="relative ml-[-0.50px] mt-[-0.50px] h-[61px] w-[61px]"
                     alt="Papers"
                     src="x31-1-papers.png"
                   /> */}
-                  <div className="relative w-fit font-text-regular-medium font-[number:var(--text-regular-medium-font-weight)] text-[#000000] text-[length:var(--text-regular-medium-font-size)] tracking-[var(--text-regular-medium-letter-spacing)] leading-[var(--text-regular-medium-line-height)] whitespace-nowrap [font-style:var(--text-regular-medium-font-style)]">
+                  <div className="font-text-regular-medium relative w-fit whitespace-nowrap text-[length:var(--text-regular-medium-font-size)] font-[number:var(--text-regular-medium-font-weight)] leading-[var(--text-regular-medium-line-height)] tracking-[var(--text-regular-medium-letter-spacing)] text-[#000000] [font-style:var(--text-regular-medium-font-style)]">
                     Pioneering Legacy
                   </div>
-                  <p className="relative w-[319px] font-text-tiny-normal font-[number:var(--text-tiny-normal-font-weight)] text-mediun-grey text-[length:var(--text-tiny-normal-font-size)] tracking-[var(--text-tiny-normal-letter-spacing)] leading-[var(--text-tiny-normal-line-height)] [font-style:var(--text-tiny-normal-font-style)]">
+                  <p className="font-text-tiny-normal text-mediun-grey relative w-[319px] text-[length:var(--text-tiny-normal-font-size)] font-[number:var(--text-tiny-normal-font-weight)] leading-[var(--text-tiny-normal-line-height)] tracking-[var(--text-tiny-normal-letter-spacing)] [font-style:var(--text-tiny-normal-font-style)]">
                     With roots dating back to 1975, La Poire boasts a
                     time-honored tradition in Egypt, melding expertise with
                     culinary innovation.
                   </p>
                 </div>
-                <div className="inline-flex flex-col items-start gap-[10px] relative flex-[0_0_auto]">
+                <div className="relative inline-flex flex-[0_0_auto] flex-col items-start gap-[10px]">
                   {/* <img
-                    className="absolute w-[40px] h-[40px] top-[28px] left-[-7px]"
+                    className="absolute left-[-7px] top-[28px] h-[40px] w-[40px]"
                     alt="Vector"
                     src="vector-2.svg"
                   /> */}
                   {/* <img
-                    className="relative w-[60px] h-[60px]"
+                    className="relative h-[60px] w-[60px]"
                     alt="Vector"
                     src="vector-3.svg"
                   /> */}
-                  <div className="relative w-fit font-text-regular-medium font-[number:var(--text-regular-medium-font-weight)] text-[#000000] text-[length:var(--text-regular-medium-font-size)] tracking-[var(--text-regular-medium-letter-spacing)] leading-[var(--text-regular-medium-line-height)] whitespace-nowrap [font-style:var(--text-regular-medium-font-style)]">
+                  <div className="font-text-regular-medium relative w-fit whitespace-nowrap text-[length:var(--text-regular-medium-font-size)] font-[number:var(--text-regular-medium-font-weight)] leading-[var(--text-regular-medium-line-height)] tracking-[var(--text-regular-medium-letter-spacing)] text-[#000000] [font-style:var(--text-regular-medium-font-style)]">
                     Diverse Portfolio
                   </div>
-                  <p className="relative w-[319px] font-text-tiny-normal font-[number:var(--text-tiny-normal-font-weight)] text-mediun-grey text-[length:var(--text-tiny-normal-font-size)] tracking-[var(--text-tiny-normal-letter-spacing)] leading-[var(--text-tiny-normal-line-height)] [font-style:var(--text-tiny-normal-font-style)]">
+                  <p className="font-text-tiny-normal text-mediun-grey relative w-[319px] text-[length:var(--text-tiny-normal-font-size)] font-[number:var(--text-tiny-normal-font-weight)] leading-[var(--text-tiny-normal-line-height)] tracking-[var(--text-tiny-normal-letter-spacing)] [font-style:var(--text-tiny-normal-font-style)]">
                     Spanning patisseries to cafes, La Poire group&#39;s
                     wide-ranging brand lineup offers a comprehensive experience
                     for every palate and preference.
                   </p>
                 </div>
-                <div className="inline-flex flex-col items-start gap-[10px] relative flex-[0_0_auto]">
+                <div className="relative inline-flex flex-[0_0_auto] flex-col items-start gap-[10px]">
                   {/* <img
-                    className="absolute w-[40px] h-[40px] top-[-5px] left-[11px]"
+                    className="absolute left-[11px] top-[-5px] h-[40px] w-[40px]"
                     alt="Vector"
                     src="vector-4.svg"
                   /> */}
                   {/* <img
-                    className="relative w-[60.4px] h-[60.4px] mt-[-0.20px] ml-[-0.20px]"
+                    className="relative ml-[-0.20px] mt-[-0.20px] h-[60.4px] w-[60.4px]"
                     alt="Group"
                     src="group.png"
                   /> */}
-                  <div className="relative w-fit font-text-regular-medium font-[number:var(--text-regular-medium-font-weight)] text-[#000000] text-[length:var(--text-regular-medium-font-size)] tracking-[var(--text-regular-medium-letter-spacing)] leading-[var(--text-regular-medium-line-height)] whitespace-nowrap [font-style:var(--text-regular-medium-font-style)]">
+                  <div className="font-text-regular-medium relative w-fit whitespace-nowrap text-[length:var(--text-regular-medium-font-size)] font-[number:var(--text-regular-medium-font-weight)] leading-[var(--text-regular-medium-line-height)] tracking-[var(--text-regular-medium-letter-spacing)] text-[#000000] [font-style:var(--text-regular-medium-font-style)]">
                     Quality Commitment
                   </div>
-                  <p className="relative w-[319px] font-text-tiny-normal font-[number:var(--text-tiny-normal-font-weight)] text-mediun-grey text-[length:var(--text-tiny-normal-font-size)] tracking-[var(--text-tiny-normal-letter-spacing)] leading-[var(--text-tiny-normal-line-height)] [font-style:var(--text-tiny-normal-font-style)]">
+                  <p className="font-text-tiny-normal text-mediun-grey relative w-[319px] text-[length:var(--text-tiny-normal-font-size)] font-[number:var(--text-tiny-normal-font-weight)] leading-[var(--text-tiny-normal-line-height)] tracking-[var(--text-tiny-normal-letter-spacing)] [font-style:var(--text-tiny-normal-font-style)]">
                     La Poire stands as a hallmark of premium ingredients,
                     masterful craftsmanship, and a consistent, delightful taste
                     profile cherished by many.
                   </p>
                 </div>
               </div>
-              <div className="flex w-[1372px] items-start justify-between relative flex-[0_0_auto] mr-[-3.00px]">
-                <div className="inline-flex flex-col h-[196px] items-start gap-[10px] relative flex-[0_0_auto]">
+              <div className="relative mr-[-3.00px] flex w-[1372px] flex-[0_0_auto] items-start justify-between">
+                <div className="relative inline-flex h-[196px] flex-[0_0_auto] flex-col items-start gap-[10px]">
                   {/* <img
-                    className="absolute w-[40px] h-[40px] top-[-6px] left-[36px]"
+                    className="absolute left-[36px] top-[-6px] h-[40px] w-[40px]"
                     alt="Vector"
                     src="vector-5.svg"
                   />
                   <img
-                    className="relative w-[61.7px] h-[61.7px] mt-[-0.85px] ml-[-0.85px]"
+                    className="relative ml-[-0.85px] mt-[-0.85px] h-[61.7px] w-[61.7px]"
                     alt="G"
                     src="g-6883.png"
                   /> */}
-                  <div className="inline-flex flex-col items-start gap-[10px] relative flex-[0_0_auto]">
-                    <div className="relative w-fit mt-[-1.00px] font-text-regular-medium font-[number:var(--text-regular-medium-font-weight)] text-[#000000] text-[length:var(--text-regular-medium-font-size)] tracking-[var(--text-regular-medium-letter-spacing)] leading-[var(--text-regular-medium-line-height)] whitespace-nowrap [font-style:var(--text-regular-medium-font-style)]">
+                  <div className="relative inline-flex flex-[0_0_auto] flex-col items-start gap-[10px]">
+                    <div className="font-text-regular-medium relative mt-[-1.00px] w-fit whitespace-nowrap text-[length:var(--text-regular-medium-font-size)] font-[number:var(--text-regular-medium-font-weight)] leading-[var(--text-regular-medium-line-height)] tracking-[var(--text-regular-medium-letter-spacing)] text-[#000000] [font-style:var(--text-regular-medium-font-style)]">
                       Cultural Integration
                     </div>
-                    <p className="relative w-[319px] font-text-tiny-normal font-[number:var(--text-tiny-normal-font-weight)] text-mediun-grey text-[length:var(--text-tiny-normal-font-size)] tracking-[var(--text-tiny-normal-letter-spacing)] leading-[var(--text-tiny-normal-line-height)] [font-style:var(--text-tiny-normal-font-style)]">
+                    <p className="font-text-tiny-normal text-mediun-grey relative w-[319px] text-[length:var(--text-tiny-normal-font-size)] font-[number:var(--text-tiny-normal-font-weight)] leading-[var(--text-tiny-normal-line-height)] tracking-[var(--text-tiny-normal-letter-spacing)] [font-style:var(--text-tiny-normal-font-style)]">
                       Merging international culinary flair with Egypt&#39;s
                       deep-rooted heritage, the group curates unique offerings
                       that appeal to both local and international tastes.
                     </p>
                   </div>
                 </div>
-                <div className="inline-flex flex-col items-start gap-[10px] relative flex-[0_0_auto]">
+                <div className="relative inline-flex flex-[0_0_auto] flex-col items-start gap-[10px]">
                   {/* <img
-                    className="relative w-[40px] h-[40px]"
+                    className="relative h-[40px] w-[40px]"
                     alt="Element"
                     src="04.png"
                   /> */}
-                  <div className="relative w-fit font-text-regular-medium font-[number:var(--text-regular-medium-font-weight)] text-[#000000] text-[length:var(--text-regular-medium-font-size)] tracking-[var(--text-regular-medium-letter-spacing)] leading-[var(--text-regular-medium-line-height)] whitespace-nowrap [font-style:var(--text-regular-medium-font-style)]">
+                  <div className="font-text-regular-medium relative w-fit whitespace-nowrap text-[length:var(--text-regular-medium-font-size)] font-[number:var(--text-regular-medium-font-weight)] leading-[var(--text-regular-medium-line-height)] tracking-[var(--text-regular-medium-letter-spacing)] text-[#000000] [font-style:var(--text-regular-medium-font-style)]">
                     Economy of Scope
                   </div>
-                  <p className="relative w-[319px] font-text-tiny-normal font-[number:var(--text-tiny-normal-font-weight)] text-mediun-grey text-[length:var(--text-tiny-normal-font-size)] tracking-[var(--text-tiny-normal-letter-spacing)] leading-[var(--text-tiny-normal-line-height)] [font-style:var(--text-tiny-normal-font-style)]">
+                  <p className="font-text-tiny-normal text-mediun-grey relative w-[319px] text-[length:var(--text-tiny-normal-font-size)] font-[number:var(--text-tiny-normal-font-weight)] leading-[var(--text-tiny-normal-line-height)] tracking-[var(--text-tiny-normal-letter-spacing)] [font-style:var(--text-tiny-normal-font-style)]">
                     With its broad array of brands, La Poire adeptly caters to
                     diverse market demands, ensuring a dynamic and ever-evolving
                     presence in the culinary scene.
                   </p>
                   {/* <img
-                    className="absolute w-[57px] h-[40px] top-0 left-0"
+                    className="absolute left-0 top-0 h-[40px] w-[57px]"
                     alt="Vector"
                     src="vector-6.svg"
                   /> */}
                 </div>
-                <div className="inline-flex flex-col items-start gap-[10px] relative flex-[0_0_auto]">
+                <div className="relative inline-flex flex-[0_0_auto] flex-col items-start gap-[10px]">
                   {/* <img
-                    className="absolute w-[40px] h-[40px] top-[11px] left-[14px]"
+                    className="absolute left-[14px] top-[11px] h-[40px] w-[40px]"
                     alt="Vector"
                     src="vector-7.svg"
                   />
                   <img
-                    className="relative w-[60px] h-[60px]"
+                    className="relative h-[60px] w-[60px]"
                     alt="Growth"
                     src="growth-1.svg"
                   /> */}
-                  <div className="relative w-fit font-text-regular-medium font-[number:var(--text-regular-medium-font-weight)] text-[#000000] text-[length:var(--text-regular-medium-font-size)] tracking-[var(--text-regular-medium-letter-spacing)] leading-[var(--text-regular-medium-line-height)] whitespace-nowrap [font-style:var(--text-regular-medium-font-style)]">
+                  <div className="font-text-regular-medium relative w-fit whitespace-nowrap text-[length:var(--text-regular-medium-font-size)] font-[number:var(--text-regular-medium-font-weight)] leading-[var(--text-regular-medium-line-height)] tracking-[var(--text-regular-medium-letter-spacing)] text-[#000000] [font-style:var(--text-regular-medium-font-style)]">
                     Sustainable Growth
                   </div>
-                  <p className="relative w-[319px] font-text-tiny-normal font-[number:var(--text-tiny-normal-font-weight)] text-mediun-grey text-[length:var(--text-tiny-normal-font-size)] tracking-[var(--text-tiny-normal-letter-spacing)] leading-[var(--text-tiny-normal-line-height)] [font-style:var(--text-tiny-normal-font-style)]">
+                  <p className="font-text-tiny-normal text-mediun-grey relative w-[319px] text-[length:var(--text-tiny-normal-font-size)] font-[number:var(--text-tiny-normal-font-weight)] leading-[var(--text-tiny-normal-line-height)] tracking-[var(--text-tiny-normal-letter-spacing)] [font-style:var(--text-tiny-normal-font-style)]">
                     La Poire&#39;s commitment to environmental and societal
                     well-being, coupled with business expansion, ensures a
                     sustainable and positive impact on the communities they
@@ -465,7 +465,7 @@ export const Landing2 = (): JSX.Element => {
           </div>
         </div>
         {/* <img
-          className="absolute w-[1374px] h-[5px] top-[4006px] left-[79px]"
+          className="absolute left-[79px] top-[4006px] h-[5px] w-[1374px]"
           alt="Line"
           src="line-9.svg"
         /> */}

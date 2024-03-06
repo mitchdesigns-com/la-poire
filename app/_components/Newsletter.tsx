@@ -6,16 +6,18 @@ import { useState } from "react";
 import Button from "./Button";
 import Field from "./Field";
 import CampaignMonitorForm from "./CampaignMonitorForm";
+import { useTranslations } from "next-intl";
 
 export default function Newsletter() {
+  const t = useTranslations("common");
   const [show] = useState(true);
 
   return (
-    <div className="p-10 bg-black">
-      <div className="md:w-[100vw] md:max-w-[1490px] max-w-full w-full mx-auto md:px-0 px-10">
-        <div className="flex w-full gap-10 md:flex-nowrap flex-wrap">
+    <div className="bg-black p-10">
+      <div className="mx-auto w-full max-w-full px-10 md:w-[100vw] md:max-w-[1490px] md:px-0">
+        <div className="flex w-full flex-wrap gap-10 md:flex-nowrap">
           <motion.div
-            className="md:w-1/3 w-full flex flex-col gap-10"
+            className="flex w-full flex-col gap-10 md:w-1/3"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 1 * 0.4 }}
@@ -35,9 +37,9 @@ export default function Newsletter() {
               height={277}
             />
           </motion.div>
-          <div className="md:w-1/3 w-full flex flex-col gap-10">
+          <div className="flex w-full flex-col gap-10 md:w-1/3">
             <motion.div
-              className="flex gap-10 w-full"
+              className="flex w-full gap-10"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1 * 0.4 }}
@@ -58,18 +60,17 @@ export default function Newsletter() {
                 className="max-w-[calc(50%-5px)]"
               />
             </motion.div>
-            <div className="flex bg-white flex-col h-[362px] text-center md:px-30 px-4 items-center justify-center">
-              <h3 className="text-3xl md:px-30 px-0">
-                Stay in the Loop with <span>La Poire!</span>
+            <div className="flex h-[362px] flex-col items-center justify-center bg-white px-4 text-center md:px-30">
+              <h3 className="px-0 text-3xl md:px-30">
+                {t("newsletter_title")} <span>{t("brand_name")}!</span>
               </h3>
-              <p className="mt-5 text-greenBlack text-sm">
-                Subscribe now for delicious updates, exclusive offers, and a
-                sprinkle of joy in your inbox.
+              <p className="mt-5 text-sm text-greenBlack">
+                {t("newsletter_desc")}
               </p>
-              <CampaignMonitorForm/>
+              <CampaignMonitorForm />
             </div>
             <motion.div
-              className="flex gap-10 w-full"
+              className="flex w-full gap-10"
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1 * 0.4 }}
@@ -92,7 +93,7 @@ export default function Newsletter() {
             </motion.div>
           </div>
           <motion.div
-            className="md:w-1/3 w-full flex flex-col gap-10"
+            className="flex w-full flex-col gap-10 md:w-1/3"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 1 * 0.4 }}

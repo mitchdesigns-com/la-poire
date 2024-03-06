@@ -169,6 +169,7 @@ const config: Config = {
     'w-[6px]',
     'h-[6px]',
     'before:bg-greenBlack',
+    'before:bg-gold',
     'before:right-[150px]'
   ]
 }

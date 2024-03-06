@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/app/_components/Header/Header";
 import { NextIntlClientProvider, createTranslator } from "next-intl";
 import { cls } from "@/app/utils/helpers";
-import { poppins } from "@/app/fonts";
+import { arfont, poppins } from "@/app/fonts";
 import Footer from "@/app/_components/Footer/Footer";
 // import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -34,7 +34,7 @@ export default async function RootLayout({
   const direction = locale === "en" ? "ltr" : "rtl";
   return (
     <html lang={locale} dir={direction}>
-      <body className={cls(`${poppins.className} bg-white`)}>
+      <body className={cls(`${locale === "ar"?arfont.className:poppins.className} bg-white`)}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="overflow-hidden">
             <Header />

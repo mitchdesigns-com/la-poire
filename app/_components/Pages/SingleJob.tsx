@@ -1,10 +1,7 @@
-import Link from "next/link";
-import React from "react";
-import ArrowLeft from "../Icons/ArrowLeft";
-import BreadCrumb from "../UI/BreadCrumb";
+import { Link } from "@/navigation";
 import Image from "next/image";
-import LongArrow from "../Icons/LongArrow";
 import Button from "../Button";
+import LongArrow from "../Icons/LongArrow";
 import Newsletter from "../Newsletter";
 import NoDataFound from "../UI/NoDataFound";
 

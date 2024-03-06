@@ -1,6 +1,34 @@
 {
     "common": {
-      "title": "Hello world! EN"
+      "title": "Hello world! EN",
+      "about":"About",
+      "brand_name":"La Poire",
+      "newsletter_title":"Stay in the Loop with",
+      "newsletter_desc":"Subscribe now for delicious updates, exclusive offers, and a sprinkle of joy in your inbox.",
+      "la_poire_brands":"La Poire Brands",
+      "full_name":"Full Name",
+      "subscribe":"Subscribe",
+      "email":"Email Address",
+      "social_media":"Social Media",
+      "our_sweet_promise":"Our Sweet Promise",
+      "when_people_taste":"When people taste",
+      "our_brands":"Our Brands",
+      "joy":"joy",
+      "our_vision":"Our Vision",
+      "our_mission":"Our Mission",
+      "speaks":"speaks",
+      "flavors_trusted":"Flavors Trusted by Millions",
+      "flavors_trusted_des":"Over 16 million people find joy in every bite, trusting our brands to deliver unparalleled happiness and flavor.",
+      "explore_more_brands":"Explore More Brands",
+      "brands":"brands",
+      "locations":"locations",
+      "employees":"employees",
+      "find_us":"Find La Poire Patisserie on"
+    },
+    "signature":{
+      "title":"Signature Delights",
+      "subtitle":"Experience La Poire's Iconic",
+      "subtitle2":"Dessert Creations"
     },
     "nav":{
       "home":"Homepage",

@@ -5,10 +5,12 @@ import SocialMediaLoader from "./SocialMediaLoader";
 import Tiktok from "./Icons/Tiktok";
 import X from "./Icons/X";
 import Youtube from "./Icons/Youtube";
-import Link from "next/link";
+import { Link } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 export default function SocialMedia({ data }: any) {
-  // Check if data or data.HeroImage is null
+  const t = useTranslations('common');
+  
   if (!data) {
     // You can render a placeholder or handle this case as needed
     return <SocialMediaLoader />;
@@ -67,14 +69,14 @@ export default function SocialMedia({ data }: any) {
   }
   return (
     <div
-      className={`bg-${data.BrandColor} h-screen flex justify-center items-center text-center text-white`}
+      className={`bg-${data.BrandColor} min-h-[50vh] py-44 flex justify-center items-center text-center text-white`}
     >
       <div className="flex flex-col items-center justify-center">
-        <h6 className="text-xl font-semibold">Find La Poire Patisserie on</h6>
-        <h3 className="relative before:content-[''] before:absolute before:left-0 before:right-0 before:bottom-3 before:h-2 before:bg-black before:z-0 text-[60px] font-bold px-2">
-          <span className="relative">Social Media</span>
+        <h6 className="text-xl font-semibold">{t('find_us')}</h6>
+        <h3 className="relative px-2 text-[60px] font-bold before:absolute before:bottom-3 before:left-0 before:right-0 before:z-0 before:h-2 before:bg-black before:content-['']">
+          <span className="relative">{t('social_media')}</span>
         </h3>
-        <div className="flex gap-10 flex-wrap mt-40">
+        <div className="mt-40 flex flex-wrap gap-10">
           {socialMediaLinks.map((socialMedia, index) => (
             <Link
               key={index}

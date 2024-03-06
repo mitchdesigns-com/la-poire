@@ -22,13 +22,17 @@ export default function TimeLineProgress({ progress }: any) {
   const handleMouseUp = () => {
     setDragStartX(null);
   };
+  // const handleItemClick = (index: number) => {
+  //   const newActiveIndices: number[] = Array.from(
+  //     { length: index + 1 },
+  //     (_, i) => i
+  //   );
+  //   setActiveIndices(newActiveIndices);
+  // };
   const handleItemClick = (index: number) => {
-    const newActiveIndices: number[] = Array.from(
-      { length: index + 1 },
-      (_, i) => i
-    );
-    setActiveIndices(newActiveIndices);
+    setActiveIndices([index]);
   };
+  
 
   // const mockData = [
   //   {
@@ -113,8 +117,8 @@ const ProgressItem = ({ data, active, onItemClick, index }: any) => {
     <div className={`inline-block pb-[316px] pr-[130px] pt-[400px]`}>
       <div className="group relative cursor-pointer py-22">
         <span
-          className={`text-2xl font-bold leading-[36px] px-14 w-[90px] flex justify-center items-center rounded-full ${
-            active ? "text-white bg-greenDark" : "text-goldLight bg-green"
+          className={`text-2xl font-bold leading-[36px] px-14 w-[90px] flex justify-center items-center rounded-full group-hover:opacity-100 ${
+            active ? "text-white bg-greenDark opacity-100" : "text-goldLight bg-green opacity-30"
           }`}
           onClick={onItemClick}
         >
@@ -163,7 +167,7 @@ const ProgressItem = ({ data, active, onItemClick, index }: any) => {
               width={130}
               height={166}
             />
-            <div className={`transition-all ${active ? "" : "opacity-30"}`}>
+            <div className={`transition-all ${active ? "" : "opacity-0 group-hover:opacity-90"}`}>
               <span
                 className={`w-[2px] bg-goldLight ${
                   even ? "h-[140px]" : "h-[140px]"
@@ -176,14 +180,14 @@ const ProgressItem = ({ data, active, onItemClick, index }: any) => {
             <div>
               <h3
                 className={`whitespace-nowrap text-sm font-semibold text-goldLight transition-all ${
-                  active ? "" : "opacity-30"
+                  active ? "" : "opacity-0 group-hover:opacity-90"
                 }`}
               >
                 {data.Title}
               </h3>
               <p
                 className={`whitespace-nowrap text-xs text-white mt-5 transition-all ${
-                  active ? "" : "opacity-30"
+                  active ? "" : "opacity-0 group-hover:opacity-90"
                 }`}
               >
                 {data.Description}

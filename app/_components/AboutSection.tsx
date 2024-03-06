@@ -1,12 +1,14 @@
 "use client";
 import React from "react";
 import Joy from "./Icons/Joy";
-import { pt_serif } from "../fonts";
+import { arfont, pt_serif } from "../fonts";
 import ArrowLeft from "./Icons/ArrowLeft";
 import { motion } from "@/app/lib/motion";
 import CurveBorder from "./Icons/CurveBorder";
+import { useLocale } from "next-intl";
 
 export default function AboutSection({color}:any) {
+  const locale = useLocale();
   let baseColor = "bg-greenBlack";
   let textColor = "text-goldLight";
   if(color==="pink"){
@@ -19,7 +21,7 @@ export default function AboutSection({color}:any) {
         <div className="flex flex-wrap-reverse items-center justify-between gap-40 md:flex-nowrap md:gap-0">
           <div className="w-auto">
             <p
-              className={`md:text-4xl text-2xl ${pt_serif.className} text-white md:w-[700px] w-full font-normal`}
+              className={`md:text-4xl text-2xl ${locale === "ar"?arfont.className:pt_serif.className} text-white md:w-[700px] w-full font-normal`}
             >
               La Poire&apos;s{" "}
               <span className={`${textColor} relative`}>
@@ -53,10 +55,10 @@ export default function AboutSection({color}:any) {
             <Joy />
           </motion.div>
         </div>
-        <div className="hidden mt-56 pointer-events-none opacity-30">
-          <button className="flex items-center justify-between text-white gap-.5 text-sm uppercase font-semibold">
+        <div className="pointer-events-none mt-56 hidden opacity-30">
+          <button className="flex items-center justify-between gap-.5 text-sm font-semibold uppercase text-white">
             more about La Poire{" "}
-            <span className="inline-block w-6 h-6">
+            <span className="inline-block h-6 w-6">
               <ArrowLeft />
             </span>
           </button>

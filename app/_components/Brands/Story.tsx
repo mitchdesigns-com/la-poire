@@ -1,10 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import StoryLoader from "./StoryLoader";
-import { pt_serif } from "@/app/fonts";
+import { arfont, pt_serif } from "@/app/fonts";
+import { useLocale } from "next-intl";
 
 export default function Story({ data }: any) {
-  // Check if data or data.HeroImage is null
+  const locale = useLocale();
   if (!data) {
     // You can render a placeholder or handle this case as needed
     return <StoryLoader />;
@@ -17,7 +18,7 @@ export default function Story({ data }: any) {
   return (
     <div>
       <div className="container mx-auto max-w-[1000px]">
-        <div className="aspect-[2/1] relative">
+        <div className="relative aspect-[2/1]">
           {data.HeroImage.data?.attributes.url && (
             <Image
               alt=""
@@ -32,7 +33,7 @@ export default function Story({ data }: any) {
         </div>
         <div className="px-4 py-44">
           <div className="flex">
-            <div className="w-[300px] pr-5 shrink-0 flex-grow-0">
+            <div className="w-[300px] shrink-0 flex-grow-0 pr-5">
               <Image
                 alt=""
                 src={
@@ -48,7 +49,7 @@ export default function Story({ data }: any) {
             <div>
               <h3 className="text-2xl font-bold">{data.StoryTitle}</h3>
               <h4 className="text-xl font-light">{data.StorySubTitle}</h4>
-              <div className={`space-y-34 mt-34 ${pt_serif.className} text-greenBlack leading-[28px]`}>{paragraphs}</div>
+              <div className={`space-y-34 mt-34 ${locale === "ar"?arfont.className:pt_serif.className} text-greenBlack leading-[28px]`}>{paragraphs}</div>
             </div>
           </div>
         </div>

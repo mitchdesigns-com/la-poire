@@ -2,8 +2,10 @@
 import Script from "next/script";
 import React from "react";
 import Button from "./Button";
+import { useTranslations } from "next-intl";
 
 const SubscribeForm = () => {
+  const t = useTranslations('common')
   return (
     <div className="w-full">
       <form
@@ -13,16 +15,16 @@ const SubscribeForm = () => {
         method="post"
         data-id="5B5E7037DA78A748374AD499497E309EF7189DEA4B9B9CEC14758B50508F1EEDA7998CA6E8A9333D4A5A5FC9764659EEBB7AC0D21E5A021D4C7A58CADE19C05A"
       >
-        <div className="flex flex-col gap-10 items-stretch w-full mt-10">
+        <div className="mt-10 flex w-full flex-col items-stretch gap-10">
           <div>
-            <input aria-label="Name" placeholder="Full Name" id="fieldName" name="cm-name" className="border border-gray4 py-10 px-14 placeholder:text-gray text-black text-sm rounded-md w-full"/>
+            <input aria-label="Name" placeholder={t('full_name')} id="fieldName" name="cm-name" className="w-full rounded-md border border-gray4 px-14 py-10 text-sm text-black placeholder:text-gray"/>
           </div>
           <div>
             <input
               autoComplete="Email"
               aria-label="Email"
-              placeholder="Email Address"
-              className="js-cm-email-input border border-gray4 py-10 px-14 placeholder:text-gray text-black text-sm rounded-md w-full"
+              placeholder={t('email')}
+              className="js-cm-email-input w-full rounded-md border border-gray4 px-14 py-10 text-sm text-black placeholder:text-gray"
               id="fieldEmail"
               name="cm-buyjrjh-buyjrjh"
               required
@@ -30,7 +32,7 @@ const SubscribeForm = () => {
             />
           </div>
           <Button type="submit" variant="primary" size="normal" pill uppercase>
-            Subscribe
+            {t("subscribe")}
           </Button>
         </div>
       </form>

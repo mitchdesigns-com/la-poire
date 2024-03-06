@@ -1,6 +1,5 @@
-import React from "react";
+import { Link } from "@/navigation";
 import Button from "../Button";
-import Link from "next/link";
 
 export default function NoDataFound() {
   return (

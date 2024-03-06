@@ -34,8 +34,8 @@ const sendRequest = async (
   }
 };
 
-export const fetchingAboutPage = async () => {
-  const endpoint = "about-page?populate=deep";
+export const fetchingAboutPage = async (lang:string ='en') => {
+  const endpoint = `about-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
 export const fetchingFranchisePage = async () => {
@@ -54,12 +54,16 @@ export const fetchingAllJobs = async () => {
   const endpoint = "jobs?populate=deep";
   return sendRequest(endpoint);
 };
-export const fetchingBrandsPage = async () => {
-  const endpoint = "brands-page?populate=deep";
+export const fetchingBrandsPage = async (lang:string ='en') => {
+  const endpoint = `brands-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
-export const fetchingAllBrands = async () => {
-  const endpoint = "our-brands?populate=deep";
+export const fetchingHomePage = async (lang:string ='en') => {
+  const endpoint = `home?populate=deep&locale=${lang}`;
+  return sendRequest(endpoint);
+};
+export const fetchingAllBrands = async (lang:string ='en') => {
+  const endpoint = `our-brands?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
 
@@ -73,8 +77,8 @@ const fetchingBrandsSEO = async (slug: string) => {
   // console.log("params", slug);
   return sendRequest("brands-page?populate[0]=SEO", {});
 };
-const fetchingSingleBrand = async (slug: string) => {
-  return sendRequest(`our-brands?filters[slug][$eq]=${slug}&populate=deep`, {});
+const fetchingSingleBrand = async (slug: string,lang:string ='en') => {
+  return sendRequest(`our-brands?filters[slug][$eq]=${slug}&populate=deep&locale=${lang}`, {});
 };
 export const fetchingSingleBlog = async (slug: string) => {
   return sendRequest(`blogs?filters[slug][$eq]=${slug}&populate=deep`, {});

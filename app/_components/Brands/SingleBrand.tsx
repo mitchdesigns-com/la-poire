@@ -13,6 +13,7 @@ import ExploreMore from "./ExploreMore";
 import ExtraMoreAbout from "../ExtraMoreAbout";
 import Newsletter from "../Newsletter";
 import mockData from './mockData.json';
+import { useLocale, useTranslations } from "next-intl";
 
 
 interface BrandData {
@@ -26,16 +27,18 @@ interface BrandData {
 }
 
 export default function SingleBrand({ params }: any) {
+  const locale = useLocale();
+  const t = useTranslations('common');
   const [dataFetched, setDataFetched] = useState<BrandData | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetchingSingleBrand(params);
-      setDataFetched(result?.data[0]?.attributes ?? mockData.data[0]?.attributes);
+      const result = await fetchingSingleBrand(params,locale);
+      setDataFetched(result?.data[0]?.attributes);
     };
 
     fetchData();
-  }, [params]);
+  }, [params,locale]);
 
   // console.log("dataFetched>>", dataFetched);
 
@@ -60,7 +63,7 @@ export default function SingleBrand({ params }: any) {
       <div className="container mr-auto">
         <div className="max-w-[930px]">
           <ExtraMoreAbout
-            title="La Poire Brands"
+            title={t("la_poire_brands")}
             content={dataFetched?.MoreAbout ?? ""}
           />
         </div>

@@ -1,13 +1,16 @@
 "use client";
-import { pt_serif } from "@/app/fonts";
+import { arfont, pt_serif } from "@/app/fonts";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
-export default function MissionVision({data}:any) {
+export default function MissionVision({ data }: any) {
+  const t = useTranslations("common");
+  const locale = useLocale();
   const [selectedRadio, setSelectedRadio] = useState("visionRadio");
   const handleRadioChange = (event: any) => {
     setSelectedRadio(event.target.value);
   };
-  if(!data){
+  if (!data) {
     return null;
   }
   return (
@@ -27,7 +30,7 @@ export default function MissionVision({data}:any) {
             htmlFor="visionRadio"
             className="block cursor-pointer select-none whitespace-nowrap rounded-full px-20 text-center text-base font-bold leading-9 text-gold peer-checked:bg-green peer-checked:text-white"
           >
-            Our Vision
+            {t("our_vision")}
           </label>
         </div>
 
@@ -45,17 +48,17 @@ export default function MissionVision({data}:any) {
             htmlFor="missionRadio"
             className="block cursor-pointer select-none whitespace-nowrap rounded-full px-20 text-center text-base font-bold leading-9 text-gold peer-checked:bg-green peer-checked:text-white"
           >
-            Our Mission
+            {t("our_mission")}
           </label>
         </div>
       </div>
       {selectedRadio === "visionRadio" ? (
-        <h2 className={`${pt_serif.className} text-gray5 text-[36px]`}>
+        <h2 className={`${locale === "ar"?arfont.className:pt_serif.className} text-gray5 text-[36px]`}>
           {data.visionDescription}
         </h2>
       ) : (
-        <h2 className={`${pt_serif.className} text-gray5 text-[36px]`}>
-        {data.missionDescription}
+        <h2 className={`${locale === "ar"?arfont.className:pt_serif.className} text-gray5 text-[36px]`}>
+          {data.missionDescription}
         </h2>
       )}
     </div>

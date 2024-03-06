@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 export default function BlogWidget({ data }: any) {
   if (!data) {

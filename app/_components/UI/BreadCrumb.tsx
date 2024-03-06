@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/navigation";
 import React from "react";
 
 interface BreadCrumbProps {
@@ -13,21 +13,21 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({ list, noPadding }) => {
   return (
     <div className="" id="BreadCrumb">
       <div className={`container mx-auto ${noPadding ? "" : "md:px-12 px-4"}`}>
-        <ul className="flex md:py-4 py-4 flex-wrap text-[10px] text-gray-800 md:text-sm whitespace-nowrap leading-relaxed">
+        <ul className="text-gray-800 flex flex-wrap whitespace-nowrap py-4 text-[10px] leading-relaxed md:py-4 md:text-sm">
           {list.map((item: any, index: number) => (
             <li key={index} className="flex items-center capitalize">
               {item.link ? (
                 <>
                   <Link
                     href={item.link}
-                    className="hover:underline cursor-pointer pr-[6px]"
+                    className="cursor-pointer pr-[6px] hover:underline"
                   >
                     {item.title}
                   </Link>
-                  <span className="inline-block mr-1">/</span>
+                  <span className="mr-1 inline-block">/</span>
                 </>
               ) : (
-                <span className="text-gray-800 text-opacity-60 text-xs md:text-sm w-[110px] lg:w-full whitespace-nowrap">
+                <span className="text-gray-800 w-[110px] whitespace-nowrap text-xs text-opacity-60 md:text-sm lg:w-full">
                   {item.title}
                 </span>
               )}

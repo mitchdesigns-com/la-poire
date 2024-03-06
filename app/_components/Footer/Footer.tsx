@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import React from "react";
 
 export default function Footer() {
   return (
     <div className="bg-black">
-      <div className="flex container mx-auto md:pt-64 pt-4 pb-4 flex-col justify-center items-center gap-4 text-center border-none">
-        <Link href="/" className="inline-block md:my-0 my-20">
+      <div className="container mx-auto flex flex-col items-center justify-center gap-4 border-none pb-4 pt-4 text-center md:pt-64">
+        <Link href="/" className="my-20 inline-block md:my-0">
           <Image
             src="/images/logo-white.webp"
             alt="La Poire Logo"
@@ -14,8 +14,8 @@ export default function Footer() {
             height="46"
           />
         </Link>
-        <span className="bg-gray5 h-[2px] w-full block opacity-50" />
-        <p className="text-gray5 text-sm tracking-normal opacity-50 px-2">
+        <span className="block h-[2px] w-full bg-gray5 opacity-50" />
+        <p className="px-2 text-sm tracking-normal text-gray5 opacity-50">
           © {new Date().getFullYear()} La Poire Group • All Rights Reserved •{" "}
           <Link
             href="https://www.mitchdesigns.com/"

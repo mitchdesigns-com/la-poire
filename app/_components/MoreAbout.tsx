@@ -3,11 +3,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import PlayBtn from "./Icons/PlayBtn";
-import { pt_serif } from "../fonts";
+import { arfont, pt_serif } from "../fonts";
 import MoreAboutItem from "./MoreAboutItem";
 import { motion } from "@/app/lib/motion";
+import { useLocale } from "next-intl";
 
-export default function MoreAbout() {
+export default function MoreAbout({ data }: any) {
+  const locale = useLocale();
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -47,53 +49,57 @@ export default function MoreAbout() {
     },
   ];
   return (
-    <div className="md:pt-100 md:px-70 px-4 pt-20">
+    <div className="px-4 pt-20 md:px-70 md:pt-100">
       <div className="container mx-auto">
         {hasWindow && (
-          <div className="w-full aspect-video">
+          <div className="aspect-video w-full">
             <ReactPlayer
               width="100%"
               height="100%"
-              url="https://www.youtube.com/watch?v=K2fHBRPT1VY"
+              url={`https://www.youtube.com/watch?v=${data.YoutubeID}`}
               playing
-              light="/images/more-about.webp"
-              playIcon={<span className="md:w-[140px] md:h-[141px] w-[100px] h-[100px] z-10"><PlayBtn /></span>}
+              // light="/images/more-about.webp"
+              light={
+                process.env.NEXT_PUBLIC_API_URL +
+                data.YoutubeCover.data?.attributes.url
+              }
+              playIcon={
+                <span className="z-10 h-[100px] w-[100px] md:h-[141px] md:w-[140px]">
+                  <PlayBtn />
+                </span>
+              }
             />
           </div>
         )}
         <div className="flex flex-col gap-70 py-30">
-          <div className="flex justify-between items-center text-black md:flex-nowrap flex-wrap-reverse md:gap-0 gap-20">
+          <div className="flex flex-wrap-reverse items-center justify-between gap-20 text-black md:flex-nowrap md:gap-0">
             <div>
-              <h3 className="text-2xl">Distinctive Excellence</h3>
+              <h3 className="text-2xl">{data.FeatureTitle}</h3>
               <p className="text-xl font-light">
-                The Pillars of Our Prestige: Six Reasons We Shine
+                {data.FeatureSubtitle}
               </p>
             </div>
             <div className="w-634">
-              <p className={`${pt_serif.className} italic text-base`}>
-                Dive into the essence of what makes La Poire group exceptional.
-                With a tapestry woven from pioneering legacies to unparalleled
-                quality, our unique selling propositions distinguish us in
-                Egypt&apos;s culinary landscape. Discover the cornerstones that
-                have shaped our journey, transforming ordinary moments into
-                extraordinary experiences.
-              </p>
+              <p className={`italic text-base ${locale === "ar"?arfont.className:pt_serif.className}`}>{data.FeatureDescription}</p>
             </div>
           </div>
-          <div className="flex md:grid-cols-3 grid-cols-2 gap-y-26 justify-between flex-wrap md:gap-x-56 gap-5">
-            {moreAboutData.map((item, index) => (
+          <div className="flex grid-cols-2 flex-wrap justify-between gap-5 gap-y-26 md:grid-cols-3 md:gap-x-56">
+            {data.FeatureItem.map((item: any, index: number) => (
               <motion.div
                 key={index}
-                className="md:w-320 w-[calc(50%-10px)]"
+                className="w-[calc(50%-10px)] md:w-320"
                 initial={{ opacity: 0, y: -10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
                 <MoreAboutItem
-                  img={item.img}
-                  title={item.title}
-                  desc={item.desc}
+                  img={
+                    process.env.NEXT_PUBLIC_API_URL +
+                    item.Image.data?.attributes.url
+                  }
+                  title={item.Title}
+                  desc={item.Description}
                 />
               </motion.div>
             ))}

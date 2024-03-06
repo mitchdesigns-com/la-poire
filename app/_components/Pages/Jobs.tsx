@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import HeroWithTitles from "../HeroWithTitles";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import LongArrow from "../Icons/LongArrow";
 import SectionTitles from "../UI/SectionTitles";
 import Newsletter from "../Newsletter";

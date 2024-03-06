@@ -1,11 +1,13 @@
 "use client";
 import { fetchingAllBrands } from "@/app/api/fetcher";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { useEffect, useState } from "react";
 import mockData from "./mockData.json";
+import { useTranslations } from "next-intl";
 
 export default function ExploreMore({ parentSlug }: any) {
+  const t = useTranslations("common");
   const [brands, setBrands] = useState<any | null>(null);
   useEffect(() => {
     const fetchBrands = async () => {
@@ -24,29 +26,21 @@ export default function ExploreMore({ parentSlug }: any) {
     (brand: any) => brand.attributes.slug !== parentSlug
   );
   return (
-    <div className="container mx-auto py-70 flex justify-center items-center flex-col gap-40">
-      <h3 className="text-xl font-light">Explore More Brands</h3>
-      <div className="flex justify-center items-center gap-40">
+    <div className="container mx-auto flex flex-col items-center justify-center gap-40 py-70">
+      <h3 className="text-xl font-light">{t("explore_more_brands")}</h3>
+      <div className="flex items-center justify-center gap-40">
         {Array.isArray(filteredBrands) &&
           filteredBrands.map((item: any, index: any) => (
             <Link
               href={`/brands/${item.attributes.slug}`}
               key={index}
-              className="inline-block"
+              className="relative inline-block h-[124px] w-[142px]"
             >
               <Image
-                alt=""
-                className="object-cover"
-                width={
-                  item.attributes.Logo.data.attributes.width > 150
-                    ? item.attributes.Logo.data.attributes.width / 2
-                    : item.attributes.Logo.data.attributes.width
-                }
-                height={
-                  item.attributes.Logo.data.attributes.width > 150
-                    ? item.attributes.Logo.data.attributes.height / 2
-                    : item.attributes.Logo.data.attributes.height
-                }
+                alt="brand logo alt"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="max-w-[120px] object-contain"
                 src={
                   process.env.NEXT_PUBLIC_API_URL +
                   item.attributes.Logo.data?.attributes.url

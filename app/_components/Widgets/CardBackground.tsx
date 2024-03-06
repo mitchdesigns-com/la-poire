@@ -1,7 +1,6 @@
+import { Link } from "@/navigation";
 import Image from "next/image";
-import React from "react";
 import LeftUp from "../Icons/LeftUp";
-import Link from "next/link";
 
 export default function CardBackground({ img, text, color, slug }: any) {
   return (

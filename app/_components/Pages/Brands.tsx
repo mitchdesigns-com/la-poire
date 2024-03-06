@@ -7,16 +7,21 @@ import ExtraMoreAbout from "../ExtraMoreAbout";
 import Newsletter from "../Newsletter";
 import brandsMock from "./brands.json"
 import brandsAllMock from "../Brands/mockData.json"
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Brands() {
+  const locale = useLocale();
+  const t = useTranslations();
   const [data, setData] = useState<any | null>(null);
   const [brandsList, setBrands] = useState<any | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const homeData = await fetchingBrandsPage();
+        const homeData = await fetchingBrandsPage(locale);
+        console.log('homeData',homeData)
         setData(homeData);
+        // debugger
       } catch (error) {
         console.error("Error fetching home page data:", error);
       }
@@ -25,7 +30,8 @@ export default function Brands() {
     fetchData();
     const fetchBrands = async () => {
       try {
-        const allBrands = await fetchingAllBrands();
+        const allBrands = await fetchingAllBrands(locale);
+        console.log('allBrands',allBrands)
         setBrands(allBrands);
       } catch (error) {
         console.error("Error fetching home page data:", error);
@@ -34,9 +40,9 @@ export default function Brands() {
     };
 
     fetchBrands();
-  }, []);
-  const brandsData = data?.data?.attributes??brandsMock.data?.attributes;
-  const brands = brandsList??brandsAllMock;
+  }, [locale]);
+  const brandsData = data?.data?.attributes;
+  const brands = brandsList;
   // console.log("brandsData", brandsData);
   // console.log("brands", brands);
   return (
@@ -50,7 +56,7 @@ export default function Brands() {
       <List data={brands?.data} />
       <div className="container mx-auto h-[5px] bg-gray3" />
       <ExtraMoreAbout
-        title="La Poire Brands"
+        title={t('common.about')+' '+t('common.la_poire_brands')}
         content={brandsData?.MoreAbout ?? ""}
       />
       <Newsletter />

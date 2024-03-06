@@ -65,8 +65,8 @@ const subscribeToCampaignMonitor = async (
 };
 
 
-const fetchLanding = async () => {
-  return sendRequest("landing-pages?populate[0]=heroImage,metadata.metaImage", {});
+const fetchLanding = async (lang:string ='en') => {
+  return sendRequest(`landing-pages?populate[0]=heroImage,metadata.metaImage&locale=${lang}`, {});
 };
 
 export { subscribeToCampaignMonitor,fetchLanding };

@@ -1,23 +1,24 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Button from "../Button";
 import Hamburger from "./Hamburger";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/navigation";
 // import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const t = useTranslations("nav");
   const pathname = usePathname();
-  console.log("pathname", pathname);
+  // console.log("pathname", pathname);
   // const isBrandsPage = pathname === "/brands";
   const isBrandsPage = pathname.startsWith("/brands");
   const brandSlug = isBrandsPage ? pathname.replace("/brands/", "") : null;
   const isHome = pathname === "/" || pathname === "/en" || pathname === "/ar";
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenMob, setIsOpenMob] = useState(false);
+  const isAboutPage = pathname.includes("/about");
   return (
     <header
       className={`header-page md:py-34 py-14 px-4 ${
@@ -37,7 +38,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="hidden w-[1004px] items-center justify-between md:max-w-[calc(100vw-388px)] lg:flex">
-            <div className="1xl:gap-54 flex -translate-x-34 items-center gap-4">
+            <div className="1xl:gap-54 flex items-center gap-4 ltr:-translate-x-34 rtl:translate-x-34">
               {isHome && <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />}
               <nav
                 className={`${
@@ -55,7 +56,7 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : "text-gold hover:text-goldHover"
+                        : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
                     <Link href={"/"}>{t("home")}</Link>
@@ -64,8 +65,8 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : "text-gold hover:text-goldHover"
-                    }`}
+                        : "text-gold hover:text-goldHover hover:underline"
+                    } ${isAboutPage?"underline":""}`}
                   >
                     <Link href={"/about"}>{t("about")}</Link>
                   </li>
@@ -73,7 +74,7 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : "text-gold hover:text-goldHover"
+                        : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
                     <Link href={"/brands"}>{t("brands")}</Link>
@@ -82,7 +83,7 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : "text-gold hover:text-goldHover"
+                        : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
                     <Link href={"/franchise"}>{t("franchise")}</Link>
@@ -91,7 +92,7 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : "text-gold hover:text-goldHover"
+                        : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
                     <Link href={"/blog"}>{t("blog")}</Link>
@@ -100,7 +101,7 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : "text-gold hover:text-goldHover"
+                        : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
                     <Link href={"/job"}>{t("job")}</Link>

@@ -7,7 +7,7 @@ import MissionVision from "../UI/MissionVision";
 import TimeLine from "../UI/TimeLine";
 import PlayBtn from "../Icons/PlayBtn";
 import OurBrands from "../OurBrands";
-import { pt_serif } from "@/app/fonts";
+import { arfont, pt_serif } from "@/app/fonts";
 import { motion } from "@/app/lib/motion";
 import MoreAboutItem from "../MoreAboutItem";
 import AboutSection from "../AboutSection";
@@ -15,9 +15,11 @@ import OurTeam from "../UI/OurTeam";
 import Newsletter from "../Newsletter";
 import SectionTextImage from "../UI/SectionTextImage";
 import { fetchingAboutPage } from "@/app/api/fetcher";
+import { useLocale } from "next-intl";
 
 export default function About() {
   const [data, setData] = useState<any | null>(null);
+  const locale = useLocale();
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -28,7 +30,7 @@ export default function About() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await fetchingAboutPage();
+        const result = await fetchingAboutPage(locale);
         setData(result.data.attributes);
       } catch (error) {
         console.error("Error fetching home page data:", error);
@@ -36,7 +38,7 @@ export default function About() {
     };
 
     fetchData();
-  }, []);
+  }, [locale]);
   if (!data) {
     return null;
   }
@@ -139,7 +141,7 @@ export default function About() {
         </div>
       </div>
 
-      <OurBrands brandsList={data.OurBrandsLogos.data} />
+      <OurBrands brandsList={data.OurBrandsLogos.data} noLinks />
 
       <div className="container mx-auto max-w-[1000px]">
         <div className="px-4 py-44">
@@ -180,7 +182,7 @@ export default function About() {
               <p className="text-xl font-light">{data.FeaturesSubtitle}</p>
             </div>
             <div className="w-634">
-              <p className={`${pt_serif.className} italic text-base`}>
+              <p className={`${locale === "ar"?arfont.className:pt_serif.className} italic text-base`}>
                 {data.FeaturesDescription}
               </p>
             </div>

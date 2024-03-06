@@ -16,13 +16,18 @@ export default function SectionTextImage({
   let bgColor2 = "bg-goldLight";
   let textColor = "text-white";
   if (color === "bej") {
-    bgColor = "bg-nej";
+    bgColor = "bg-bej";
     bgColor2 = "bg-greenBlack";
     textColor = "text-black";
   }
   if (color === "white") {
     bgColor = "bg-white";
     bgColor2 = "bg-greenBlack";
+    textColor = "text-black";
+  }
+  if (color === "lightgold") {
+    bgColor = "bg-goldLight";
+    bgColor2 = "bg-gold";
     textColor = "text-black";
   }
   return (

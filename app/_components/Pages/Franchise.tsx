@@ -37,38 +37,7 @@ export default function Franchise() {
   if (!data) {
     return null;
   }
-  const moreAboutData = [
-    {
-      img: "/images/franchise/franchise_01.webp",
-      title: "Business Model Excellence",
-      desc: "Launch with a proven, growth-focused business model.",
-    },
-    {
-      img: "/images/franchise/franchise_02.webp",
-      title: "Support & Training",
-      desc: "Access comprehensive support and expert-led training.",
-    },
-    {
-      img: "/images/franchise/franchise_03.webp",
-      title: "Exclusive Recipes",
-      desc: "Offer unique delicacies from our exclusive recipe collections.",
-    },
-    {
-      img: "/images/franchise/franchise_04.webp",
-      title: "Brand Recognition",
-      desc: "Leverage our strong brand presence and marketing.",
-    },
-    {
-      img: "/images/franchise/franchise_05.webp",
-      title: "Operational Efficiency",
-      desc: "Benefit from streamlined, effective operational systems.",
-    },
-    {
-      img: "/images/franchise/franchise_06.webp",
-      title: "Site & Design",
-      desc: "Receive help in selecting prime locations and design.",
-    },
-  ];
+  
   return (
     <div>
       <HeroWithTitles
@@ -150,7 +119,7 @@ export default function Franchise() {
         </div>
       </div>
 
-      <OurBrands title="Our Franchised Brands" brandsList={data.Logos.data} />
+      <OurBrands title="Our Franchised Brands" brandsList={data.brands.data} />
 
       <div className="container mx-auto mb-30 mt-30 md:mb-95">
         <span className="block h-[5px] w-full bg-gray3" />

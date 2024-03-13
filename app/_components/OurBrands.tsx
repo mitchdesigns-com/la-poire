@@ -17,7 +17,7 @@ export default function OurBrands({
   if (title) {
     mainTitle = title;
   }
-  // console.log("brandsList", brandsList);
+  
   return (
     <div className="container mx-auto flex flex-col gap-20 py-50 text-center md:gap-40 md:py-100">
       <h4 className="text-xl font-light text-black">{mainTitle}</h4>
@@ -31,23 +31,34 @@ export default function OurBrands({
             transition={{ duration: 0.2, delay: index * 0.5 }}
             viewport={{ once: true }}
           >
-            <Image
-              src={
-                noLinks
-                  ? card.attributes
+            {card.attributes.Logo ? (
+              <Image
+                src={
+                  card.attributes.Logo.data
+                    ? process.env.NEXT_PUBLIC_API_URL +
+                      card.attributes.Logo.data?.attributes.url
+                    : "/images/placeholder.webp"
+                }
+                alt="brand logo alt has logo"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                // style={{ objectFit: "contain" }}
+                className="max-w-[120px] object-contain"
+              />
+            ) : (
+              <Image
+                src={
+                  card.attributes
                     ? process.env.NEXT_PUBLIC_API_URL + card.attributes.url
                     : "/images/placeholder.webp"
-                  : card.attributes.Logo.data
-                  ? process.env.NEXT_PUBLIC_API_URL +
-                    card.attributes.Logo.data?.attributes.url
-                  : "/images/placeholder.webp"
-              }
-              alt="brand logo alt"
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              // style={{ objectFit: "contain" }}
-              className="max-w-[120px] object-contain"
-            />
+                }
+                alt="brand logo alt no logo"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                // style={{ objectFit: "contain" }}
+                className="max-w-[120px] object-contain"
+              />
+            )}
             {!noLinks && (
               <Link href={`/brands/${card.attributes.slug}`}>
                 <span

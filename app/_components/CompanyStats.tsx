@@ -6,7 +6,7 @@ const StatItem = ({ value, label }: any) => (
   <>
     <div className="flex flex-col items-center justify-center text-center">
       <span
-        className={`md:ltr:text-7xl md:rtl:text-6xl text-[11vw] text-goldLight font-medium ${gabarito.className}`}
+        className={`md:ltr:text-[66px] md:rtl:text-6xl text-[11vw] text-goldLight font-medium ${gabarito.className}`}
       >
         <Counter value={value} />
       </span>
@@ -47,8 +47,8 @@ export default function CompanyStats({
         </div>
         <div className="flex w-auto items-stretch justify-center gap-22 pt-20 md:justify-between md:gap-44 md:pt-0">
           <StatItem value={brandsNum} label={t("brands")} />
-          <StatItem value={employeesNum} label={t("locations")} />
-          <StatItem value={locationsNum} label={t("employees")} />
+          <StatItem value={locationsNum} label={t("locations")} />
+          <StatItem value={employeesNum} label={t("employees")} />
         </div>
       </div>
     </div>

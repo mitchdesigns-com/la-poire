@@ -13,12 +13,15 @@ export default function Header() {
   const pathname = usePathname();
   // console.log("pathname", pathname);
   // const isBrandsPage = pathname === "/brands";
-  const isBrandsPage = pathname.startsWith("/brands");
+  const isBrandsPage = pathname.includes("brands/");
   const brandSlug = isBrandsPage ? pathname.replace("/brands/", "") : null;
   const isHome = pathname === "/" || pathname === "/en" || pathname === "/ar";
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenMob, setIsOpenMob] = useState(false);
   const isAboutPage = pathname.includes("/about");
+  const isSingleBrand = pathname.includes("brands/");
+  console.log('pathname',pathname)
+  console.log('brandSlug',brandSlug)
   return (
     <header
       className={`header-page md:py-34 py-14 px-4 ${
@@ -56,6 +59,8 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
+                        : isSingleBrand
+                        ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
@@ -65,8 +70,10 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
+                        : isSingleBrand
+                        ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
-                    } ${isAboutPage?"underline":""}`}
+                    }`}
                   >
                     <Link href={"/about"}>{t("about")}</Link>
                   </li>
@@ -74,6 +81,8 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
+                        : isSingleBrand
+                        ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
@@ -83,6 +92,8 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
+                        : isSingleBrand
+                        ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
@@ -92,6 +103,8 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
+                        : isSingleBrand
+                        ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
@@ -101,6 +114,8 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
+                        : isSingleBrand
+                        ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >

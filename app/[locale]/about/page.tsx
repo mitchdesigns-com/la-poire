@@ -1,7 +1,8 @@
 export const runtime = "edge";
 import About from "@/app/_components/Pages/About";
-import { fetchingBrandsSEO } from "@/app/api/fetcher";
+import { fetchingAboutPage, fetchingBrandsSEO } from "@/app/api/fetcher";
 import { SITE_TITLE } from "@/app/config";
+import { getLocale } from "next-intl/server";
 
 export async function  generateMetadata({ params }: any) {
   const categoryInfo = await fetchingBrandsSEO(params);
@@ -16,10 +17,12 @@ export async function  generateMetadata({ params }: any) {
     keywords: pageKeywords ?? "",
   };
 }
-export default function AboutPage() {
+export default async function AboutPage() {
+  const locale = await getLocale();
+  const result = await fetchingAboutPage(locale);
   return (
     <div>
-      <About />
+      <About data={result.data.attributes} />
     </div>
   );
 }

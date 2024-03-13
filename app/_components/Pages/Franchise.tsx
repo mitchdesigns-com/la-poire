@@ -13,8 +13,8 @@ import FAQsSection from "../UI/FAQsSection";
 import Newsletter from "../Newsletter";
 import { fetchingFranchisePage } from "@/app/api/fetcher";
 
-export default function Franchise() {
-  const [data, setData] = useState<any | null>(null);
+export default function Franchise({data}:any) {
+  // const [data, setData] = useState<any | null>(null);
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -22,18 +22,18 @@ export default function Franchise() {
     }
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await fetchingFranchisePage();
-        setData(result.data.attributes);
-      } catch (error) {
-        console.error("Error fetching home page data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const result = await fetchingFranchisePage();
+  //       setData(result.data.attributes);
+  //     } catch (error) {
+  //       console.error("Error fetching home page data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
   if (!data) {
     return null;
   }

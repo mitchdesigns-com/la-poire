@@ -19,7 +19,7 @@ export default function Brands() {
     const fetchData = async () => {
       try {
         const homeData = await fetchingBrandsPage(locale);
-        console.log('homeData',homeData)
+        // console.log('homeData',homeData)
         setData(homeData);
         // debugger
       } catch (error) {
@@ -31,7 +31,7 @@ export default function Brands() {
     const fetchBrands = async () => {
       try {
         const allBrands = await fetchingAllBrands(locale);
-        console.log('allBrands',allBrands)
+        // console.log('allBrands',allBrands)
         setBrands(allBrands);
       } catch (error) {
         console.error("Error fetching home page data:", error);

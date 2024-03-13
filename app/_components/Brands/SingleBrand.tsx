@@ -26,19 +26,19 @@ interface BrandData {
   // Add other properties if needed
 }
 
-export default function SingleBrand({ params }: any) {
+export default function SingleBrand({ dataFetched }: any) {
   const locale = useLocale();
   const t = useTranslations('common');
-  const [dataFetched, setDataFetched] = useState<BrandData | null>(null);
+  // const [dataFetched, setDataFetched] = useState<BrandData | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await fetchingSingleBrand(params,locale);
-      setDataFetched(result?.data[0]?.attributes);
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const result = await fetchingSingleBrand(params,locale);
+  //     setDataFetched(result?.data[0]?.attributes);
+  //   };
 
-    fetchData();
-  }, [params,locale]);
+  //   fetchData();
+  // }, [params,locale]);
 
   // console.log("dataFetched>>", dataFetched);
 

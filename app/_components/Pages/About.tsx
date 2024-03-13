@@ -17,8 +17,8 @@ import SectionTextImage from "../UI/SectionTextImage";
 import { fetchingAboutPage } from "@/app/api/fetcher";
 import { useLocale } from "next-intl";
 
-export default function About() {
-  const [data, setData] = useState<any | null>(null);
+export default function About({data}:any) {
+  // const [data, setData] = useState<any | null>(null);
   const locale = useLocale();
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
@@ -27,18 +27,18 @@ export default function About() {
     }
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await fetchingAboutPage(locale);
-        setData(result.data.attributes);
-      } catch (error) {
-        console.error("Error fetching home page data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const result = await fetchingAboutPage(locale);
+  //       setData(result.data.attributes);
+  //     } catch (error) {
+  //       console.error("Error fetching home page data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, [locale]);
+  //   fetchData();
+  // }, [locale]);
   if (!data) {
     return null;
   }

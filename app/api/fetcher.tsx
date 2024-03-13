@@ -38,8 +38,8 @@ export const fetchingAboutPage = async (lang:string ='en') => {
   const endpoint = `about-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
-export const fetchingFranchisePage = async () => {
-  const endpoint = "franchise-page?populate=deep";
+export const fetchingFranchisePage = async (lang:string ='en') => {
+  const endpoint = `franchise-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
 export const fetchingJobsPage = async () => {

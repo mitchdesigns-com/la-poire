@@ -2,13 +2,13 @@ import { useTranslations } from "next-intl";
 import { gabarito } from "../fonts";
 import Counter from "./Counter";
 
-const StatItem = ({ value, label }: any) => (
+const StatItem = ({ value, label,removeComma }: any) => (
   <>
     <div className="flex flex-col items-center justify-center text-center">
       <span
         className={`md:ltr:text-[66px] md:rtl:text-6xl text-[11vw] text-goldLight font-medium ${gabarito.className}`}
       >
-        <Counter value={value} />
+        <Counter value={value} removeComma={removeComma}/>
       </span>
       <span className="text-sm uppercase text-gray2">{label}</span>
     </div>
@@ -18,6 +18,7 @@ const StatItem = ({ value, label }: any) => (
 export default function CompanyStats({
   fullWidth,
   brandsNum,
+  sinceYear,
   employeesNum,
   locationsNum,
   numbersTitle,
@@ -46,7 +47,8 @@ export default function CompanyStats({
           </p>
         </div>
         <div className="flex w-auto items-stretch justify-center gap-22 pt-20 md:justify-between md:gap-44 md:pt-0">
-          <StatItem value={brandsNum} label={t("brands")} />
+          {brandsNum && <StatItem value={brandsNum} label={t("brands")} />}
+          {sinceYear && <StatItem value={sinceYear} label={t("since")} removeComma/>}
           <StatItem value={locationsNum} label={t("locations")} />
           <StatItem value={employeesNum} label={t("employees")} />
         </div>

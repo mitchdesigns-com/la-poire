@@ -20,8 +20,8 @@ export default function Header() {
   const [isOpenMob, setIsOpenMob] = useState(false);
   const isAboutPage = pathname.includes("/about");
   const isSingleBrand = pathname.includes("brands/");
-  console.log('pathname',pathname)
-  console.log('brandSlug',brandSlug)
+  // console.log('pathname',pathname)
+  // console.log('brandSlug',brandSlug)
   return (
     <header
       className={`header-page md:py-34 py-14 px-4 ${

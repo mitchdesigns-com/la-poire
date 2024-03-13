@@ -5,9 +5,11 @@ import { useEffect, useRef } from "react";
 export default function Counter({
   value,
   direction = "up",
+  removeComma = false, 
 }: {
   value: number;
   direction?: "up" | "down";
+  removeComma?: boolean;
 }) {
   // console.log('value',value)
   const ref = useRef<HTMLSpanElement>(null);
@@ -27,9 +29,13 @@ export default function Counter({
   useEffect(() => {
     const updateTextContent = (latest: number) => {
       if (ref.current) {
-        ref.current.textContent = Intl.NumberFormat("en-US").format(
+        let formattedValue = Intl.NumberFormat("en-US").format(
           Number(latest.toFixed(0))
         );
+        if (removeComma) {
+          formattedValue = formattedValue.replace(/,/g, "");
+        }
+        ref.current.textContent = formattedValue;
       }
     };
 
@@ -38,7 +44,7 @@ export default function Counter({
     return () => {
       changeListener();
     };
-  }, [springValue]);
+  }, [springValue, removeComma]);
 
   return (<span ref={ref} ></span>);
 }

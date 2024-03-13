@@ -12,9 +12,8 @@ import OurPromise from "./OurPromise";
 import ExploreMore from "./ExploreMore";
 import ExtraMoreAbout from "../ExtraMoreAbout";
 import Newsletter from "../Newsletter";
-import mockData from './mockData.json';
+import mockData from "./mockData.json";
 import { useLocale, useTranslations } from "next-intl";
-
 
 interface BrandData {
   BrandColor: string;
@@ -28,7 +27,7 @@ interface BrandData {
 
 export default function SingleBrand({ dataFetched }: any) {
   const locale = useLocale();
-  const t = useTranslations('common');
+  const t = useTranslations("common");
   // const [dataFetched, setDataFetched] = useState<BrandData | null>(null);
 
   // useEffect(() => {
@@ -51,15 +50,22 @@ export default function SingleBrand({ dataFetched }: any) {
         description={dataFetched?.Description ?? ""}
       />
       <section className="-translate-y-64">
-      <Story data={dataFetched} />
+        <Story data={dataFetched} />
       </section>
       <Signature data={dataFetched} />
-      <CompanyStats fullWidth />
+      <CompanyStats
+        fullWidth
+        sinceYear={dataFetched.SinceYear}
+        employeesNum={dataFetched.EmployeesNum}
+        locationsNum={dataFetched.LocationsNum}
+        numbersTitle={dataFetched.BlackSectionTitle}
+        numbersDescription={dataFetched.BlackSectionDescription}
+      />
       <TheExperience data={dataFetched} />
       <Testimonials />
       <SocialMedia data={dataFetched} />
       <OurPromise data={dataFetched} />
-      <ExploreMore parentSlug={dataFetched?.slug ??""}/>
+      <ExploreMore parentSlug={dataFetched?.slug ?? ""} />
       <div className="container mr-auto">
         <div className="max-w-[930px]">
           <ExtraMoreAbout

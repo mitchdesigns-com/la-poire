@@ -6,5 +6,5 @@ import { getLocale } from "next-intl/server";
 export default async function page() {
   const locale = await getLocale();
   const dataFetched = await fetchingHomePage(locale);
-  return <Home data={dataFetched.data} />;
+  return <Home data={dataFetched?.data} />;
 }

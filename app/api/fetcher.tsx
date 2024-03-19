@@ -1,13 +1,13 @@
 // api/fetcher.ts
-const apiUrl = process.env.NEXT_PUBLIC_STRAPI_URL; // Replace with your Strapi API base URL
-const strapiToken = process.env.NEXT_PUBLIC_STRAPI_TOKEN; // Replace with your Strapi API token
+const apiUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
+const strapiToken = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
 
 const sendRequest = async (
   endpoint: string,
   options: RequestInit = {}
 ): Promise<any> => {
   const url = `${apiUrl}/${endpoint}`;
-
+  
   try {
     const response = await fetch(url, {
       ...options,
@@ -25,10 +25,10 @@ const sendRequest = async (
     return data;
   } catch (error) {
     if (error instanceof TypeError) {
-      // console.error(`Failed to fetch data from ${url}:`, error);
+      console.error(`Failed to fetch data from ${url}:`, error);
       return null;
     } else {
-      // console.error(`Error during API request to ${url}:`, error);
+      console.error(`Error during API request to ${url}:`, error);
       return null;
     }
   }
@@ -60,6 +60,7 @@ export const fetchingBrandsPage = async (lang:string ='en') => {
 };
 export const fetchingHomePage = async (lang:string ='en') => {
   const endpoint = `home?populate=deep&locale=${lang}`;
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   return sendRequest(endpoint);
 };
 export const fetchingAllBrands = async (lang:string ='en') => {

@@ -14,9 +14,9 @@ import BlogWidget from "./UI/BlogWidget";
 import SectionTitles from "./UI/SectionTitles";
 
 export default function Home({ data }: any) {
-  // if (!data) {
-  //   return null;
-  // }
+  if (!data) {
+    return null;
+  }
   // console.log("data Home", data);
   return (
     <div>
@@ -30,7 +30,7 @@ export default function Home({ data }: any) {
         numbersTitle={data.attributes?.numbersTitle}
         numbersDescription={data.attributes?.numbersDescription}
       />
-      <OurBrands brandsList={data.attributes?.OurBrands.data} />
+      <OurBrands brandsList={data?.attributes?.OurBrands.data} />
       <AboutSection />
       <MoreAbout data={data.attributes} />
       <div className="container mx-auto mb-30 mt-30 md:mb-95">

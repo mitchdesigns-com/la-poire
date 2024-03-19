@@ -3,6 +3,7 @@ import About from "@/app/_components/Pages/About";
 import { fetchingAboutPage, fetchingBrandsSEO } from "@/app/api/fetcher";
 import { SITE_TITLE } from "@/app/config";
 import { getLocale } from "next-intl/server";
+import AboutData from "@/app/api/about-page.json"
 
 export async function  generateMetadata({ params }: any) {
   const categoryInfo = await fetchingBrandsSEO(params);
@@ -22,7 +23,7 @@ export default async function AboutPage() {
   const result = await fetchingAboutPage(locale);
   return (
     <div>
-      <About data={result.data.attributes} />
+      <About data={result?.data?.attributes??AboutData.data.attributes} />
     </div>
   );
 }

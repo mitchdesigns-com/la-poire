@@ -1,14 +1,15 @@
 // api/fetcher.ts
-const apiUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
-const strapiToken = process.env.NEXT_PUBLIC_STRAPI_TOKEN;
+const apiUrl = process.env.NEXT_PUBLIC_STRAPI_URL; // Replace with your Strapi API base URL
+const strapiToken = process.env.NEXT_PUBLIC_STRAPI_TOKEN; // Replace with your Strapi API token
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const sendRequest = async (
   endpoint: string,
   options: RequestInit = {}
 ): Promise<any> => {
   const url = `${apiUrl}/${endpoint}`;
-
   try {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
     const response = await fetch(url, {
       ...options,
       headers: {
@@ -34,11 +35,11 @@ const sendRequest = async (
   }
 };
 
-export const fetchingAboutPage = async (lang: string = "en") => {
+export const fetchingAboutPage = async (lang:string ='en') => {
   const endpoint = `about-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
-export const fetchingFranchisePage = async (lang: string = "en") => {
+export const fetchingFranchisePage = async (lang:string ='en') => {
   const endpoint = `franchise-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
@@ -46,23 +47,24 @@ export const fetchingJobsPage = async () => {
   const endpoint = "jobs-page?populate=deep";
   return sendRequest(endpoint);
 };
-export const fetchingBlogsPage = async () => {
-  const endpoint = "blogs?populate=deep";
+export const fetchingBlogsPage = async (lang:string ='en') => {
+  const endpoint = `blogs?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
 export const fetchingAllJobs = async () => {
   const endpoint = "jobs?populate=deep";
   return sendRequest(endpoint);
 };
-export const fetchingBrandsPage = async (lang: string = "en") => {
+export const fetchingBrandsPage = async (lang:string ='en') => {
   const endpoint = `brands-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
-export const fetchingHomePage = async (lang: string = "en") => {
+export const fetchingHomePage = async (lang:string ='en') => {
   const endpoint = `home?populate=deep&locale=${lang}`;
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   return sendRequest(endpoint);
 };
-export const fetchingAllBrands = async (lang: string = "en") => {
+export const fetchingAllBrands = async (lang:string ='en') => {
   const endpoint = `our-brands?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
@@ -77,11 +79,8 @@ const fetchingBrandsSEO = async (slug: string) => {
   // console.log("params", slug);
   return sendRequest("brands-page?populate[0]=SEO", {});
 };
-const fetchingSingleBrand = async (slug: string, lang: string = "en") => {
-  return sendRequest(
-    `our-brands?filters[slug][$eq]=${slug}&populate=deep&locale=${lang}`,
-    {}
-  );
+const fetchingSingleBrand = async (slug: string,lang:string ='en') => {
+  return sendRequest(`our-brands?filters[slug][$eq]=${slug}&populate=deep&locale=${lang}`, {});
 };
 export const fetchingSingleBlog = async (slug: string) => {
   return sendRequest(`blogs?filters[slug][$eq]=${slug}&populate=deep`, {});

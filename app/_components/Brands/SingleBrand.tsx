@@ -39,7 +39,7 @@ export default function SingleBrand({ dataFetched }: any) {
   //   fetchData();
   // }, [params,locale]);
 
-  // console.log("dataFetched>>", dataFetched);
+  console.log("dataFetched>>", dataFetched);
 
   return (
     <div>
@@ -55,11 +55,11 @@ export default function SingleBrand({ dataFetched }: any) {
       <Signature data={dataFetched} />
       <CompanyStats
         fullWidth
-        sinceYear={dataFetched.SinceYear}
-        employeesNum={dataFetched.EmployeesNum}
-        locationsNum={dataFetched.LocationsNum}
-        numbersTitle={dataFetched.BlackSectionTitle}
-        numbersDescription={dataFetched.BlackSectionDescription}
+        sinceYear={dataFetched?.SinceYear??null}
+        employeesNum={dataFetched?.EmployeesNum}
+        locationsNum={dataFetched?.LocationsNum}
+        numbersTitle={dataFetched?.BlackSectionTitle}
+        numbersDescription={dataFetched?.BlackSectionDescription}
       />
       <TheExperience data={dataFetched} />
       <Testimonials />

@@ -42,15 +42,16 @@ export const fetchingFranchisePage = async (lang:string ='en') => {
   return sendRequest(endpoint);
 };
 export const fetchingJobsPage = async () => {
-  const endpoint = "jobs-page?populate=deep";
+  const endpoint = `jobs-page?populate=deep&locale=en`;
   return sendRequest(endpoint);
 };
+
 export const fetchingBlogsPage = async (lang:string ='en') => {
   const endpoint = `blogs?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
 export const fetchingAllJobs = async () => {
-  const endpoint = "jobs?populate=deep";
+  const endpoint = `jobs?populate=deep&locale=en`;
   return sendRequest(endpoint);
 };
 export const fetchingBrandsPage = async (lang:string ='en') => {

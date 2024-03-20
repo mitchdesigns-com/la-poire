@@ -9,12 +9,9 @@ import { useEffect, useState } from "react";
 import { fetchingAllJobs } from "@/app/api/fetcher";
 
 export default function Jobs({ data }: any) {
-  const dataHero = {
-    herotitle: "Jobs in La Poire",
-    herosubtitle:
-      "Unlock Your Potential, Embrace Creativity, and Build a Flavorful Career Journey with La Poire",
-    herodescription: "",
-  };
+  const mediaUrl = process.env.NEXT_PUBLIC_API_URL;
+  console.log(mediaUrl);
+  
   const [dataJobs, setDataJobs] = useState<any | null>(null);
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +25,8 @@ export default function Jobs({ data }: any) {
 
     fetchData();
   }, []);
-  // console.log("dataJobs", dataJobs);
+
+  console.log(data);
   return (
     <div>
       <HeroWithTitles
@@ -44,10 +42,7 @@ export default function Jobs({ data }: any) {
         <div className="flex justify-center gap-5">
           <div className="flex-none">
             <Image
-              src={
-                process.env.NEXT_PUBLIC_API_URL +
-                data.Image_01.data?.attributes.url
-              }
+              src={`${mediaUrl}${data.Image_01.data?.attributes.url}`}
               alt=""
               width={296}
               height={409}
@@ -55,10 +50,7 @@ export default function Jobs({ data }: any) {
           </div>
           <div className="flex-none">
             <Image
-              src={
-                process.env.NEXT_PUBLIC_API_URL +
-                data.Image_02.data?.attributes.url
-              }
+              src={`${mediaUrl}${data.Image_02.data?.attributes.url}`}
               alt=""
               width={667}
               height={409}
@@ -66,19 +58,13 @@ export default function Jobs({ data }: any) {
           </div>
           <div className="flex flex-none flex-col gap-5">
             <Image
-              src={
-                process.env.NEXT_PUBLIC_API_URL +
-                data.Image_03.data?.attributes.url
-              }
+              src={`${mediaUrl}${data.Image_03.data?.attributes.url}`}
               alt=""
               width={206}
               height={258}
             />
             <Image
-              src={
-                process.env.NEXT_PUBLIC_API_URL +
-                data.Image_04.data?.attributes.url
-              }
+              src={`${mediaUrl}${data.Image_04.data?.attributes.url}`}
               alt=""
               width={206}
               height={146}

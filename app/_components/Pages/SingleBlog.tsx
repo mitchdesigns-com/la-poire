@@ -1,34 +1,18 @@
 import Image from "next/image";
 import { Link } from "@/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ArrowLeft from "../Icons/ArrowLeft";
 import BreadCrumb from "../UI/BreadCrumb";
 
-// interface BlogData {
-//   BodyContent: any;
-//   Title: string;
-//   Subtitle: string;
-//   Description: string;
-//   slug: string;
-//   MoreAbout: any;
-//   // Add other properties if needed
-// }
+interface BlogData {
+  BodyContent: any;
+  Title: string;
+  Subtitle: string;
+  Description: string;
+  slug: string;
+  MoreAbout: any;
+}
 export default function SingleBlog({ data }: any) {
-  // const [dataFetched, setDataFetched] = useState<BlogData | null>(null);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await fetchingSingleBlog(params);
-  //     setDataFetched(result?.data[0]?.attributes);
-  //   };
-
-  //   fetchData();
-  // }, [params]);
-  const dataFetched = data;
-  // console.log("dataFetched", dataFetched);
-  if (!dataFetched) {
-    return null;
-  }
   const list = [
     {
       title: "Home",
@@ -66,9 +50,8 @@ export default function SingleBlog({ data }: any) {
         <div className="relative -mx-[140px] aspect-video">
           <Image src="/images/blog-hero.webp" fill alt="" />
         </div>
-
         <div className="blog-content">
-          {dataFetched.BodyContent.map((item: any, index: any) => (
+          {data.BodyContent.map((item: any, index: any) => (
             <React.Fragment key={index}>
               {item.type === "heading" && (
                 <>

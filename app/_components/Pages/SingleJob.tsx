@@ -76,7 +76,6 @@ export default function SingleJob({ data }: any) {
                     size="large"
                     pill
                     uppercase
-                    // onClick={handleSubscribe}
                   >
                     Apply Now
                   </Button>

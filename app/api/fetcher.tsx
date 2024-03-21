@@ -9,6 +9,7 @@ const sendRequest = async (
 ): Promise<any> => {
   const url = `${apiUrl}/${endpoint}`;
   try {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
     const response = await fetch(url, {
       ...options,
       headers: {

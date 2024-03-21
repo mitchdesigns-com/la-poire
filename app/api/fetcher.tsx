@@ -1,7 +1,7 @@
 // api/fetcher.ts
 const apiUrl = process.env.NEXT_PUBLIC_STRAPI_URL; // Replace with your Strapi API base URL
-const strapiToken = process.env.NEXT_PUBLIC_STRAPI_TOKEN; // Replace with your Strapi API token
-const tlsUnAuthorized = process.env.NODE_TLS_REJECT_UNAUTHORIZED;
+// const strapiToken = process.env.NEXT_PUBLIC_STRAPI_TOKEN; // Replace with your Strapi API token
+// const tlsUnAuthorized = process.env.NODE_TLS_REJECT_UNAUTHORIZED;
 
 const sendRequest = async (
   endpoint: string,
@@ -11,7 +11,7 @@ const sendRequest = async (
   try {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
     const response = await fetch(url, {
-      ...options,
+      method: "GET",
       headers: {
         ...options.headers,
       },

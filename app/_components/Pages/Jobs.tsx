@@ -98,6 +98,7 @@ export default function Jobs({ data }: any) {
               <li key={index}>
                 <Link
                   href={`/job/${item.attributes.slug}`}
+                  prefetch={false}
                   className="flex items-center justify-between border-b pb-20 pt-[27px]"
                 >
                   <div className="flex flex-col">

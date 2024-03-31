@@ -16,6 +16,7 @@ export default function BigWidget({ data, index }: any) {
           <div className="relative md:w-[calc(100%-400px)]">
             <Link
               href={`/brands/${data.slug}`}
+              prefetch={false}
               className="relative block aspect-[928/619] h-full w-full overflow-hidden bg-white"
             >
               {data.HeroImage.data?.attributes.url && (
@@ -30,30 +31,31 @@ export default function BigWidget({ data, index }: any) {
                 />
               )}
             </Link>
-              <span
-                className={`absolute bottom-[20px] z-10 pointer-events-none ${
-                  isEven ? "right-[-34px] rotate-90" : "left-[-25px] -rotate-90"
-                }`}
-              >
-                <Pattern spanWidth={3} color={data.BrandColor} />
-              </span>
-              <span
-                className={`absolute top-[-60px] z-10 pointer-events-none ${
-                  isEven ? "left-[50px]" : "right-[50px]"
-                }`}
-              >
-                <Pattern spanWidth={6} color={data.BrandColor} />
-              </span>
+            <span
+              className={`absolute bottom-[20px] z-10 pointer-events-none ${
+                isEven ? "right-[-34px] rotate-90" : "left-[-25px] -rotate-90"
+              }`}
+            >
+              <Pattern spanWidth={3} color={data.BrandColor} />
+            </span>
+            <span
+              className={`absolute top-[-60px] z-10 pointer-events-none ${
+                isEven ? "left-[50px]" : "right-[50px]"
+              }`}
+            >
+              <Pattern spanWidth={6} color={data.BrandColor} />
+            </span>
           </div>
           <div className="flex w-auto flex-col gap-[10px] md:w-[400px]">
-            
-            <h2 className="text-[36px] font-medium">{data.SmallWidgetTitle}
-              <Link href={`/brands/${data.slug}`}>
+            <h2 className="text-[36px] font-medium">
+              {data.SmallWidgetTitle}
+              <Link href={`/brands/${data.slug}`} prefetch={false}>
                 <span
                   aria-hidden="true"
                   className="absolute inset-0 z-[11]"
                 ></span>
-              </Link></h2>
+              </Link>
+            </h2>
             <h5 className="text-xl font-light">{data.SmallWidgetSubTitle}</h5>
             <div className="relative my-20 flex h-[280px] items-center justify-start pl-[50px]">
               <span

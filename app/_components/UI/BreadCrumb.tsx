@@ -19,6 +19,7 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({ list, noPadding }) => {
               {item.link ? (
                 <>
                   <Link
+                    prefetch={false}
                     href={item.link}
                     className="cursor-pointer pr-[6px] hover:underline"
                   >

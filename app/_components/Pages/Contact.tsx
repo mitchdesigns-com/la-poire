@@ -135,7 +135,7 @@ export default function Contact({ data }: any) {
                   width={16}
                   height={23}
                 />
-                <Link href={data.Directions} target="_blank">
+                <Link href={data.Directions} target="_blank" prefetch={false}>
                   {t("get_direction")}
                 </Link>
               </Button>

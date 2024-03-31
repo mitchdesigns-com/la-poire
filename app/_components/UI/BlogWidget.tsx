@@ -18,6 +18,7 @@ export default function BlogWidget({ data }: any) {
     <div>
       <Link
         href={`/blog/${data.slug}`}
+        prefetch={false}
         className="relative block aspect-square overflow-hidden rounded-[45px]"
       >
         <Image src="/images/blog_widget.webp" alt="blog" fill />
@@ -29,6 +30,7 @@ export default function BlogWidget({ data }: any) {
         <h2 className="text-2xl">
           <Link
             href="/blog/single"
+            prefetch={false}
             dangerouslySetInnerHTML={{ __html: data.Title }}
           />
         </h2>

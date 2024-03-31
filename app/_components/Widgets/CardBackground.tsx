@@ -22,7 +22,7 @@ export default function CardBackground({ img, text, color, slug }: any) {
           <LeftUp />
         </span>
       </span>
-      <Link href={`/brands/${slug}`}>
+      <Link href={`/brands/${slug}`} prefetch={false}>
         <span aria-hidden="true" className="absolute inset-0 z-[11]"></span>
       </Link>
     </div>

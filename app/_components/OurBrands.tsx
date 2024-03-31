@@ -17,7 +17,7 @@ export default function OurBrands({
   if (title) {
     mainTitle = title;
   }
-  
+
   return (
     <div className="container mx-auto flex flex-col gap-20 py-50 text-center md:gap-40 md:py-100">
       <h4 className="text-xl font-light text-black">{mainTitle}</h4>
@@ -60,7 +60,7 @@ export default function OurBrands({
               />
             )}
             {!noLinks && (
-              <Link href={`/brands/${card.attributes.slug}`}>
+              <Link href={`/brands/${card.attributes.slug}`} prefetch={false}>
                 <span
                   aria-hidden="true"
                   className="absolute inset-0 z-[11]"

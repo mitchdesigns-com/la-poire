@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div className="bg-black">
       <div className="container mx-auto flex flex-col items-center justify-center gap-4 border-none pb-4 pt-4 text-center md:pt-64">
-        <Link href="/" className="my-20 inline-block md:my-0">
+        <Link href="/" className="my-20 inline-block md:my-0" prefetch={false}>
           <Image
             src="/images/logo-white.webp"
             alt="La Poire Logo"

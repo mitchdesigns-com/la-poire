@@ -15,7 +15,9 @@ export default function Header() {
   const pathname = usePathname();
   const isBrandsPage = pathname.includes("brands/");
   // const brandSlug = isBrandsPage ? pathname.replace("/brands/", "") : null;
-  const brandSlug = isBrandsPage ? pathname.substring(pathname.indexOf("brands/") + 7) : null;
+  const brandSlug = isBrandsPage
+    ? pathname.substring(pathname.indexOf("brands/") + 7)
+    : null;
   const isHome = pathname === "/" || pathname === "/en/" || pathname === "/ar/";
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenMob, setIsOpenMob] = useState(false);
@@ -30,16 +32,16 @@ export default function Header() {
         isBrandsPage ? "absolute left-0 right-0 top-0 z-10" : ""
       }`}
     >
-    <ProgressBar
-      height="4px"
-      color="#00754A"
-      options={{ showSpinner: false }}
-      shallowRouting
-    />
+      <ProgressBar
+        height="4px"
+        color="#00754A"
+        options={{ showSpinner: false }}
+        shallowRouting
+      />
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div>
-            <Link href="/">
+            <Link prefetch={false} href="/">
               <Image
                 src={`/images/logo-${brandSlug ? "white" : "gold"}.webp`}
                 alt="La Poire Logo"
@@ -72,7 +74,9 @@ export default function Header() {
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
-                    <Link href={"/"}>{t("home")}</Link>
+                    <Link prefetch={false} href={"/"}>
+                      {t("home")}
+                    </Link>
                   </li>
                   <li
                     className={`${
@@ -83,7 +87,9 @@ export default function Header() {
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
-                    <Link href={"/about"}>{t("about")}</Link>
+                    <Link prefetch={false} href={"/about"}>
+                      {t("about")}
+                    </Link>
                   </li>
                   <li
                     className={`${
@@ -94,7 +100,9 @@ export default function Header() {
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
-                    <Link href={"/brands"}>{t("brands")}</Link>
+                    <Link prefetch={false} href={"/brands"}>
+                      {t("brands")}
+                    </Link>
                   </li>
                   <li
                     className={`${
@@ -105,7 +113,9 @@ export default function Header() {
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
-                    <Link href={"/franchise"}>{t("franchise")}</Link>
+                    <Link prefetch={false} href={"/franchise"}>
+                      {t("franchise")}
+                    </Link>
                   </li>
                   <li
                     className={`${
@@ -116,7 +126,9 @@ export default function Header() {
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
-                    <Link href={"/blog"}>{t("blog")}</Link>
+                    <Link prefetch={false} href={"/blog"}>
+                      {t("blog")}
+                    </Link>
                   </li>
                   <li
                     className={`${
@@ -127,15 +139,21 @@ export default function Header() {
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
                   >
-                    <Link href={"/job"}>{t("job")}</Link>
+                    <Link prefetch={false} href={"/job"}>
+                      {t("job")}
+                    </Link>
                   </li>
                 </ul>
               </nav>
             </div>
             <div className="flex items-center gap-2">
-              <LangSwitcher headerTransparent={isBrandsPage && brandSlug || isHome}/>
+              <LangSwitcher
+                headerTransparent={(isBrandsPage && brandSlug) || isHome}
+              />
               <Button variant="primary" size="normalSm" pill uppercase>
-                <Link href={"/contact-us"}>{t("contact")}</Link>
+                <Link prefetch={false} href={"/contact-us"}>
+                  {t("contact")}
+                </Link>
               </Button>
             </div>
           </div>
@@ -154,22 +172,34 @@ export default function Header() {
                     className={`ease 1xl:text-base flex flex-col items-center gap-20 whitespace-nowrap pb-34 text-sm uppercase`}
                   >
                     <li>
-                      <Link href={"/"}>{t("home")}</Link>
+                      <Link prefetch={false} href={"/"}>
+                        {t("home")}
+                      </Link>
                     </li>
                     <li>
-                      <Link href={"/about"}>{t("about")}</Link>
+                      <Link prefetch={false} href={"/about"}>
+                        {t("about")}
+                      </Link>
                     </li>
                     <li>
-                      <Link href={"/brands"}>{t("brands")}</Link>
+                      <Link prefetch={false} href={"/brands"}>
+                        {t("brands")}
+                      </Link>
                     </li>
                     <li>
-                      <Link href={"/franchise"}>{t("franchise")}</Link>
+                      <Link prefetch={false} href={"/franchise"}>
+                        {t("franchise")}
+                      </Link>
                     </li>
                     <li>
-                      <Link href={"/blog"}>{t("blog")}</Link>
+                      <Link prefetch={false} href={"/blog"}>
+                        {t("blog")}
+                      </Link>
                     </li>
                     <li>
-                      <Link href={"/job"}>{t("job")}</Link>
+                      <Link prefetch={false} href={"/job"}>
+                        {t("job")}
+                      </Link>
                     </li>
                   </ul>
                   <Button
@@ -179,7 +209,9 @@ export default function Header() {
                     uppercase
                     className="mx-auto block"
                   >
-                    <Link href={"/contact-us"}>{t("contact")}</Link>
+                    <Link prefetch={false} href={"/contact-us"}>
+                      {t("contact")}
+                    </Link>
                   </Button>
                   <div className="mx-auto"></div>
                 </nav>

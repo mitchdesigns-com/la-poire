@@ -1,19 +1,18 @@
 export const runtime = "edge";
 import About from "@/app/_components/Pages/About";
-import { fetchingAboutPage, fetchingBrandsSEO } from "@/app/api/fetcher";
-import { SITE_TITLE } from "@/app/config";
+import AboutData from "@/app/api/about-page.json";
+import { fetchingAboutPage, fetchingAboutSEO } from "@/app/api/fetcher";
 import { getLocale } from "next-intl/server";
-import AboutData from "@/app/api/about-page.json"
 
-export async function  generateMetadata({ params }: any) {
-  const categoryInfo = await fetchingBrandsSEO(params);
-  const seo = categoryInfo?.data.attributes?.SEO;
-  const pageTitle = 'About';
-  const pageDescription = "metaDescription";
+export async function generateMetadata({ params }: any) {
+  const categoryInfo = await fetchingAboutSEO();
+  const seo = categoryInfo?.data.attributes?.SEO[0];
+  const pageTitle = seo.metaTitle;
+  const pageDescription = seo.metaDescription;
   const pageKeywords = `key`;
-
+  
   return {
-    title: `${pageTitle} | ${SITE_TITLE}`,
+    title: pageTitle ?? "",
     description: pageDescription ?? "",
     keywords: pageKeywords ?? "",
   };

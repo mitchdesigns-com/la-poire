@@ -6,22 +6,23 @@ import Hamburger from "./Hamburger";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
+import LangSwitcher from "./LangSwitcher";
 // import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const t = useTranslations("nav");
   const pathname = usePathname();
-  // console.log("pathname", pathname);
-  // const isBrandsPage = pathname === "/brands";
   const isBrandsPage = pathname.includes("brands/");
-  const brandSlug = isBrandsPage ? pathname.replace("/brands/", "") : null;
-  const isHome = pathname === "/" || pathname === "/en" || pathname === "/ar";
+  // const brandSlug = isBrandsPage ? pathname.replace("/brands/", "") : null;
+  const brandSlug = isBrandsPage ? pathname.substring(pathname.indexOf("brands/") + 7) : null;
+  const isHome = pathname === "/" || pathname === "/en/" || pathname === "/ar/";
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenMob, setIsOpenMob] = useState(false);
   const isAboutPage = pathname.includes("/about");
-  const isSingleBrand = pathname.includes("brands/");
+  const isSingleBrand = pathname.includes("/brands");
   // console.log('pathname',pathname)
-  // console.log('brandSlug',brandSlug)
+  console.log('isBrandsPage',isBrandsPage)
+  console.log('brandSlug',brandSlug)
   return (
     <header
       className={`header-page md:py-34 py-14 px-4 ${
@@ -59,7 +60,7 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : isSingleBrand
+                        : isBrandsPage && brandSlug
                         ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
@@ -70,7 +71,7 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : isSingleBrand
+                        : isBrandsPage && brandSlug
                         ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
@@ -81,7 +82,7 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : isSingleBrand
+                        : isBrandsPage && brandSlug
                         ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
@@ -92,7 +93,7 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : isSingleBrand
+                        : isBrandsPage && brandSlug
                         ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
@@ -103,7 +104,7 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : isSingleBrand
+                        : isBrandsPage && brandSlug
                         ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
@@ -114,7 +115,7 @@ export default function Header() {
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
-                        : isSingleBrand
+                        : isBrandsPage && brandSlug
                         ? "text-white hover:underline"
                         : "text-gold hover:text-goldHover hover:underline"
                     }`}
@@ -124,7 +125,8 @@ export default function Header() {
                 </ul>
               </nav>
             </div>
-            <div>
+            <div className="flex items-center gap-2">
+              <LangSwitcher headerTransparent={isBrandsPage && brandSlug || isHome}/>
               <Button variant="primary" size="normalSm" pill uppercase>
                 <Link href={"/contact-us"}>{t("contact")}</Link>
               </Button>

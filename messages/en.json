@@ -24,7 +24,13 @@
       "since":"since",
       "locations":"locations",
       "employees":"employees",
-      "find_us":"Find La Poire Patisserie on"
+      "get_direction":"Get Direction on Map",
+      "find_us":"Find La Poire Patisserie on",
+      "for_your_registration":"for your registration",
+      "thank_you":"Thank you",
+      "lng_en":"English",
+      "lng_ar":"Arabic",
+      "back_to_lapoire":"Back To La poire"
     },
     "signature":{
       "title":"Signature Delights",

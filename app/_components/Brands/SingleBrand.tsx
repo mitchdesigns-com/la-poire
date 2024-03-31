@@ -39,7 +39,7 @@ export default function SingleBrand({ dataFetched }: any) {
   //   fetchData();
   // }, [params,locale]);
 
-  console.log("dataFetched>>", dataFetched);
+  // console.log("dataFetched>>", dataFetched);
 
   return (
     <div>

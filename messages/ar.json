@@ -24,7 +24,13 @@
     "since":"منذ",
     "locations":"الأماكن",
     "employees":"الموظفين",
-    "find_us":"ابحث عن حلويات لابوار على"
+    "get_direction":"الحصول على الاتجاه على الخريطة",
+    "find_us":"ابحث عن حلويات لابوار على",
+    "for_your_registration":"للتسجيل الخاص بك",
+    "thank_you":"شكرا لك",
+    "lng_en":"إنجليزي",
+    "lng_ar":"عربي",
+    "back_to_lapoire":"العودة إلى لابوار"
   },
   "signature": {
     "title": "التواقيع لذيذة",

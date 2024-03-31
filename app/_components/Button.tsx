@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { cls } from "../utils/helpers";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "danger" | "border" | "borderGold";
+  variant?: "primary" | "secondary" | "danger" | "border" | "borderGold" | "borderGray";
   size?: "small" | "normal" | "large" | "square" | "normalSm";
   pill?: boolean;
   uppercase?: boolean;
@@ -27,6 +27,7 @@ interface ButtonClasses {
     secondary: string;
     border: string;
     borderGold: string;
+    borderGray: string;
     danger: string;
   };
 }
@@ -39,7 +40,8 @@ const classes: ButtonClasses = {
   size: {
     small: "px-2 py-1 text-sm",
     normal: "px-34 py-2 md:text-sm md:leading-[21px] tracking-[0.02em] text-sm",
-    normalSm: "1xl:px-34 px-20 1xl:py-2 py-1 1xl:text-sm 1xl:leading-[21px] tracking-[0.02em] text-xs",
+    normalSm:
+      "1xl:px-34 px-20 1xl:py-2 py-1 1xl:text-sm 1xl:leading-[21px] tracking-[0.02em] text-xs",
     square: "p-4",
     large: "px-8 py-3 text-lg",
   },
@@ -49,8 +51,8 @@ const classes: ButtonClasses = {
     secondary:
       "bg-bej hover:bg-black focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 text-gray-900 hover:text-white",
     border: "bg-white hover:bg-gray4 text-gray-900 border-2 border-gray4",
-    borderGold:
-      "bg-white hover:bg-gray4 text-gray-900 border-2 border-goldLight",
+    borderGold: "bg-white hover:bg-gray4 text-gray-900 border-2 border-goldLight",
+    borderGray: "bg-white hover:bg-gray text-gray border-2 border-gray hover:text-white",
     danger:
       "bg-red-500 hover:bg-red-800 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 text-white",
   },
@@ -103,8 +105,9 @@ Button.propTypes = {
     "danger",
     "border",
     "borderGold",
+    "borderGray",
   ]),
-  size: PropTypes.oneOf(["small", "normal", "large", "square","normalSm"]),
+  size: PropTypes.oneOf(["small", "normal", "large", "square", "normalSm"]),
 };
 Button.displayName = "Button";
 export default Button;

@@ -1,9 +1,22 @@
 export const runtime = "edge";
 import Home from "@/app/_components/Home";
-import { fetchingHomePage } from "../api/fetcher";
+import { fetchingHomePage, fetchingHomeSEO } from "../api/fetcher";
 import { getLocale } from "next-intl/server";
 import HomeData from "@/app/api/home.json"
 
+export async function generateMetadata({ params }: any) {
+  const categoryInfo = await fetchingHomeSEO();
+  const seo = categoryInfo?.data.attributes?.SEO;
+  const pageTitle = seo?.metaTitle;
+  const pageDescription = seo?.metaDescription;
+  const pageKeywords = `key`;
+  
+  return {
+    title: pageTitle ?? "",
+    description: pageDescription ?? "",
+    keywords: pageKeywords ?? "",
+  };
+}
 export default async function page() {
   const locale = await getLocale();
   const dataFetched = await fetchingHomePage(locale);

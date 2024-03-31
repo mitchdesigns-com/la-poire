@@ -6,7 +6,9 @@ import { getLocale } from "next-intl/server";
 
 export async function generateMetadata({ params }: any) {
   const categoryInfo = await fetchingAboutSEO();
-  const seo = categoryInfo?.data.attributes?.SEO[0];
+  const seo = categoryInfo?.data?.attributes?.SEO[0];
+  // console.log('categoryInfo',categoryInfo)
+  // console.log('seo',seo)
   const pageTitle = seo.metaTitle;
   const pageDescription = seo.metaDescription;
   const pageKeywords = `key`;

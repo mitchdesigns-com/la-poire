@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
 import LangSwitcher from "./LangSwitcher";
+import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 // import { usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -21,14 +22,20 @@ export default function Header() {
   const isAboutPage = pathname.includes("/about");
   const isSingleBrand = pathname.includes("/brands");
   // console.log('pathname',pathname)
-  console.log('isBrandsPage',isBrandsPage)
-  console.log('brandSlug',brandSlug)
+  // console.log('isBrandsPage',isBrandsPage)
+  // console.log('brandSlug',brandSlug)
   return (
     <header
       className={`header-page md:py-34 py-14 px-4 ${
         isBrandsPage ? "absolute left-0 right-0 top-0 z-10" : ""
       }`}
     >
+    <ProgressBar
+      height="4px"
+      color="#00754A"
+      options={{ showSpinner: false }}
+      shallowRouting
+    />
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div>

@@ -131,7 +131,7 @@ const ProgressItem = ({ data, active, onItemClick, index }: any) => {
             <span className="h-36 w-[2px] rounded-full bg-goldLight bg-opacity-50" />
           </span>
         )}
-        <span className="absolute bottom-full flex gap-[50px] ltr:left-full ltr:-translate-x-[45px] rtl:right-full rtl:translate-x-[45px]">
+        <span className="absolute bottom-full flex gap-[50px] ltr:left-full ltr:-translate-x-[47px] rtl:right-full rtl:translate-x-[47px]">
           <span
             className={`w-[2px] h-36 bg-goldLight group-hover:before:opacity-100 relative before:absolute before:w-10 before:h-10 before:bg-goldLight before:opacity-0 before:transition-all transition-all before:rounded-full ltr:before:-left-[4px] rtl:before:-right-[4px] rounded-full ${
               active ? "bg-opacity-100 before:opacity-100" : "bg-opacity-70"

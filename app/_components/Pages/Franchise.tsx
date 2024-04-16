@@ -12,9 +12,10 @@ import RequestSection from "../UI/RequestSection";
 import FAQsSection from "../UI/FAQsSection";
 import Newsletter from "../Newsletter";
 import { fetchingFranchisePage } from "@/app/api/fetcher";
+import { useTranslations } from "next-intl";
 
 export default function Franchise({data}:any) {
-  // const [data, setData] = useState<any | null>(null);
+  const t = useTranslations('common');
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -119,7 +120,7 @@ export default function Franchise({data}:any) {
         </div>
       </div>
 
-      <OurBrands title="Our Franchised Brands" brandsList={data.brands.data} />
+      <OurBrands title={t('our_franchised_brands')} brandsList={data.brands.data} />
 
       <div className="container mx-auto mb-30 mt-30 md:mb-95">
         <span className="block h-[5px] w-full bg-gray3" />

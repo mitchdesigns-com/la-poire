@@ -30,12 +30,34 @@
     "thank_you":"شكرا لك",
     "lng_en":"إنجليزي",
     "lng_ar":"عربي",
-    "back_to_lapoire":"العودة إلى لابوار"
+    "back_to_lapoire":"العودة إلى لابوار",
+    "faq_title":"الأسئلة الشائعة",
+    "faq_subtitle":"تمت الإجابة على أسئلتك - الكشف عن الفرصة الرائعة.",
+    "our_franchised_brands":"علاماتنا التجارية الحاصلة على الامتياز",
+    "blog": "الأخبار والمدونة",
+    "blog_subtitle":"Latest Scoops & Sweet Stories from La Poire"
   },
   "signature": {
     "title": "التواقيع لذيذة",
     "subtitle": "استمتع بأشهى الحلويات الرمزية",
     "subtitle2": "من لا بوار"
+  },
+  "franchise":{
+    "req_subtitle":"Ready to Embark on this Venture?",
+    "req_title":"Let's Shape the Future Together",
+    "req_paragraph":"Have questions? Eager to get started? Reach out to our franchising team today. We're here to assist, guide, and collaborate, ensuring a prosperous and fulfilling journey ahead."
+  },
+  "form":{
+    "full_name":"الاسم بالكامل",
+    "mobile_number":"رقم الهاتف",
+    "company":"الشركة",
+    "title":"اللقب",
+    "message":"الرسالة",
+    "submit":"تقديم الطلب",
+    "back_to_lapoire":"العودة إلى لابوار",
+    "for_your_registration":"للتسجيل الخاص بك",
+    "thank_you":"شكرا لك",
+    "email_address":"البريد الإلكتروني"
   },
   "nav": {
     "home": "الصفحة الرئيسية",

@@ -5,11 +5,11 @@ import { fetchingAboutPage, fetchingAboutSEO } from "@/app/api/fetcher";
 import { getLocale } from "next-intl/server";
 
 export async function generateMetadata({ params }: any) {
-  const categoryInfo = await fetchingAboutSEO();
+  const categoryInfo = await fetchingAboutSEO(params.locale);
   const seo = categoryInfo?.data?.attributes?.SEO[0];
-  // console.log('categoryInfo',categoryInfo)
+  // console.log('params.local',params.local)
   // console.log('seo',seo)
-  const pageTitle = seo.metaTitle;
+  const pageTitle = seo.metaTitle??"";
   const pageDescription = seo.metaDescription;
   const pageKeywords = `key`;
   

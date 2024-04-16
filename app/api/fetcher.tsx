@@ -9,11 +9,12 @@ const sendRequest = async (
 ): Promise<any> => {
   const url = `${apiUrl}/${endpoint}`;
   try {
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
+    // process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
     const response = await fetch(url, {
       method: "GET",
       headers: {
         ...options.headers,
+        // 'Cache-Control': 'no-cache',
       },
     });
 
@@ -46,8 +47,8 @@ export const fetchingContactUsPage = async (lang:string ='en') => {
   const endpoint = `contact-us-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
-export const fetchingJobsPage = async () => {
-  const endpoint = `jobs-page?populate=deep&locale=en`;
+export const fetchingJobsPage = async (lang:string ='en') => {
+  const endpoint = `jobs-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
 
@@ -72,25 +73,37 @@ export const fetchingAllBrands = async (lang:string ='en') => {
   const endpoint = `our-brands?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
+export const fetchingFAQs = async (lang:string ='en') => {
+  const endpoint = `faqs?populate=deep&locale=${lang}`;
+  return sendRequest(endpoint);
+};
 
 // export const fetchingBrandsSEO = async () => {
 //   const endpoint = 'our-brands?populate=deep';
 //   return sendRequest(endpoint);
 // };
 
-export const fetchingAboutSEO = async () => {
-  return sendRequest("about-page?populate[0]=SEO", {});
+export const fetchingAboutSEO = async (lang:string ='en') => {
+  return sendRequest(`about-page?populate[0]=SEO&locale=${lang}`, {});
 };
-
-export const fetchingHomeSEO = async () => {
-  return sendRequest("home?populate[0]=SEO", {});
+export const fetchingBlogsSEO = async (lang:string ='en') => {
+  return sendRequest(`blogs-page?populate[0]=SEO&locale=${lang}`, {});
 };
-export const fetchingSingleBrandSEO = async (slug: string) => {
+export const fetchingFranchisePageSEO = async (lang:string ='en') => {
+  return sendRequest(`franchise-page?populate[0]=SEO&locale=${lang}`, {});
+};
+export const fetchingHomeSEO = async (lang:string ='en') => {
+  return sendRequest(`home?populate[0]=SEO&locale=${lang}`, {});
+};
+export const fetchingSingleBrandSEO = async (lang:string ='en',slug: string) => {
   // return sendRequest("brands-page?populate[0]=SEO", {});
-  return sendRequest(`our-brands?filters[slug][$eq]=${slug}&populate[0]=SEO`, {});
+  return sendRequest(`our-brands?filters[slug][$eq]=${slug}&populate[0]=SEO&locale=${lang}`, {});
 };
-const fetchingBrandsSEO = async () => {
-  return sendRequest("brands-page?populate[0]=SEO", {});
+export const fetchingJobsSEO = async (lang:string ='en') => {
+  return sendRequest(`jobs-page?populate[0]=SEO&locale=${lang}`, {});
+};
+const fetchingBrandsSEO = async (lang:string ='en') => {
+  return sendRequest(`brands-page?populate[0]=SEO&locale=${lang}`, {});
 };
 const fetchingSingleBrand = async (slug: string,lang:string ='en') => {
   return sendRequest(`our-brands?filters[slug][$eq]=${slug}&populate=deep&locale=${lang}`, {});
@@ -98,8 +111,8 @@ const fetchingSingleBrand = async (slug: string,lang:string ='en') => {
 export const fetchingSingleBlog = async (slug: string) => {
   return sendRequest(`blogs?filters[slug][$eq]=${slug}&populate=deep`, {});
 };
-export const fetchingSingleJob = async (slug: string) => {
-  return sendRequest(`jobs?filters[slug][$eq]=${slug}&populate=deep`, {});
+export const fetchingSingleJob = async (slug: string,lang:string ='en') => {
+  return sendRequest(`jobs?filters[slug][$eq]=${slug}&populate=deep&locale=${lang}`, {});
 };
 
 export { fetchingBrandsSEO, fetchingSingleBrand };

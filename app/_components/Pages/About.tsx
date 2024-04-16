@@ -161,7 +161,7 @@ export default function About({data}:any) {
               <h3 className="text-2xl font-bold">{data.StoryTitle}</h3>
               <h4 className="text-xl font-light">{data.StorySubTitle}</h4>
               <div
-                className={`space-y-34 mt-34 ${pt_serif.className} text-greenBlack leading-[28px]`}
+                className={`mt-34 ${locale === "ar"?`${arfont.className} leading-[28px] space-y-22`:`${pt_serif.className} leading-[28px] space-y-34`} text-greenBlack`}
               >
                 {storyParagraphs}
               </div>

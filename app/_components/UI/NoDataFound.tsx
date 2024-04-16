@@ -3,7 +3,7 @@ import Button from "../Button";
 
 export default function NoDataFound() {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 py-7">
+    <div className="flex min-h-screen flex-col items-center justify-center gap-4 py-7">
       <h2 className="text-3xl font-semibold">No Data Here</h2>
       <p>Make sure to open correct URL</p>
       <Button

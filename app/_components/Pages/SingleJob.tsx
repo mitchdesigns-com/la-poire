@@ -29,7 +29,11 @@ export default function SingleJob({ data }: any) {
         <div className="container mx-auto">
           <div className="flex justify-between">
             <div className="flex items-center gap-30">
-              <Link href="/job" className="inline-block w-[35px] rotate-180">
+              <Link
+                href="/job"
+                className="inline-block w-[35px] rotate-180"
+                prefetch={false}
+              >
                 <LongArrow />
               </Link>
               <div>
@@ -71,12 +75,7 @@ export default function SingleJob({ data }: any) {
                   ))}
                 </ul>
                 <div className="mt-50">
-                  <Button
-                    variant="primary"
-                    size="large"
-                    pill
-                    uppercase
-                  >
+                  <Button variant="primary" size="large" pill uppercase>
                     Apply Now
                   </Button>
                 </div>

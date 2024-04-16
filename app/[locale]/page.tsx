@@ -5,7 +5,7 @@ import { getLocale } from "next-intl/server";
 import HomeData from "@/app/api/home.json"
 
 export async function generateMetadata({ params }: any) {
-  const categoryInfo = await fetchingHomeSEO();
+  const categoryInfo = await fetchingHomeSEO(params.locale);
   const seo = categoryInfo?.data.attributes?.SEO;
   const pageTitle = seo?.metaTitle;
   const pageDescription = seo?.metaDescription;

@@ -101,7 +101,13 @@ const ContactForm = () => {
             required
           />
           <div className="pt-4">
-            <Button variant="primary" size="normal" uppercase pill type="submit">
+            <Button
+              variant="primary"
+              size="normal"
+              uppercase
+              pill
+              type="submit"
+            >
               SUBMIT REQUEST
             </Button>
           </div>

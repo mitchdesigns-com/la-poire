@@ -3,7 +3,7 @@ import Brands from "@/app/_components/Pages/Brands";
 import { fetchingBrandsSEO } from "@/app/api/fetcher";
 
 export async function generateMetadata({ params }: any) {
-  const categoryInfo = await fetchingBrandsSEO();
+  const categoryInfo = await fetchingBrandsSEO(params.locale);
   const seo = categoryInfo?.data?.attributes?.SEO??null;
   const pageTitle = seo?.metaTitle??"Brands Page";
   const pageDescription = seo?.metaDescription??"Brands Page";

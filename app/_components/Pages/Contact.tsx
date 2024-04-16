@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import HeroWithTitles from "../HeroWithTitles";
-import { roboto } from "@/app/fonts";
+import { arfont, roboto } from "@/app/fonts";
 import PhoneCall from "../Icons/PhoneCall";
 import Mail from "../Icons/Mail";
 import SectionTitles from "../UI/SectionTitles";
@@ -13,11 +13,12 @@ import Button from "../Button";
 import Image from "next/image";
 import Newsletter from "../Newsletter";
 import { Link } from "@/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Contact({ data }: any) {
   const [hasWindow, setHasWindow] = useState(false);
   const t = useTranslations("common");
+  const locale = useLocale();
   useEffect(() => {
     if (typeof window !== "undefined") {
       setHasWindow(true);
@@ -49,7 +50,7 @@ export default function Contact({ data }: any) {
               <div className="flex flex-col items-start gap-30" key={index}>
                 <div>
                   <h4
-                    className={`text-greenBlack ${roboto.className} text-xl font-semibold`}
+                    className={`text-greenBlack ${locale === "ar"?arfont.className:roboto.className} text-xl font-semibold`}
                   >
                     {item.Title}
                   </h4>

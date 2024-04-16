@@ -10,7 +10,7 @@ import { fetchingAllJobs } from "@/app/api/fetcher";
 
 export default function Jobs({ data }: any) {
   const mediaUrl = process.env.NEXT_PUBLIC_API_URL;
-  console.log(mediaUrl);
+  // console.log(mediaUrl);
   
   const [dataJobs, setDataJobs] = useState<any | null>(null);
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Jobs({ data }: any) {
     fetchData();
   }, []);
 
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <HeroWithTitles

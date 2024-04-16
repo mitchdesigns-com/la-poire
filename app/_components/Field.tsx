@@ -7,13 +7,13 @@ export default function Field({ text, label, textarea, ...props }: any) {
       {textarea ? (
         <textarea
           {...props}
-          className="border border-gray4 py-10 px-14 placeholder:text-gray text-black text-sm rounded-md w-full h-[160px] resize-none"
+          className="h-[160px] w-full resize-none rounded-md border border-gray4 px-14 py-10 text-sm text-black placeholder:text-gray"
         />
       ) : (
         <input
           type="text"
           {...props}
-          className="w-full py-10 text-sm text-black border rounded-md border-gray4 px-14 placeholder:text-gray"
+          className="w-full rounded-md border border-gray4 px-14 py-10 text-sm text-black placeholder:text-gray"
         />
       )}
     </div>

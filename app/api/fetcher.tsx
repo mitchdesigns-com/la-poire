@@ -14,7 +14,7 @@ const sendRequest = async (
       method: "GET",
       headers: {
         ...options.headers,
-        // 'Cache-Control': 'no-cache',
+        'Cache-Control': 'no-cache',
       },
     });
 

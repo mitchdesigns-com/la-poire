@@ -58,7 +58,6 @@ export default function SocialMedia({ data }: any) {
     });
   }
 
-  // Check if YouTubeLink exists and add to the array
   if (data.YouTubeLink) {
     socialMediaLinks.push({
       name: "Youtube",

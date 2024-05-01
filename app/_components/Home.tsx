@@ -1,17 +1,17 @@
-"use client";
-import { useEffect, useState } from "react";
+// "use client";
+// import { useEffect, useState } from "react";
 import AboutSection from "./AboutSection";
 import LandingHero from "./LandingHero";
 import MoreAbout from "./MoreAbout";
 import Newsletter from "./Newsletter";
 import OurBrands from "./OurBrands";
-import Testimonials from "./Testimonials";
-import { fetchLanding } from "../api/general";
-import { fetchingAllBrands } from "../api/fetcher";
-import { useLocale } from "next-intl";
+// import Testimonials from "./Testimonials";
+// import { fetchLanding } from "../api/general";
+// import { fetchingAllBrands } from "../api/fetcher";
+// import { useLocale } from "next-intl";
 import SectionTextImage from "./UI/SectionTextImage";
-import BlogWidget from "./UI/BlogWidget";
-import SectionTitles from "./UI/SectionTitles";
+// import BlogWidget from "./UI/BlogWidget";
+// import SectionTitles from "./UI/SectionTitles";
 
 export default function Home({ data }: any) {
   if (!data) {
@@ -36,7 +36,7 @@ export default function Home({ data }: any) {
       <div className="container mx-auto mb-30 mt-30 md:mb-95">
         <span className="block h-[5px] w-full bg-gray3" />
       </div>
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       {data.attributes.FranchiseBox.map((item: any, index: number) => (
         <SectionTextImage
@@ -58,7 +58,7 @@ export default function Home({ data }: any) {
         </SectionTextImage>
       ))}
 
-      <div className="container mx-auto flex flex-col gap-40 py-72">
+      {/* <div className="container mx-auto flex flex-col gap-40 py-72">
         <section>
           <SectionTitles
             title={data.attributes.blogTitle}
@@ -72,7 +72,7 @@ export default function Home({ data }: any) {
             <BlogWidget key={index} data={item.attributes} />
           ))}
         </div>
-      </div>
+      </div> */}
       <Newsletter />
     </div>
   );

@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import HeroWithTitles from "../HeroWithTitles";
 import MissionVision from "../UI/MissionVision";
-import TimeLine from "../UI/TimeLine";
+// import TimeLine from "../UI/TimeLine";
 import PlayBtn from "../Icons/PlayBtn";
 import OurBrands from "../OurBrands";
 import { arfont, pt_serif } from "@/app/fonts";
 import { motion } from "@/app/lib/motion";
 import MoreAboutItem from "../MoreAboutItem";
 import AboutSection from "../AboutSection";
-import OurTeam from "../UI/OurTeam";
+// import OurTeam from "../UI/OurTeam";
 import Newsletter from "../Newsletter";
 import SectionTextImage from "../UI/SectionTextImage";
 import { fetchingAboutPage } from "@/app/api/fetcher";
@@ -104,7 +104,7 @@ export default function About({data}:any) {
         subtitle={data.Subtitle}
         description={data.Description}
       />
-      <TimeLine data={timeLineData} />
+      {/* <TimeLine data={timeLineData} /> */}
 
       <div className="mb-[278px] bg-goldLight px-4 py-64">
         <div className="container mx-auto">
@@ -213,7 +213,7 @@ export default function About({data}:any) {
 
       <AboutSection color="pink" />
 
-      <OurTeam />
+      {/* <OurTeam /> */}
 
       {data.SectionTextImage.map((item: any, index: number) => (
         <SectionTextImage

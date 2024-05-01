@@ -27,24 +27,10 @@ export default function AboutSection({ color }: any) {
             >
               {locale === "en" ? (
                 <>
-                  La Poire&apos;s{" "}
-                  <span className={`${textColor} relative`}>
-                    four brands{" "}
-                    <motion.span
-                      className="absolute left-0 right-0 top-full"
-                      initial={{ opacity: 0, y: -20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.2, delay: 1 * 0.2 }}
-                      viewport={{ once: true }}
-                    >
-                      <CurveBorder />
-                    </motion.span>
-                  </span>{" "}
-                  in <span className={`${textColor}`}>Egypt</span> symbolize a
-                  fusion of <span className={`${textColor}`}>joy</span> and
-                  happiness in every cherished{" "}
-                  <span className={`${textColor}`}>moment</span>. Through our
-                  unwavering commitment, we{" "}
+                  La Poire a fusion of{" "}
+                  <span className={`${textColor}`}>joy</span> and happiness in
+                  every cherished <span className={`${textColor}`}>moment</span>
+                  . Through our unwavering commitment, we{" "}
                   <span className={`${textColor}`}>transform</span> fleeting
                   moments into memorable, delightful experiences.
                 </>
@@ -52,7 +38,8 @@ export default function AboutSection({ color }: any) {
                 <>
                   علامات
                   <span className={`${textColor} relative`}>
-                    {" "} لابوار الأربعة
+                    {" "}
+                    لابوار الأربعة
                     <motion.span
                       className="absolute left-0 right-0 top-full"
                       initial={{ opacity: 0, y: -20 }}
@@ -66,7 +53,7 @@ export default function AboutSection({ color }: any) {
                   في <span className={`${textColor}`}>مصر</span> رمز لاندماج
                   الفرح والسعادة في كل{" "}
                   <span className={`${textColor}`}>لحظة</span>. من خلال التزامنا
-                  تجاه عملاءنا، <span className={`${textColor}`}>نحول {" "}</span>
+                  تجاه عملاءنا، <span className={`${textColor}`}>نحول </span>
                   اللحظات العابرة إلى تجارب مبهجة لا تُنسى.
                 </>
               )}

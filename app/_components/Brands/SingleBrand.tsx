@@ -62,7 +62,7 @@ export default function SingleBrand({ dataFetched }: any) {
         numbersDescription={dataFetched?.BlackSectionDescription}
       />
       <TheExperience data={dataFetched} />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <SocialMedia data={dataFetched} />
       <OurPromise data={dataFetched} />
       <ExploreMore parentSlug={dataFetched?.slug ?? ""} />

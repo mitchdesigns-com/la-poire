@@ -117,7 +117,7 @@ export default function Header() {
                       {t("franchise")}
                     </Link>
                   </li>
-                  <li
+                  {/* <li
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
@@ -129,7 +129,7 @@ export default function Header() {
                     <Link prefetch={false} href={"/blog"}>
                       {t("blog")}
                     </Link>
-                  </li>
+                  </li> */}
                   <li
                     className={`${
                       isHome
@@ -191,11 +191,11 @@ export default function Header() {
                         {t("franchise")}
                       </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link prefetch={false} href={"/blog"}>
                         {t("blog")}
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link prefetch={false} href={"/job"}>
                         {t("job")}

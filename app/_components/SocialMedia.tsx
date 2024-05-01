@@ -72,7 +72,9 @@ export default function SocialMedia({ data }: any) {
       className={`bg-${data.BrandColor} min-h-[50vh] py-44 flex justify-center items-center text-center text-white`}
     >
       <div className="flex flex-col items-center justify-center">
-        <h6 className="text-xl font-semibold">{t('find_us')}</h6>
+        <h6 className="text-xl font-semibold">
+          {t("find") || "Find"} {data.Title || ""} {t("on") || "on"}
+        </h6>
         <h3 className="relative px-2 text-[60px] font-bold before:absolute before:bottom-3 before:left-0 before:right-0 before:z-0 before:h-2 before:bg-black before:content-['']">
           <span className="relative">{t('social_media')}</span>
         </h3>

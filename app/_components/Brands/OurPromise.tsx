@@ -26,7 +26,7 @@ export default function OurPromise({ data }: any) {
             height={data.OurPromiseImage_1.data.attributes.height}
           />
           <div className="pt-22 text-center">
-            <h3 className="text-2xl font-bold text-white">{t('our_sweet_promise')}</h3>
+            <h3 className="text-2xl font-bold text-white">{data.OurPromiseTitle?data.OurPromiseTitle:t('our_sweet_promise')}</h3>
             <p className={`text-goldLight text-[34px] mt-[50px] ${locale === "ar"?arfont.className:pt_serif.className}`}>{data.OurPromiseDescription}</p>
           </div>
           <Image

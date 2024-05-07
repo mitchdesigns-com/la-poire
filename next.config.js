@@ -5,8 +5,6 @@ module.exports = withNextIntl({
   trailingSlash: true,
   experimental: {
     esmExternals: false,
-    // Remove the runtime property
-    // runtime: 'experimental-edge',
   },
   reactStrictMode: true,
   swcMinify: true,
@@ -21,24 +19,15 @@ module.exports = withNextIntl({
   async headers() {
     return [
       {
-        source: '/:all*(svg|jpg|png|webp)',
+        source: "/:all*(svg|jpg|png|webp)",
         locale: false,
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=9999999999, stale-while-revalidate',
-          },
-          {
-            key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' https://ap.gateway.mastercard.com",
-          },
-          // {
-          //   key:"origin",
-          //   value:"new.abuauf.com"
-          // }
+            key: "Cache-Control",
+            value: "public, max-age=9999999999, stale-while-revalidate",
+          }
         ],
       },
-    ]
+    ];
   },
-  // Other Next.js configuration ...
 });

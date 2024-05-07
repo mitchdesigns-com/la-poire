@@ -7,11 +7,10 @@ import SectionTitles from "../UI/SectionTitles";
 import ReactPlayer from "react-player";
 import PlayBtn from "../Icons/PlayBtn";
 import OurBrands from "../OurBrands";
-import Testimonials from "../Testimonials";
+// import Testimonials from "../Testimonials";
 import RequestSection from "../UI/RequestSection";
 import FAQsSection from "../UI/FAQsSection";
 import Newsletter from "../Newsletter";
-import { fetchingFranchisePage } from "@/app/api/fetcher";
 import { useTranslations } from "next-intl";
 
 export default function Franchise({data}:any) {
@@ -23,18 +22,6 @@ export default function Franchise({data}:any) {
     }
   }, []);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const result = await fetchingFranchisePage();
-  //       setData(result.data.attributes);
-  //     } catch (error) {
-  //       console.error("Error fetching home page data:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
   if (!data) {
     return null;
   }
@@ -125,7 +112,7 @@ export default function Franchise({data}:any) {
       <div className="container mx-auto mb-30 mt-30 md:mb-95">
         <span className="block h-[5px] w-full bg-gray3" />
       </div>
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       <RequestSection />
 

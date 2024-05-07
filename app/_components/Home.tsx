@@ -1,5 +1,4 @@
-// "use client";
-// import { useEffect, useState } from "react";
+import Link from "next/link";
 import AboutSection from "./AboutSection";
 import LandingHero from "./LandingHero";
 import MoreAbout from "./MoreAbout";
@@ -10,14 +9,17 @@ import OurBrands from "./OurBrands";
 // import { fetchingAllBrands } from "../api/fetcher";
 // import { useLocale } from "next-intl";
 import SectionTextImage from "./UI/SectionTextImage";
+import { useTranslations } from "next-intl";
 // import BlogWidget from "./UI/BlogWidget";
 // import SectionTitles from "./UI/SectionTitles";
 
 export default function Home({ data }: any) {
+  const t = useTranslations("common");
+
   if (!data) {
     return null;
   }
-  // console.log("data Home", data);
+
   return (
     <div>
       <LandingHero
@@ -54,25 +56,32 @@ export default function Home({ data }: any) {
             <h2 className="text-5xl font-semibold">{item.Title}</h2>
             <h4 className="mt-10 text-gray5">{item.Subtitle}</h4>
             <p className="mt-30 text-base">{item.Description}</p>
+            <h4 className="mt-10 text-gray5 hover:text-greenBlack">
+              <Link href="/franchise" prefetch={false}>
+                <span className="inline-block underline">
+                  {t("SeeMore")}
+                </span>
+              </Link>
+            </h4>
           </div>
         </SectionTextImage>
       ))}
 
       {/* <div className="container mx-auto flex flex-col gap-40 py-72">
-        <section>
-          <SectionTitles
-            title={data.attributes.blogTitle}
-            tagline={data.attributes.blogSubTitle}
-            taglineAlt
-            taglineLight
-          />
-        </section>
-        <div className="grid gap-x-[25px] gap-y-[50px] md:grid-cols-4">
-          {data.attributes.blogs.data.map((item: any, index: number) => (
-            <BlogWidget key={index} data={item.attributes} />
-          ))}
-        </div>
-      </div> */}
+      <section>
+        <SectionTitles
+          title={data.attributes.blogTitle}
+          tagline={data.attributes.blogSubTitle}
+          taglineAlt
+          taglineLight
+        />
+      </section>
+      <div className="grid gap-x-[25px] gap-y-[50px] md:grid-cols-4">
+        {data.attributes.blogs.data.map((item: any, index: number) => (
+          <BlogWidget key={index} data={item.attributes} />
+        ))}
+      </div>
+    </div> */}
       <Newsletter />
     </div>
   );

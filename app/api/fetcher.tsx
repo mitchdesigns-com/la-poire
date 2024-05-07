@@ -14,12 +14,14 @@ const sendRequest = async (
       method: "GET",
       headers: {
         ...options.headers,
-        'Cache-Control': 'no-cache',
+        // "Cache-Control": "no-cache",
+        // "Access-Control-Request-Headers": "cache-control",
       },
+      redirect: "follow",
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(`HTTP error! Status: ${response}`);
     }
 
     const data = await response.json();

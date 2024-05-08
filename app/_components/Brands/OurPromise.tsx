@@ -13,21 +13,32 @@ export default function OurPromise({ data }: any) {
     return <SocialMediaLoader />;
   }
   return (
-    <div className="flex h-screen items-center justify-center bg-black py-100">
-      <div className="container mx-auto">
-        <div className="flex gap-[47px]">
+    <div className="flex xl:h-screen items-center justify-center bg-black py-100">
+      <div className="container mx-auto px-4">
+        <div className="flex lg:flex-row flex-col gap-[47px] items-center">
           <Image
             src={
               process.env.NEXT_PUBLIC_API_URL +
               data.OurPromiseImage_1.data.attributes.url
             }
             alt="img alt"
-            width={data.OurPromiseImage_1.data.attributes.width}
-            height={data.OurPromiseImage_1.data.attributes.height}
+            width={data.OurPromiseImage_1.data.attributes.width / 2}
+            height={data.OurPromiseImage_1.data.attributes.height / 2}
+            className=" object-contain"
           />
           <div className="pt-22 text-center">
-            <h3 className="text-2xl font-bold text-white">{data.OurPromiseTitle?data.OurPromiseTitle:t('our_sweet_promise')}</h3>
-            <p className={`text-goldLight text-[34px] mt-[50px] ${locale === "ar"?arfont.className:pt_serif.className}`}>{data.OurPromiseDescription}</p>
+            <h3 className="text-2xl font-bold text-white">
+              {data.OurPromiseTitle
+                ? data.OurPromiseTitle
+                : t("our_sweet_promise")}
+            </h3>
+            <p
+              className={`text-goldLight xl:text-[34px] text-[29px] xl:mt-[50px] mt-[40px] ${
+                locale === "ar" ? arfont.className : pt_serif.className
+              }`}
+            >
+              {data.OurPromiseDescription}
+            </p>
           </div>
           <Image
             src={
@@ -35,8 +46,9 @@ export default function OurPromise({ data }: any) {
               data.OurPromiseImage_2.data.attributes.url
             }
             alt="img alt"
-            width={data.OurPromiseImage_2.data.attributes.width}
-            height={data.OurPromiseImage_2.data.attributes.height}
+            width={data.OurPromiseImage_2.data.attributes.width / 2}
+            height={data.OurPromiseImage_2.data.attributes.height / 2}
+            className=" object-contain"
           />
         </div>
       </div>

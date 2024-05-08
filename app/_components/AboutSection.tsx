@@ -17,7 +17,7 @@ export default function AboutSection({ color }: any) {
   }
   return (
     <div className={`md:py-130 py-40 px-4 ${baseColor}`}>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-[20px]">
         <div className="flex flex-wrap-reverse items-center justify-between gap-40 md:flex-nowrap md:gap-0">
           <div className="w-auto">
             <p

@@ -89,4 +89,9 @@ export const fetchingSingleJob = async (slug: string) => {
   return sendRequest(`jobs?filters[slug][$eq]=${slug}&populate=deep`, {});
 };
 
+export const fetchingGeneralPage = async () => {
+  const endpoint = `settings?populate=deep`;
+  return sendRequest(endpoint);
+};
+
 export { fetchingBrandsSEO, fetchingSingleBrand };

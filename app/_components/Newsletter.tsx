@@ -2,15 +2,34 @@
 import { motion } from "@/app/lib/motion";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
 import Field from "./Field";
 import CampaignMonitorForm from "./CampaignMonitorForm";
 import { useTranslations } from "next-intl";
+import { fetchingGeneralPage } from "../api/fetcher";
 
 export default function Newsletter() {
   const t = useTranslations("common");
   const [show] = useState(true);
+  interface GeneralData {
+    data: any;
+  }
+  let [dataFetchedContent, setDataFetched] = useState<GeneralData | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetchingGeneralPage();
+        setDataFetched(result);
+      } catch (error) {
+        // console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const dataImages = dataFetchedContent?.data.attributes;
 
   return (
     <div className="bg-black p-10">
@@ -24,14 +43,24 @@ export default function Newsletter() {
             viewport={{ once: true }}
           >
             <Image
-              src="/images/newsletter/newsletter_01.webp"
+              src={
+                dataImages?.Images
+                  ? process.env.NEXT_PUBLIC_API_URL +
+                  dataImages?.Images[0].Image?.data.attributes.url
+                  : "/images/placeholder.webp"
+              } 
               alt="img alt"
               width={490}
               height={277}
             />
 
             <Image
-              src="/images/newsletter/newsletter_02.webp"
+               src={
+                dataImages?.Images
+                  ? process.env.NEXT_PUBLIC_API_URL +
+                  dataImages?.Images[1].Image?.data.attributes.url
+                  : "/images/placeholder.webp"
+              } 
               alt="img alt"
               width={490}
               height={277}
@@ -46,14 +75,24 @@ export default function Newsletter() {
               viewport={{ once: true }}
             >
               <Image
-                src="/images/newsletter/newsletter_03.webp"
+              src={
+                  dataImages?.Images
+                    ? process.env.NEXT_PUBLIC_API_URL +
+                    dataImages?.Images[2].Image?.data.attributes.url
+                    : "/images/placeholder.webp"
+                } 
                 alt="img alt"
                 width={240}
                 height={91}
                 className="max-w-[calc(50%-5px)]"
               />
               <Image
-                src="/images/newsletter/newsletter_04.webp"
+                src={
+                  dataImages?.Images
+                    ? process.env.NEXT_PUBLIC_API_URL +
+                    dataImages?.Images[3].Image?.data.attributes.url
+                    : "/images/placeholder.webp"
+                } 
                 alt="img alt"
                 width={240}
                 height={91}
@@ -77,14 +116,24 @@ export default function Newsletter() {
               viewport={{ once: true }}
             >
               <Image
-                src="/images/newsletter/newsletter_05.webp"
+                src={
+                  dataImages?.Images
+                    ? process.env.NEXT_PUBLIC_API_URL +
+                    dataImages?.Images[6].Image?.data.attributes.url
+                    : "/images/placeholder.webp"
+                } 
                 alt="img alt"
                 width={240}
                 height={91}
                 className="max-w-[calc(50%-5px)]"
               />
               <Image
-                src="/images/newsletter/newsletter_06.webp"
+                 src={
+                  dataImages?.Images
+                    ? process.env.NEXT_PUBLIC_API_URL +
+                    dataImages?.Images[7].Image?.data.attributes.url
+                    : "/images/placeholder.webp"
+                } 
                 alt="img alt"
                 width={240}
                 height={91}
@@ -100,13 +149,23 @@ export default function Newsletter() {
             viewport={{ once: true }}
           >
             <Image
-              src="/images/newsletter/newsletter_07.webp"
+               src={
+                dataImages?.Images
+                  ? process.env.NEXT_PUBLIC_API_URL +
+                  dataImages?.Images[4].Image?.data.attributes.url
+                  : "/images/placeholder.webp"
+              } 
               alt="img alt"
               width={490}
               height={277}
             />
             <Image
-              src="/images/newsletter/newsletter_08.webp"
+              src={
+                dataImages?.Images
+                  ? process.env.NEXT_PUBLIC_API_URL +
+                  dataImages?.Images[5].Image?.data.attributes.url
+                  : "/images/placeholder.webp"
+              } 
               alt="img alt"
               width={490}
               height={277}

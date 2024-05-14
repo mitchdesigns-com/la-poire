@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function ProductWidget({ data }: any) {
@@ -6,7 +7,7 @@ export default function ProductWidget({ data }: any) {
   console.log(data, "single product")
   return (
     <div className="bg-bej drop-shadow-md rounded-[10px] p-20 w-full relative">
-      <a href={data.Link} target="_blank" className={`${data.Link == null?" pointer-events-none":""} z-10 absolute inset-0`}></a>
+      <Link href={data.Link} target="_blank" className={`${data.Link === null ? " pointer-events-none" : ""} z-10 absolute inset-0`} />
       <div className="aspect-square relative">
         <Image
           alt=""

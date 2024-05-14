@@ -2,10 +2,14 @@ import Image from "next/image";
 import React from "react";
 
 export default function ProductWidget({ data }: any) {
-    const categoryNames = data.categories.data.map((category: any) => category.attributes.name);
-
+  const categoryNames = data.categories.data.map((category: any) => category.attributes.name);
+  console.log(data, "single product")
   return (
-    <div className="bg-bej drop-shadow-md rounded-[10px] p-20 w-full">
+    <div className="bg-bej drop-shadow-md rounded-[10px] p-20 w-full relative">
+      {data.Link != null && (
+        <a href={data.Link} target="_blank" className=" z-10 absolute inset-0"></a>
+
+      )}
       <div className="aspect-square relative">
         <Image
           alt=""

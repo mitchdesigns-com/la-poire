@@ -37,7 +37,8 @@
       "our_franchised_brands":"Our Franchised Brands",
       "blog":"News & Blog",
       "blog_subtitle":"Latest Scoops & Sweet Stories from La Poire",
-      "SeeMore": "See More"
+      "SeeMore": "See More",
+      "LearnMore":"Learn More"
     },
     "signature":{
       "title":"Signature Delights",
@@ -67,7 +68,7 @@
       "brands":"Brands",
       "franchise":"Franchise",
       "blog":"News & Blog",
-      "job":"Job",
+      "job":"Jobs",
       "contact": "Contact Us"
     }
   }

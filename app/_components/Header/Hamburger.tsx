@@ -5,7 +5,7 @@ export default function Hamburger({ isOpen, setIsOpen }: any) {
 
   return (
     <button
-      className="group flex h-22 w-22 flex-col items-end justify-center gap-[4px]"
+      className="group lg:opacity-0 lg:pointer-events-none flex h-22 w-22 flex-col items-end justify-center gap-[4px]"
       onClick={() => setIsOpen(!isOpen)}
     >
       <div

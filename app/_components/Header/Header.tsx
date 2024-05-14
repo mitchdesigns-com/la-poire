@@ -19,7 +19,7 @@ export default function Header() {
     ? pathname.substring(pathname.indexOf("brands/") + 7)
     : null;
   const isHome = pathname === "/" || pathname === "/en/" || pathname === "/ar/";
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [isOpenMob, setIsOpenMob] = useState(false);
   const isAboutPage = pathname.includes("/about");
   const isSingleBrand = pathname.includes("/brands");

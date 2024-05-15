@@ -1,5 +1,5 @@
 "use client";
-import { fetchingSingleBrand } from "@/app/api/fetcher";
+// import { fetchingSingleBrand } from "@/app/api/fetcher";
 import React, { useEffect, useState } from "react";
 import HeroWithTitles from "../HeroWithTitles";
 import Story from "./Story";
@@ -12,7 +12,7 @@ import OurPromise from "./OurPromise";
 import ExploreMore from "./ExploreMore";
 import ExtraMoreAbout from "../ExtraMoreAbout";
 import Newsletter from "../Newsletter";
-import mockData from "./mockData.json";
+// import mockData from "./mockData.json";
 import { useLocale, useTranslations } from "next-intl";
 
 interface BrandData {

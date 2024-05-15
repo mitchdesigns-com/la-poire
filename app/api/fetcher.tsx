@@ -117,4 +117,9 @@ export const fetchingSingleJob = async (slug: string,lang:string ='en') => {
   return sendRequest(`jobs?filters[slug][$eq]=${slug}&populate=deep&locale=${lang}`, {});
 };
 
+export const fetchingGeneralPage = async () => {
+  const endpoint = `settings?populate=deep`;
+  return sendRequest(endpoint);
+};
+
 export { fetchingBrandsSEO, fetchingSingleBrand };

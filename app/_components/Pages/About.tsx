@@ -15,10 +15,11 @@ import AboutSection from "../AboutSection";
 import Newsletter from "../Newsletter";
 import SectionTextImage from "../UI/SectionTextImage";
 import { fetchingAboutPage } from "@/app/api/fetcher";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function About({data}:any) {
-  // const [data, setData] = useState<any | null>(null);
+  const t = useTranslations("common");
   const locale = useLocale();
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
@@ -231,6 +232,12 @@ export default function About({data}:any) {
             <h2 className="text-5xl font-semibold">{item.Title}</h2>
             <h4 className="mt-10 text-goldLight">{item.Subtitle}</h4>
             <p className="mt-30 text-base">{item.Description}</p>
+
+            {item.Buttonlink && (
+              <Link className=" hover:bg-greenDark hover:text-white transition border-greenDark border-[2px] rounded-full font-semibold uppercase w-fit text-greenDark text-sm py-2 px-[35px] mt-10" href={`/${locale=="en"?`${item.Buttonlink}`:`ar/${item.Buttonlink}`}`}>
+                  {t("LearnMore")}
+              </Link>
+            )}
           </div>
         </SectionTextImage>
       ))}

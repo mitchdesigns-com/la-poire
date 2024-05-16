@@ -6,7 +6,7 @@ import Story from "./Story";
 import Signature from "./Signature";
 import CompanyStats from "../CompanyStats";
 import TheExperience from "../TheExperience";
-import Testimonials from "../Testimonials";
+// import Testimonials from "../Testimonials";
 import SocialMedia from "../SocialMedia";
 import OurPromise from "./OurPromise";
 import ExploreMore from "./ExploreMore";
@@ -34,6 +34,9 @@ export default function SingleBrand({ dataFetched }: any) {
   const productsSectionData = {
     SignatureDelightsDescription: dataFetched?.SignatureDelightsDescription,
     BrandColor: dataFetched?.BrandColor,
+    ProductsSectionTitle: dataFetched?.ProductsSectionTitle,
+    ProductsSectionSubTitle_1: dataFetched?.ProductsSectionSubTitle_1,
+    ProductsSectionSubTitle_2: dataFetched?.ProductsSectionSubTitle_2,
   };
   return (
     <div>

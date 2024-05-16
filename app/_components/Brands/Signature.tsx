@@ -26,9 +26,11 @@ export default function Signature({ products, data }: any) {
               className={`bg-${data?.BrandColor} absolute top-0 ltr:left-[calc(50vw-(140px*2))] rtl:right-[calc(50vw-(140px*2))] bottom-0 w-[100vw] select-none pointer-events-none`}
             ></span>
             <div className="relative text-white">
-              <h3 className="text-2xl font-bold">{t("title")}</h3>
+              <h3 className="text-2xl font-bold">
+                {data?.ProductsSectionTitle}
+              </h3>
               <h5 className="text-xl font-light">
-                {t("subtitle")} <br /> {t("subtitle2")}
+                {data?.ProductsSectionSubTitle_1} <br />{data?.ProductsSectionSubTitle_2}
               </h5>
             </div>
           </div>

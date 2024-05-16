@@ -1,3 +1,4 @@
+"use-client";
 export const runtime = "edge";
 import SingleBrand from "@/app/_components/Brands/SingleBrand";
 import { fetchingSingleBrand, fetchingSingleBrandSEO } from "@/app/api/fetcher";
@@ -5,8 +6,6 @@ import { fetchingSingleBrand, fetchingSingleBrandSEO } from "@/app/api/fetcher";
 export async function generateMetadata({ params }: any) {
   const categoryInfo = await fetchingSingleBrandSEO(params.locale, params.brandSlug);
   const seo = categoryInfo?.data[0]?.attributes?.SEO;
-  // console.log('categoryInfo',categoryInfo)
-  // console.log('seo',seo)
   const pageTitle = seo?.metaTitle??"Single Brand Page";
   const pageDescription = seo?.metaDescription??"Single Brand metaDescription";
   const pageKeywords = `key`;

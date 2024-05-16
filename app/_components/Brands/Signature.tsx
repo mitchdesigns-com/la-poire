@@ -3,7 +3,7 @@ import Pattern from "../Pattern";
 import ProductSlider from "../Product/ProductSlider";
 import SignatureLoader from "./SignatureLoader";
 
-export default function Signature({ data }: any) {
+export default function Signature({ products, data }: any) {
   const t = useTranslations("signature");
   if (!data) {
     // You can render a placeholder or handle this case as needed
@@ -34,7 +34,7 @@ export default function Signature({ data }: any) {
           </div>
         </div>
       </div>
-      <ProductSlider data={data} />
+      <ProductSlider data={products} />
       <div className="container mx-auto pb-34">
         <div className="flex">
           <div className="w-[445px] shrink-0 flex-grow-0 ps-3" />

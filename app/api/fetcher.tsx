@@ -18,7 +18,7 @@ const sendRequest = async (
         // "Access-Control-Request-Headers": "cache-control",
       },
       redirect: "follow",
-      next: {revalidate: 5000}
+      next: {revalidate: 3600}
     });
 
     if (!response.ok) {

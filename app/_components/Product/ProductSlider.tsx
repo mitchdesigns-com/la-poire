@@ -5,8 +5,8 @@ import SlickMultipleItems from "../SlickMultipleItems";
 import ProductWidget from "./ProductWidget";
 
 export default function ProductSlider({ data }: any) {
-  const list = data?.products.data;
-
+  const list = data?.data;
+  console.log('products list: ', list);
   // Sort the list by orderNumber
   const sortedList = Array.isArray(list)
     ? list.sort(

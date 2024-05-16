@@ -1,4 +1,3 @@
-"use client";
 import { useTranslations } from "next-intl";
 import Pattern from "../Pattern";
 import ProductSlider from "../Product/ProductSlider";

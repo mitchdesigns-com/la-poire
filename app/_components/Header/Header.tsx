@@ -50,7 +50,7 @@ export default function Header() {
               />
             </Link>
           </div>
-          <div className="hidden w-[1004px] items-center justify-between md:max-w-[calc(100vw-388px)] lg:flex">
+          <div className="hidden max-w-[1004px] items-center justify-between xl:max-w-[calc(100vw-388px)] md:max-w-[calc(100vw-200px)] lg:flex">
             <div className="1xl:gap-54 flex items-center gap-4 ltr:-translate-x-34 rtl:translate-x-34">
               {isHome && <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />}
               <nav
@@ -63,7 +63,7 @@ export default function Header() {
                 }`}
               >
                 <ul
-                  className={`ease 1xl:text-base flex items-center gap-20 whitespace-nowrap text-sm uppercase transition`}
+                  className={`ease 1xl:text-base ml-[20px] flex items-center xl:gap-[48px] gap-20 whitespace-nowrap text-sm uppercase transition`}
                 >
                   <li
                     className={`${
@@ -169,7 +169,7 @@ export default function Header() {
               <div className="relative h-full w-full">
                 <nav className="relative z-10 bg-white pb-8 pt-4">
                   <ul
-                    className={`ease 1xl:text-base flex flex-col items-center gap-20 whitespace-nowrap pb-34 text-sm uppercase`}
+                    className={`ease 1xl:text-base ml-[20px] flex flex-col items-center gap-20 whitespace-nowrap pb-34 text-sm uppercase`}
                   >
                     <li>
                       <Link prefetch={false} href={"/"}>

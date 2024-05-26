@@ -36,7 +36,7 @@ export default function Franchise({data}:any) {
         max_width
       />
 
-      <div className="bg-greenBlack py-72">
+      <div className="bg-greenBlack px-4 pt-72 pb-72 lg:py-72">
         <div className="container mx-auto">
           <div className="flex flex-col gap-50">
             <section className="text-center text-white">
@@ -70,7 +70,7 @@ export default function Franchise({data}:any) {
         </div>
       </div>
 
-      <div className="mb-[278px] bg-goldLight px-4 py-64">
+      <div className="mb-[152px] md:mb-[278px] bg-goldLight pb-[170px] px-4 pt-[72px] md:py-64">
         <div className="container mx-auto">
           <div className="mb-7 flex flex-col items-center justify-center gap-20">
             <section className="text-center text-black">
@@ -81,7 +81,7 @@ export default function Franchise({data}:any) {
                 sub_title={data.FranchiseSectionTitle.Subtitle}
               />
             </section>
-            <p className="mx-auto max-w-3xl text-center text-sm text-gray5">
+            <p className="mx-auto max-w-3xl text-center text-[12px] md:text-sm text-gray5">
               {data.FranchiseSectionTitle.Description}
             </p>
           </div>
@@ -109,8 +109,8 @@ export default function Franchise({data}:any) {
 
       <OurBrands title={t('our_franchised_brands')} brandsList={data.brands.data} />
 
-      <div className="container mx-auto mb-30 mt-30 md:mb-95">
-        <span className="block h-[5px] w-full bg-gray3" />
+      <div className="container hidden lg:block  mx-auto mb-30 mt-30 md:mb-95">
+        <span className="lg:block h-[5px] w-full hidden bg-gray3" />
       </div>
       {/* <Testimonials /> */}
 

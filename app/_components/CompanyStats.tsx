@@ -26,16 +26,16 @@ export default function CompanyStats({
 }: any) {
   const t = useTranslations("common");
   return (
-    <div className={`${fullWidth ? "bg-black pt-[174px] pb-[155px]" : ""}`}>
+    <div className={`${fullWidth ? "bg-black py-[75px] mb-72 lg:mb-0" : ""}`}>
       <div
-        className={`flex lg:flex-row flex-col flex-nowrap gap-10 w-full items-center justify-evenly ${
+        className={`flex lg:flex-row flex-col-reverse	 flex-nowrap  gap-10 w-full items-center justify-evenly md:pr-[113px]  ${
           fullWidth ? "mx-auto container" : ""
         }`}
       >
         <div
-          className={`${fullWidth ? "md:w-[461px] w-full" : "md:w-460 w-full "}`}
+          className={`${fullWidth ? "  pl-3 md:w-[461px] w-full" : "px-4  xl:w-460 w-full "}`}
         >
-          <h3 className="mb-5 text-xl text-white">{numbersTitle}</h3>
+          <h3 className="mb-5  md:ml-0 text-m mb:text-xl text-white">{numbersTitle}</h3>
           <p
             className={`${
               fullWidth
@@ -46,7 +46,7 @@ export default function CompanyStats({
             {numbersDescription}
           </p>
         </div>
-        <div className="flex w-full items-stretch justify-center gap-22 pt-20 md:justify-between md:gap-0 md:pt-0">
+        <div className="flex w-full items-stretch justify-center sm:gap-[17px] pt-20 md:justify-between md:gap-0 md:pt-0">
           {brandsNum && <StatItem value={brandsNum} label={t("brands")} />}
           {sinceYear && <StatItem value={sinceYear} label={t("since")} removeComma/>}
           <StatItem value={locationsNum} label={t("locations")} />

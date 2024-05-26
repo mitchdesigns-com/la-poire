@@ -15,7 +15,7 @@ export default function MissionVision({ data }: any) {
   }
   console.log(data)
   return (
-    <div className="mx-auto flex max-w-[960px] flex-col items-center justify-center gap-20 text-center">
+    <div className="mx-auto flex max-w-[960px] flex-col items-center justify-center gap-20 lg:gap-50 text-center">
       <div className="bg-goldDarker  w-[280px] mx-auto flex justify-center gap-2 rounded-full p-[6px]">
         <div>
           <input
@@ -56,7 +56,7 @@ export default function MissionVision({ data }: any) {
 
       </div>
       {selectedRadio === "visionRadio" ? (
-        <h2 className={`${locale === "ar" ? arfont.className : pt_serif.className} text-gray5 text-[36px]`}>
+        <h2 className={`${locale === "ar" ? arfont.className : pt_serif.className} text-gray5 text-[24px] md:text-[32px] lg:text-[36px]`}>
           {data.visionDescription}
         </h2>
       ) : (

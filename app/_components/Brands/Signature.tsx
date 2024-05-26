@@ -13,23 +13,23 @@ export default function Signature({ products, data }: any) {
     return null;
   }
   return (
-    <div className="relative -mb-44 py-56">
-      <div className="container mx-auto">
-        <div className="flex">
-          <div className="w-[445px] shrink-0 flex-grow-0 ps-3">
+    <div className="relative -mb-44 py-56 lg:ml-0  ">
+      <div className="container mx-auto flex-row">
+        <div className="flex gap-y-20 ">
+          <div className="xl:w-[445px] max-w-[1304]:w-[28%] w-[25%] shrink-0 flex-grow-0 pe-3">
             <div className="w-fit ltr:ml-auto rtl:mr-auto">
-              <Pattern />
+              <Pattern color={data?.BrandColor}  />
             </div>
           </div>
-          <div className="w-full px-54">
+          <div className="w-full px-6 lg:px-54 text-left">
             <span
-              className={`bg-${data?.BrandColor} absolute top-0 ltr:left-[calc(50vw-(140px*2))] rtl:right-[calc(50vw-(140px*2))] bottom-0 w-[100vw] select-none pointer-events-none`}
+              className={`bg-${data?.BrandColor} absolute top-0 md:ltr:left-[calc(50vw-(140px*2))] ltr:left-[80px] rtl:right-[calc(50vw-(140px*2))] bottom-0 w-[100vw] select-none pointer-events-none`}
             ></span>
-            <div className="relative text-white">
-              <h3 className="text-2xl font-bold">
+            <div className="relative text-white  ">
+              <h3 className="md:text-2xl text-xl font-bold mb-2 ">
                 {data?.ProductsSectionTitle}
               </h3>
-              <h5 className="text-xl font-light">
+              <h5 className="md:text-xl text-lg font-light mb-4 md:w-[50%] w-full text-pretty">
                 {data?.ProductsSectionSubTitle_1} <br />{data?.ProductsSectionSubTitle_2}
               </h5>
             </div>
@@ -39,8 +39,8 @@ export default function Signature({ products, data }: any) {
       <ProductSlider data={products} />
       <div className="container mx-auto pb-34">
         <div className="flex">
-          <div className="w-[445px] shrink-0 flex-grow-0 ps-3" />
-          <div className="w-full px-54">
+          <div className="xl:w-[445px] max-w-[1304]:w-[28%] w-[25%] shrink-0 flex-grow-0 pe-3" />
+          <div className="w-full px-6 lg:px-54 text-left">
             <div className="relative text-white">
               <p className="text-sm text-bej">
                 {data.SignatureDelightsDescription}

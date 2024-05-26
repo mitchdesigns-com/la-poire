@@ -26,15 +26,15 @@ export default function ExploreMore({ parentSlug }: any) {
     (brand: any) => brand.attributes.slug !== parentSlug
   );
   return (
-    <div className="container mx-auto flex flex-col items-center justify-center gap-40 py-70">
+    <div className="container mx-auto flex flex-col items-center justify-center gap-40 lg:py-70 pt-[42px]">
       <h3 className="text-xl font-light">{t("explore_more_brands")}</h3>
-      <div className="flex items-center justify-center gap-40">
+      <div className="flex flex-row items-center justify-center pl-4 pr-3 lg:gap-40">
         {Array.isArray(filteredBrands) &&
           filteredBrands.map((item: any, index: any) => (
             <Link
               href={`/brands/${item.attributes.slug}`}
               key={index}
-              className="relative inline-block h-[124px] w-[142px]"
+              className="relative inline-block h-[124px]  w-[130px] md:w-[142px]"
             >
               <Image
                 alt="brand logo alt"

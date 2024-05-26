@@ -19,13 +19,13 @@ export default function OurBrands({
   }
 
   return (
-    <div className="container mx-auto flex flex-col gap-20 py-50 text-center md:gap-40 md:py-100">
+    <div className="container  mx-auto flex flex-col  md:pt-100 gap-20 text-center pt-26 pb-[64px] md:gap-40 lg:py-100">
       <h4 className="text-xl font-light text-black">{mainTitle}</h4>
-      <div className="flex flex-wrap items-center justify-center gap-40 md:flex-nowrap">
+      <div className="flex flex-nowrap items-center justify-center lg:p-[30px] px-4   lg:gap-40 gap-20 ">
         {brandsList?.map((card: any, index: number) => (
           <motion.div
             key={index}
-            className="relative h-[124px] w-[142px]"
+            className="relative lg:h-[124px] h-[114px] w-[calc(100%/2-20px)] lg:w-[142px]"
             initial={{ opacity: 0, x: -100 * (index + 1) }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.2, delay: index * 0.5 }}
@@ -43,7 +43,7 @@ export default function OurBrands({
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 // style={{ objectFit: "contain" }}
-                className="max-w-[120px] object-contain"
+                className="max-w-[120px] object-contain m-auto" 
               />
             ) : (
               <Image
@@ -56,7 +56,7 @@ export default function OurBrands({
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 // style={{ objectFit: "contain" }}
-                className="max-w-[120px] object-contain"
+                className="max-w-[120px] object-contain m-auto"
               />
             )}
             {!noLinks && (

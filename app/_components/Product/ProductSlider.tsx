@@ -18,7 +18,7 @@ export default function ProductSlider({ data }: any) {
       {sortedList.map((item: any, index: any) => (
         <div
           key={index}
-          className="inline-flex flex-shrink-0 flex-grow-0 md:w-[260px] w-[calc(100vw-70px)]"
+          className="inline-flex flex-shrink-0 flex-grow-0 md:w-[260px] w-[calc(50vw)] z-40"
         >
           <ProductWidget data={item.attributes} />
         </div>

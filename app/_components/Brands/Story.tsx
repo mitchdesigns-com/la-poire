@@ -16,14 +16,14 @@ export default function Story({ data }: any) {
     )
   );
   return (
-    <div>
-      <div className="container mx-auto max-w-[1000px]">
-        <div className="relative aspect-[2/1]">
+    <div className="relative lg:before:content-none before:content-normal before:absolute before:inset-0 before:w-full before:h-[10%]">
+      <div className="container mx-auto max-w-[1000px] px-3">
+        <div className="relative lg:aspect-[2/1] aspect-[792/788] md:aspect-[1188/788] top-5" >
           {data.HeroImage.data?.attributes.url && (
             <Image
               alt=""
               fill
-              className="object-cover"
+              className="object-cover lg:h-full lg:p-0 "
               src={
                 process.env.NEXT_PUBLIC_API_URL +
                 data.HeroImage.data?.attributes.url
@@ -31,19 +31,19 @@ export default function Story({ data }: any) {
             />
           )}
         </div>
-        <div className="px-4 py-44">
-          <div className="flex">
-            <div className="w-[300px] shrink-0 flex-grow-0 pr-5">
-              <div className="relative flex h-full">
-                <Image
+        <div className="py-[45px] ">
+          <div className="flex  lg:items-start lg:flex-row lg:text:left flex-col items-center ">
+            <div className="w-[300px] shrink-0 flex-grow-0 pr-5 flex-col lg:flex-row ">
+              <div className="relative flex flex-col lg:h-full aspect-[198/234] w-[92px] lg:w-full m-auto items-center mb-[40px]" >
+                <Image  
                   alt="Brand Logo"
                   src={
                     process.env.NEXT_PUBLIC_API_URL +
                     data.Logo.data?.attributes.url
                   }
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="max-w-[160px] object-contain object-top"
+                  sizes="(max-width: 640px), (max-width: 1024px)"
+                  className=" w-[90px] lg:max-w-[160px] object-contain object-center lg:object-top 4 m-auto"
                   // width={data.Logo.data.attributes.width}
                   // height={data.Logo.data.attributes.height}
                   // width={data.Logo.data.attributes.width > 150 ? data.Logo.data.attributes.width / 2 : data.Logo.data.attributes.width}

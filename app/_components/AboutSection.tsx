@@ -16,12 +16,12 @@ export default function AboutSection({ color }: any) {
     textColor = "text-pinkDark";
   }
   return (
-    <div className={`md:py-130 py-40 px-4 ${baseColor}`}>
-      <div className="container mx-auto px-[20px]">
-        <div className="flex flex-wrap-reverse items-center justify-between gap-40 md:flex-nowrap md:gap-0">
+    <div className={`py-[64px] lg:py-[100px] px-4 ${baseColor}`}>
+      <div className="container mx-auto ">
+        <div className="flex flex-wrap-reverse items-center justify-center lg:justify-between gap-40 lg:flex-nowrap md:gap-0">
           <div className="w-auto">
             <p
-              className={`md:text-4xl text-2xl ${
+              className={`md:text-2xl lg:text-4xl text-[21px] md:pt-40 lg:pt-0 ${
                 locale === "ar" ? arfont.className : pt_serif.className
               } text-white md:w-[700px] w-full font-normal`}
             >
@@ -60,7 +60,7 @@ export default function AboutSection({ color }: any) {
             </p>
           </div>
           <motion.div
-            className={`w-[502px] h-[202] md:p-0 ${textColor}`}
+            className={`w-[300px] md:w-[502px] h-[202] md:p-0 ${textColor}`}
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.2, delay: 1 * 0.2 }}

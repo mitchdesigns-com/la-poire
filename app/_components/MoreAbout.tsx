@@ -72,18 +72,18 @@ export default function MoreAbout({ data }: any) {
           </div>
         )}
         <div className="flex flex-col gap-70 py-30">
-          <div className="flex flex-wrap-reverse items-center justify-between gap-20 text-black md:flex-nowrap md:gap-0">
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-20 text-black lg:flex-nowrap md:gap-0">
             <div>
-              <h3 className="text-2xl">{data.FeatureTitle}</h3>
-              <p className="text-xl font-light">
+              <h3 className="text-[18px] font-bold md:text-2xl">{data.FeatureTitle}</h3>
+              <p className="text-[14px] md:text-xl font-light">
                 {data.FeatureSubtitle}
               </p>
             </div>
             <div className="w-634">
-              <p className={`italic text-base ${locale === "ar"?arfont.className:pt_serif.className}`}>{data.FeatureDescription}</p>
+              <p className={`italic text-[12px] md:text-base ${locale === "ar"?arfont.className:pt_serif.className}`}>{data.FeatureDescription}</p>
             </div>
           </div>
-          <div className="flex grid-cols-2 flex-wrap justify-between gap-5 gap-y-26 md:grid-cols-3 md:gap-x-56">
+          <div className="flex grid-cols-2 flex-wrap justify-evenly  gap-5 gap-y-26 lg:grid-cols-3 lg:gap-x-56">
             {data.FeatureItem.map((item: any, index: number) => (
               <motion.div
                 key={index}

@@ -65,9 +65,9 @@ function SlickMultipleItems({
           <div className="wrapper">{children}</div>
         </div>
       </div>
-      <div className={`absolute mt-54 flex gap-4 ltr:left-[calc(50vw-519px)] rtl:right-[calc(50vw-519px)]`}>
+      <div className={`absolute mt-54  gap-4 lg:ltr:left-[calc(50vw-519px)] lg:flex hidden ltr:left-[calc(60vw-519px)] rtl:right-[calc(50vw-519px)]`}>
         <div
-          className={`${isEndOfRight ? " opacity-20 pointer-events-none" : ""} rtl:rotate-180`}
+          className={`${isEndOfLeft ? " opacity-20 pointer-events-none" : ""} rtl:rotate-180`}
           onClick={goLeft}
         >
           <Button variant="secondary" size="square" pill uppercase>

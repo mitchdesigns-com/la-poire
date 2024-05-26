@@ -6,9 +6,9 @@ export default function ExtraMoreAbout({title,content}:any) {
       ));
     
   return (
-    <div className="container px-[20px] mx-auto py-48">
-        <h4 className="text-xl font-semibold">{title}</h4>
-        <div className="mt-13 flex flex-col gap-20 text-gray">
+    <div className="container px-[20px] mx-auto py-48 lg:py-48">
+        <h4 className=" text-l  md:text-xl font-semibold lg:text-left text-center">{title}</h4>
+        <div className="mt-13 text-xs md;text-m flex flex-col gap-20 text-gray">
         {paragraphs}
         </div>
     </div>

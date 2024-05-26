@@ -52,11 +52,11 @@ export default function FAQsSection() {
   //   },
   // ];
   return (
-    <div className="bg-white py-95">
+    <div className="bg-white px-4 py-60 lg:py-95">
       <div className="container mx-auto">
         <div className="flex flex-col items-center justify-center">
-          <h3 className="text-xl font-normal text-gray5">{t('faq_subtitle')}</h3>
-          <h2 className="mb-40 text-5xl font-bold text-gray5">{t('faq_title')}</h2>
+          <h3 className="text-l md:text-xl font-normal text-gray5">{t('faq_subtitle')}</h3>
+          <h2 className="mb-40 text-3xl md:text-5xl font-bold text-gray5">{t('faq_title')}</h2>
           <Questions data={faqs} />
         </div>
       </div>

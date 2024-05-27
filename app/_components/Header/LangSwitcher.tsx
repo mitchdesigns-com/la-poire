@@ -20,32 +20,28 @@ const LangSwitcher = ({ headerTransparent }: any) => {
     setIsShow(!isShow);
   };
   return (
-    <div className="relative">
+    <div className='relative'>
       <div
-        className="flex cursor-pointer items-center gap-x-[6px]"
+        className='flex cursor-pointer items-center gap-x-[6px]'
         onClick={toggleLanguageSwitcher}
-        id="lang-button"
-      >
+        id='lang-button'>
         <span
-          className={`lg:group-hover:text-sea ${
+          className={`hidden lg:block group-hover:text-sea ${
             headerTransparent ? "text-white" : "text-sea"
-          }`}
-        >
+          }`}>
           <World />
         </span>
 
         <p
-          className={`uppercase text-base lg:group-hover:text-black customSmFontScreen ${
+          className={`hidden lg:block uppercase text-base group-hover:text-black customSmFontScreen ${
             headerTransparent ? "text-white" : " text-black"
-          }`}
-        >
+          }`}>
           {locale}
         </p>
         <span
-          className={`lg:group-hover:text-black ${
+          className={`hidden lg:block group-hover:text-black ${
             headerTransparent ? "text-white" : "text-black"
-          }`}
-        >
+          }`}>
           <ArrowDown />
         </span>
       </div>

@@ -3,7 +3,13 @@ import PropTypes from "prop-types";
 import { cls } from "../utils/helpers";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "danger" | "border" | "borderGold" | "borderGray";
+  variant?:
+    | "primary"
+    | "secondary"
+    | "danger"
+    | "border"
+    | "borderGold"
+    | "borderGray";
   size?: "small" | "normal" | "large" | "square" | "normalSm";
   pill?: boolean;
   uppercase?: boolean;
@@ -51,8 +57,10 @@ const classes: ButtonClasses = {
     secondary:
       "bg-bej hover:bg-black focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 text-gray-900 hover:text-white",
     border: "bg-white hover:bg-gray4 text-gray-900 border-2 border-gray4",
-    borderGold: "bg-white hover:bg-gray4 text-gray-900 border-2 border-goldLight",
-    borderGray: "bg-white hover:bg-gray text-gray border-2 border-gray hover:text-white",
+    borderGold:
+      "bg-white hover:bg-gray4 text-gray-900 border-2 border-goldLight",
+    borderGray:
+      "bg-white hover:bg-gray text-gray border-2 border-gray hover:text-white",
     danger:
       "bg-red-500 hover:bg-red-800 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 text-white",
   },
@@ -63,7 +71,8 @@ const Button = forwardRef(
     {
       children,
       type = "button",
-      className = "", variant ="primary",
+      className = "",
+      variant = "primary",
       size = "normal",
       pill,
       uppercase,
@@ -85,8 +94,7 @@ const Button = forwardRef(
                 ${disabled && classes.disabled}
                 ${className}
             `)}
-      {...props}
-    >
+      {...props}>
       {children}
     </button>
   )

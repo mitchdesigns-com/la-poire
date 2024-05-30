@@ -34,9 +34,27 @@ export default function Header() {
     if (window.innerWidth < 1024) {
       // check if screen width is less than 1024px
       setIsOpenMob(false);
+      enableScroll();
     }
   };
+  useEffect(() => {
+    if (isOpenMob) {
+      disableScroll();
+    } else {
+      enableScroll();
+    }
+    return () => {
+      enableScroll();
+    };
+  }, [isOpenMob]);
 
+  const disableScroll = () => {
+    document.body.style.overflow = "hidden";
+  };
+
+  const enableScroll = () => {
+    document.body.style.overflow = "";
+  };
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024 && isOpenMob) {
@@ -198,10 +216,10 @@ export default function Header() {
                   : "pointer-events-none opacity-0"
               }`}>
               <div className='relative h-full w-full'>
-                <nav className='relative z-10 bg-white pb-[77px] pt-4'>
+                <nav className='relative z-10 bg-white pb-[77px] pt-[45px]'>
                   <ul
-                    className={`ease 1xl:text-base ml-[20px] flex flex-col items-center gap-20 whitespace-nowrap pb-34 text-sm uppercase`}>
-                    <li>
+                    className={`ease 1xl:text-base ml-[20px]  flex flex-col items-center gap-[50px] whitespace-nowrap pb-34 text-sm uppercase`}>
+                    <li className='hover:text-gold'>
                       <Link
                         prefetch={false}
                         href={"/"}
@@ -209,7 +227,7 @@ export default function Header() {
                         {t("home")}
                       </Link>
                     </li>
-                    <li>
+                    <li className='hover:text-gold'>
                       <Link
                         prefetch={false}
                         href={"/about"}
@@ -217,7 +235,7 @@ export default function Header() {
                         {t("about")}
                       </Link>
                     </li>
-                    <li>
+                    <li className='hover:text-gold'>
                       <Link
                         prefetch={false}
                         href={"/brands"}
@@ -225,7 +243,7 @@ export default function Header() {
                         {t("brands")}
                       </Link>
                     </li>
-                    <li>
+                    <li className='hover:text-gold'>
                       <Link
                         prefetch={false}
                         href={"/franchise"}
@@ -233,7 +251,7 @@ export default function Header() {
                         {t("franchise")}
                       </Link>
                     </li>
-                    <li>
+                    <li className='hover:text-gold'>
                       <Link
                         prefetch={false}
                         href={"/job"}
@@ -246,7 +264,7 @@ export default function Header() {
                       size='normalSm'
                       pill
                       uppercase
-                      className='mx-auto block'>
+                      className='mx-auto block hover:text-gold'>
                       <Link
                         prefetch={false}
                         href={"/contact-us"}

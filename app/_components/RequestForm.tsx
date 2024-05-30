@@ -82,97 +82,110 @@ const RequestForm = () => {
     <>
       {!isSubmitted ? (
         <form onSubmit={handleSubmit}>
-          <div className="flex flex-col gap-3">
+          <div className='flex flex-col gap-3'>
             <Field
               text={t("full_name")}
-              label="Your Full Name"
+              label='Your Full Name'
               value={formData.name}
               onChange={(e: any) => handleChange(e)}
-              name="name"
+              name='name'
               required
             />
             <Field
               text={t("email_address")}
-              label="Your Email Address"
+              label='Your Email Address'
               value={formData.email}
               onChange={(e: any) => handleChange(e)}
-              name="email"
+              name='email'
               required
             />
             <Field
               text={t("mobile_number")}
-              label="Your Mobile Number"
+              label='Your Mobile Number'
               value={formData.mobile}
               onChange={(e: any) => handleChange(e)}
-              name="mobile"
+              name='mobile'
               required
             />
             <Field
               text={t("company")}
-              label="Company Name"
+              label='Company Name'
               value={formData.company}
               onChange={(e: any) => handleChange(e)}
-              name="company"
+              name='company'
             />
             <Field
               text={t("title")}
-              label="Your Title"
+              label='Your Title'
               value={formData.title}
               onChange={(e: any) => handleChange(e)}
-              name="title"
+              name='title'
             />
             <Field
               text={t("message")}
-              label="Enter Questions or Special Message"
+              label='Enter Questions or Special Message'
               value={formData.message}
               onChange={(e: any) => handleChange(e)}
-              name="message"
+              name='message'
               textarea
               required
             />
-            <div className="pt-4">
+            <div className='pt-4'>
               <Button
-                variant="primary"
-                size="normal"
+                variant='primary'
+                size='normal'
                 pill
                 uppercase
-                type="submit"
-              >
+                type='submit'>
                 {t("submit")}
               </Button>
             </div>
           </div>
         </form>
       ) : (
-        <div className="fixed inset-0 z-[1111] m-auto flex h-[600px] w-[90%] items-center justify-center rounded-[30px] bg-white lg:w-[600px]">
-          <div className="flex flex-col items-center justify-center gap-10 text-center">
+        <div className='fixed inset-0 z-[1111] m-auto flex h-[500px] md:h-[600px] w-[80%] md:w-[90%] items-center justify-center rounded-[30px] bg-white lg:w-[600px]'>
+          <div className='flex flex-col items-center justify-center gap-10 text-center'>
             <Image
-              src="/images/thankyou.webp"
-              alt=""
+              src='/images/thankyou.webp'
+              alt=''
               width={317}
               height={238}
-              className="mx-auto"
+              className='mx-auto max-w-[66%] md:max-w-[100%]'
             />
 
-            <h2 className="text-primary-100 mx-auto text-center text-[40px] font-bold leading-[55px]">
+            <h2 className='text-primary-100 mx-auto text-center text-[30px] md:text-[40px] font-bold leading-[55px]'>
               {t("thank_you")}
             </h2>
             <p>{t("for_your_registration")}</p>
-            <div className="mt-50 flex gap-20">
+            <div className='hidden mt-50 md:flex gap-20'>
               <Button
-                variant="borderGray"
-                size="normal"
-                className="rounded-xl"
-                onClick={handleOverlayClick}
-              >
+                variant='borderGray'
+                size='normal'
+                className='rounded-xl'
+                onClick={handleOverlayClick}>
                 {t("back_to_lapoire")}
               </Button>
               <Button
-                variant="primary"
-                size="normal"
-                className="rounded-xl"
-                onClick={handleOverlayClick}
-              >
+                variant='primary'
+                size='normal'
+                className='rounded-xl'
+                onClick={handleOverlayClick}>
+                {t("back_to_lapoire")}
+              </Button>
+            </div>
+            <div className='mt-50 flex md:hidden gap-20'>
+              <Button
+                variant='borderGray'
+                size='small'
+                className='rounded-xl'
+                onClick={handleOverlayClick}>
+                {t("back_to_lapoire")}
+              </Button>
+              <Button
+                variant='primary'
+                size='small'
+                className='rounded-xl'
+                onClick={handleOverlayClick}>
                 {t("back_to_lapoire")}
               </Button>
             </div>
@@ -181,9 +194,8 @@ const RequestForm = () => {
       )}
       {isSubmitted && (
         <div
-          className="fixed inset-0 z-[1110] bg-black opacity-70"
-          onClick={handleOverlayClick}
-        ></div>
+          className='fixed inset-0 z-[1110] bg-black opacity-70'
+          onClick={handleOverlayClick}></div>
       )}
     </>
   );

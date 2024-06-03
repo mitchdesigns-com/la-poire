@@ -12,7 +12,7 @@ export default function RequestSection() {
       className={`px-4 py-32 bg-gold ${
         locale === "ar" ? arfont.className : roboto.className
       }`}>
-      <div className='container mx-auto' id='requestForm'>
+      <div className='container mx-auto'>
         <div className='flex flex-col-reverse md:max-lg:flex-col-reverse  lg:flex-row  flex-wrap items-center justify-center gap-[71px]'>
           <div className='w-full md:w-[474px]'>
             <div className='w-full rounded-xl bg-white px-32 py-26 shadow-md shadow-[#034A3080]'>

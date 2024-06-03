@@ -63,7 +63,7 @@ export default function Home({ data }: any) {
               <div className='flex flex-col lg:flex-row-reverse gap-10 lg:w-[332px]'>
                 <Link href={`/franchise`}>
                   <button className='focus:outline-none w-full  transition ease-in-out duration-300 font-medium whitespace-nowrap px-34 py-2 md:text-sm  mt-10 md:leading-[21px] tracking-[0.02em] text-sm bg-gold hover:bg-goldHover focus:ring-2 focus:ring-gold focus:ring-opacity-50 text-white rounded-full uppercase false'>
-                    {"apply now"}
+                    {t("Applynow")}
                   </button>
                 </Link>
 

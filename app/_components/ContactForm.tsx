@@ -125,23 +125,25 @@ const ContactForm = () => {
               />
 
               <h2 className='text-primary-100 mx-auto text-center text-[30px] md:text-[40px] font-bold leading-[55px]'>
-                {t("common.thank_you")}
+                {t("thank_you")}
               </h2>
-              <p>{t("common.for_your_registration")}</p>
-              <div className='mt-50 flex gap-20'>
-                <Button
-                  variant='borderGray'
-                  size='small'
-                  className='rounded-xl'
-                  onClick={handleOverlayClick}>
-                  {t("common.back_to_lapoire")}
-                </Button>
+              <p>{t("for_your_registration")}</p>
+              <div className='hidden justify-center mt-50 md:flex gap-20'>
                 <Button
                   variant='primary'
-                  size='small'
+                  size='normal'
                   className='rounded-xl'
                   onClick={handleOverlayClick}>
-                  {t("common.back_to_lapoire")}
+                  {t("back_to_lapoire")}
+                </Button>
+              </div>
+              <div className='mt-50 justify-center  flex md:hidden gap-20'>
+                <Button
+                  variant='primary'
+                  size='normal'
+                  className='rounded-xl'
+                  onClick={handleOverlayClick}>
+                  {t("back_to_lapoire")}
                 </Button>
               </div>
             </div>

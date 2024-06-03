@@ -25,57 +25,58 @@ export default function SingleJob({ data }: any) {
   // console.log("data", data);
   return (
     <>
-      <div className="px-4 pt-120">
-        <div className="container mx-auto">
-          <div className="flex justify-between">
-            <div className="flex items-center gap-30">
+      <div className='px-4 pt-120'>
+        <div className='container mx-auto'>
+          <div className='flex justify-between'>
+            <div className='flex items-center gap-30'>
               <Link
-                href="/job"
-                className="inline-block w-[35px] rotate-180"
-                prefetch={false}
-              >
+                href='/job'
+                className='inline-block w-[35px] rotate-180'
+                prefetch={false}>
                 <LongArrow />
               </Link>
               <div>
-                <h6 className="text-xl text-green">Jobs in La Poire</h6>
-                <h1 className="text-[60px] font-semibold">{data.Name}</h1>
+                <h6 className='text-xl text-green'>Jobs in La Poire</h6>
+                <h1 className='text-[25px] md:text-[60px] font-semibold'>
+                  {data.Name}
+                </h1>
               </div>
             </div>
-            <div className="h-[2px] w-7/12 self-end bg-green" />
+            <div className='h-[2px] w-7/12 self-end bg-green' />
           </div>
-          <div className="mt-80">
-            <div className="flex justify-between">
-              <div className="flex flex-col">
-                <h3 className="mb-22 text-3xl capitalize text-black">
+          <div className='mt-80'>
+            <div className='flex justify-between flex-col-reverse md:flex-row'>
+              <div className='flex flex-col'>
+                <h3 className='mb-22 text-3xl capitalize text-black'>
                   Responsibilities
                 </h3>
-                <ul className="list-disc pl-20 text-xl font-normal leading-[50px] text-black">
+                <ul className='list-disc pl-20 text-xl font-normal leading-[50px] text-black'>
                   {data.Responsibility.map((item: any, index: number) => (
                     <li key={index}>{item.Name}</li>
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className='pb-[34px] md:pb-0'>
                 <Image
-                  src="/images/single_job.webp"
-                  alt=""
+                  src='/images/single_job.webp'
+                  alt=''
                   width={527}
                   height={380}
                 />
               </div>
             </div>
-            <div className="mt-50 flex pb-50">
-              <div className="flex flex-col">
-                <h3 className="mb-22 text-3xl capitalize text-black">
+            <div className='mt-50 flex pb-50'>
+              <div className='flex flex-col'>
+                <h3 className='mb-22 text-3xl capitalize text-black'>
                   Requirements
                 </h3>
-                <ul className="list-disc pl-20 text-xl font-normal leading-[50px] text-black">
+                <ul className='list-disc pl-20 text-xl font-normal leading-[50px] text-black'>
                   {data.Requirements.map((item: any, index: number) => (
                     <li key={index}>{item.Name}</li>
                   ))}
                 </ul>
-                <div className="mt-50">
-                  <Button variant="primary" size="large" pill uppercase>
+                <div className='mt-50'>
+                  <Button variant='primary' size='large' pill uppercase>
                     Apply Now
                   </Button>
                 </div>

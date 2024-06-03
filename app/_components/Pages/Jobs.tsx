@@ -56,7 +56,7 @@ export default function Jobs({ data }: any) {
               height={409}
             />
           </div>
-          <div className='flex flex-none flex-col gap-5'>
+          <div className='flex flex-none flex-col gap-5 max-w-[36%] md:max-w-[100%]'>
             <Image
               src={`${mediaUrl}${data.Image_03.data?.attributes.url}`}
               alt=''
@@ -92,7 +92,7 @@ export default function Jobs({ data }: any) {
           <h2 className='mb-40 text-center text-3xl md:text-5xl font-bold'>
             {data.JobTitle}
           </h2>
-          <p className='mx-auto max-w-[825px] text-center text-l'>
+          <p className='mx-auto max-w-[825px] text-center text-l pb-3'>
             {data.JobDescription}
           </p>
           <ul className='mx-auto lg:mt-[90px] max-w-6xl text-gray3'>
@@ -103,7 +103,7 @@ export default function Jobs({ data }: any) {
                   prefetch={false}
                   className='flex items-center justify-between border-b pb-20 pt-[27px]'>
                   <div className='flex flex-col'>
-                    <span className='text-[34px] font-bold'>
+                    <span className='text-[25px] md:text-[34px] font-bold'>
                       {item.attributes.Name}
                     </span>
                     <span>{item.attributes.Location}</span>

@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { Link } from "@/navigation";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("nav");
+
   return (
     <footer className='bg-black'>
       <div className='container mx-auto flex flex-col items-center gap-4 pb-4 pt-4 text-center md:pt-64'>
@@ -19,37 +22,37 @@ export default function Footer() {
             href='/'
             className='my-2 inline-block text-white'
             prefetch={false}>
-            Homepage
+            {t("home")}
           </Link>
           <Link
             href='/about'
             className='my-2 inline-block text-white'
             prefetch={false}>
-            About
+            {t("about")}
           </Link>
           <Link
             href='/brands'
             className='my-2 inline-block text-white'
             prefetch={false}>
-            Our Brands
+            {t("brands")}
           </Link>
           <Link
             href='/franchise'
             className='my-2 inline-block text-white'
             prefetch={false}>
-            Franchise
+            {t("franchise")}
           </Link>
           <Link
             href='/job'
             className='my-2 inline-block text-white'
             prefetch={false}>
-            Careers
+            {t("job")}
           </Link>
           <Link
             href='/contact-us'
             className='my-2 inline-block text-white'
             prefetch={false}>
-            Contact us
+            {t("contact")}
           </Link>
         </div>
       </div>

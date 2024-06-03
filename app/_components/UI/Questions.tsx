@@ -14,7 +14,7 @@ export default function Questions({ data }: any) {
           className='flex cursor-pointer flex-col rounded-3xl border border-goldLight p-20 transition-all'
           key={index}
           onClick={() => toggleContent(index)}>
-          <div className='flex items-center gap-x-2  justify-between'>
+          <div className='flex items-center gap-x-[40px]  justify-between'>
             <h5 className='text-[15px] font-medium'>
               {item.attributes.question}
             </h5>

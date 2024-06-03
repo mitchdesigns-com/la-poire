@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const ContactForm = () => {
   const locale = useLocale();
-  const t = useTranslations();
+  const t = useTranslations("form");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -66,93 +66,89 @@ const ContactForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-3">
+        <div className='flex flex-col gap-3'>
           <Field
-            text="Full Name"
-            label="Your Full Name"
+            text={t("full_name")}
+            label='Your Full Name'
             value={formData.name}
             onChange={handleChange}
-            name="name"
+            name='name'
             required
           />
           <Field
-            text="Email Address"
-            label="Your Email Address"
+            text={t("email_address")}
+            label='Your Email Address'
             value={formData.email}
             onChange={handleChange}
-            name="email"
+            name='email'
             required
           />
           <Field
-            text="Mobile Number"
-            label="Your Mobile Number"
+            text={t("mobile_number")}
+            label='Your Mobile Number'
             value={formData.mobile}
             onChange={handleChange}
-            name="mobile"
+            name='mobile'
             required
           />
           <Field
-            text="Message"
-            label="Enter Questions or Special Message"
+            text={t("message")}
+            label='Enter Questions or Special Message'
             value={formData.message}
             onChange={handleChange}
-            name="message"
+            name='message'
             textarea
             required
           />
-          <div className="pt-4">
+          <div className='pt-4'>
             <Button
-              variant="primary"
-              size="normal"
+              variant='primary'
+              size='normal'
               uppercase
               pill
-              type="submit"
-            >
-              SUBMIT REQUEST
+              type='submit'>
+              {t("submit")}
             </Button>
           </div>
         </div>
       </form>
       {isSubmitted && (
         <>
-          <div className="fixed inset-0 z-[1111] m-auto flex h-[600px] w-[90%] items-center justify-center rounded-[30px] bg-white lg:w-[600px]">
-            <div className="felx flex-col items-center justify-center gap-10 text-center">
+          <div className='fixed inset-0 z-[1111] m-auto flex h-[500px] md:h-[600px] w-[90%] items-center justify-center rounded-[30px] bg-white lg:w-[600px]'>
+            <div className='felx flex-col items-center justify-center gap-10 text-center'>
               <Image
-                src="/images/thankyou.webp"
-                alt=""
+                src='/images/thankyou.webp'
+                alt=''
                 width={317}
                 height={238}
-                className="mx-auto"
+                className='mx-auto max-w-[82%] md:max-w-[100%]'
               />
 
-              <h2 className="text-primary-100 mx-auto text-center text-[40px] font-bold leading-[55px]">
+              <h2 className='text-primary-100 mx-auto text-center text-[30px] md:text-[40px] font-bold leading-[55px]'>
                 {t("common.thank_you")}
               </h2>
               <p>{t("common.for_your_registration")}</p>
-              <div className="mt-50 flex gap-20">
+              <div className='mt-50 flex gap-20'>
                 <Button
-                  variant="borderGray"
-                  size="normal"
-                  className="rounded-xl"
-                  onClick={handleOverlayClick}
-                >
+                  variant='borderGray'
+                  size='small'
+                  className='rounded-xl'
+                  onClick={handleOverlayClick}>
                   {t("common.back_to_lapoire")}
                 </Button>
                 <Button
-                  variant="primary"
-                  size="normal"
-                  className="rounded-xl"
-                  onClick={handleOverlayClick}
-                >
+                  variant='primary'
+                  size='small'
+                  className='rounded-xl'
+                  onClick={handleOverlayClick}>
                   {t("common.back_to_lapoire")}
                 </Button>
               </div>
             </div>
           </div>
           <div
-            className="fixed inset-0 z-[1110] bg-black opacity-70"
-            onClick={handleOverlayClick}
-          ></div>
+            className='fixed inset-0 z-[1110] bg-black opacity-70'
+            onClick={handleOverlayClick}></div>
         </>
       )}
     </>

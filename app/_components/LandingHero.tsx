@@ -111,7 +111,7 @@ export default function LandingHero({
             locale={locale}
           />
           <div className='container mx-auto pl-[52px] md:pl-320'>
-            <div className='1xl:max-w-[calc(100vw-388px)] relative flex w-[1004px] max-w-full md:justify-end bg-black p-4 md:max-w-[calc(100vw-276px)] md:pb-56 md:pt-22 ltr:pr-0 md:ltr:pl-48 rtl:pl-0 md:rtl:pr-48'>
+            <div className='1xl:max-w-[calc(100vw-388px)] relative flex w-[1004px] max-w-full md:justify-end  p-4 md:max-w-[calc(100vw-276px)] md:pb-56 md:pt-22 ltr:pr-0 md:ltr:pl-48 rtl:pl-0 md:rtl:pr-48'>
               <span className='pointer-events-none absolute bottom-0 z-[-1]  md:h-[3000vh] w-[100vw] select-none bg-black h-[691px] ltr:left-[-42px] md:rtl:right-[193px]' />
               <CompanyStats
                 brandsNum={brandsNum}

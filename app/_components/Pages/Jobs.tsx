@@ -7,16 +7,17 @@ import SectionTitles from "../UI/SectionTitles";
 import Newsletter from "../Newsletter";
 import { useEffect, useState } from "react";
 import { fetchingAllJobs } from "@/app/api/fetcher";
+import { useLocale } from "next-intl";
 
 export default function Jobs({ data }: any) {
   const mediaUrl = process.env.NEXT_PUBLIC_API_URL;
-  // console.log(mediaUrl);
+  const locale = useLocale();
 
   const [dataJobs, setDataJobs] = useState<any | null>(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await fetchingAllJobs();
+        const result = await fetchingAllJobs(locale);
         setDataJobs(result.data);
       } catch (error) {
         console.error("Error fetching home page data:", error);
@@ -26,7 +27,7 @@ export default function Jobs({ data }: any) {
     fetchData();
   }, []);
 
-  // console.log(data);
+  // console.log(dataJobs, "job data");
   return (
     <div>
       <HeroWithTitles

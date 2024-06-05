@@ -111,7 +111,11 @@ export default function Jobs({ data }: any) {
                     <span>{item.attributes.Location}</span>
                   </div>
                   <span className='inline-block w-[26px]'>
-                    <LongArrow />
+                    <span className='inline-block w-[26px]'>
+                      <LongArrow
+                        direction={locale === "ar" ? "left" : "right"}
+                      />
+                    </span>
                   </span>
                 </Link>
               </li>

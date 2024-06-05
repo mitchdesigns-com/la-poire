@@ -35,8 +35,8 @@ export default function Jobs({ data }: any) {
         subtitle={data.Subtitle}
         description={""}
         max_width
-        height_auto
         subtitle_max_width='max-w-[485px]'
+        height_auto={false}
       />
       <div className='container mx-auto px-2 pb-100'>
         <div className='flex justify-center gap-5'>
@@ -118,7 +118,7 @@ export default function Jobs({ data }: any) {
         </div>
       </div>
 
-      <div className='px-4 py-[100px] lg:pb-140 lg:pt-[200px]'>
+      <div className='px-4 py-[100px] hidden lg:pb-140 lg:pt-[200px]'>
         <div className='container mx-auto'>
           <section className='text-center text-black'>
             <SectionTitles

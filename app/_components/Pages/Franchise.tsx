@@ -34,6 +34,7 @@ export default function Franchise({ data }: any) {
         subtitle={data.Subtitle}
         description={data.Description}
         max_width
+        height_auto={true}
       />
 
       <div className='bg-greenBlack px-4 pt-72 pb-72 lg:py-72'>
@@ -114,10 +115,7 @@ export default function Franchise({ data }: any) {
       />
 
       <div className='container hidden lg:block  mx-auto mb-30 mt-30 md:mb-95'>
-        <span
-          className='lg:block h-[5px] w-full hidden bg-gray3 '
-          id='requestForm'
-        />
+        <span className='lg:block h-[5px] w-full hidden bg-gray3 ' />
       </div>
       {/* <Testimonials /> */}
 

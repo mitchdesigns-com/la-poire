@@ -45,8 +45,9 @@ export default function SingleBrand({ dataFetched }: any) {
         title={dataFetched?.Title ?? ""}
         subtitle={dataFetched?.Subtitle ?? ""}
         description={dataFetched?.Description ?? ""}
+        height_auto={true}
       />
-      <section className="-translate-y-64">
+      <section className='-translate-y-64'>
         <Story data={dataFetched} />
       </section>
       <Signature products={products} data={productsSectionData} />
@@ -63,8 +64,8 @@ export default function SingleBrand({ dataFetched }: any) {
       <SocialMedia data={dataFetched} />
       <OurPromise data={dataFetched} />
       <ExploreMore parentSlug={dataFetched?.slug ?? ""} />
-      <div className="container mr-auto">
-        <div className="max-w-[930px]">
+      <div className='container mr-auto'>
+        <div className='max-w-[930px]'>
           <ExtraMoreAbout
             title={t("la_poire_brands")}
             content={dataFetched?.MoreAbout ?? ""}

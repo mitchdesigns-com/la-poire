@@ -28,7 +28,7 @@ export default function ExploreMore({ parentSlug }: any) {
   return (
     <div className='container mx-auto flex flex-col items-center justify-center gap-40 lg:py-70 pt-[42px]'>
       <h3 className='text-xl font-light'>{t("explore_more_brands")}</h3>
-      <div className='flex flex-row items-center justify-center  pr-3 lg:gap-40'>
+      <div className='flex flex-row items-center justify-center    lg:gap-40'>
         {Array.isArray(filteredBrands) &&
           filteredBrands.map((item: any, index: any) => (
             <Link

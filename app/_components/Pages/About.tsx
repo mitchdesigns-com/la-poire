@@ -181,7 +181,7 @@ export default function About({ data }: any) {
       </div>
 
       <div className='container mx-auto'>
-        <div className='flex flex-col gap-70 px-3  lg:py-[64px]'>
+        <div className='flex flex-col gap-70 px-3  lg:py-[64px] pb-[55px]'>
           <div className='flex flex-wrap lg:flex-wrap-reverse items-center justify-between gap-20 text-black md:flex-nowrap md:gap-0'>
             <div>
               <h3 className='text-2xl'>{data.FeaturesTitle}</h3>

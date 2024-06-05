@@ -39,6 +39,7 @@ export default function Contact({ data }: any) {
         subtitle={data.Subtitle}
         description={data.Description}
         max_width
+        height_auto={false}
       />
       <div className='container mx-auto md:mb-30 md:mt-30'>
         <span className='block h-[5px] w-full bg-gray3' />
@@ -104,47 +105,48 @@ export default function Contact({ data }: any) {
         </div>
       </div>
       <div className='h-[174px] md:h-140 bg-white' />
-      <SectionTextImage
-        image_position={"left"}
-        image_src={
-          data.MapImage.data?.attributes.url
-            ? process.env.NEXT_PUBLIC_API_URL +
-              data.MapImage.data?.attributes.url
-            : "/images/placeholder.webp"
-        }
-        color={"white"}>
-        <div className='flex max-w-[515px] flex-col text-black'>
-          <h2 className='text-2xl md:text-5xl font-semibold'>
-            {data.MapTitle}
-          </h2>
-          <h4 className='mt-10 text-green'>{data.MapSubtitle}</h4>
-          <p className='mt-10 border-t-[3px] border-gray3 pt-10 text-base text-black'>
-            {data.MapAddress}
-          </p>
-          {data.Directions && (
-            <div className='pt-40'>
-              <Button
-                type='submit'
-                variant='border'
-                size='normal'
-                pill
-                uppercase
-                className='flex items-start gap-10'>
-                <Image
-                  src='/images/pin.webp'
-                  alt='google pin'
-                  width={16}
-                  height={23}
-                />
-                <Link href={data.Directions} target='_blank' prefetch={false}>
-                  {t("get_direction")}
-                </Link>
-              </Button>
-            </div>
-          )}
-        </div>
-      </SectionTextImage>
-
+      <div className='md:mr-0  mr-[26px]'>
+        <SectionTextImage
+          image_position={"left"}
+          image_src={
+            data.MapImage.data?.attributes.url
+              ? process.env.NEXT_PUBLIC_API_URL +
+                data.MapImage.data?.attributes.url
+              : "/images/placeholder.webp"
+          }
+          color={"white"}>
+          <div className='flex max-w-[515px] flex-col text-black'>
+            <h2 className='text-2xl md:text-5xl font-semibold'>
+              {data.MapTitle}
+            </h2>
+            <h4 className='mt-10 text-green'>{data.MapSubtitle}</h4>
+            <p className='mt-10 border-t-[3px] border-gray3 pt-10 text-base text-black'>
+              {data.MapAddress}
+            </p>
+            {data.Directions && (
+              <div className='pt-40'>
+                <Button
+                  type='submit'
+                  variant='border'
+                  size='normal'
+                  pill
+                  uppercase
+                  className='flex items-start gap-10'>
+                  <Image
+                    src='/images/pin.webp'
+                    alt='google pin'
+                    width={16}
+                    height={23}
+                  />
+                  <Link href={data.Directions} target='_blank' prefetch={false}>
+                    {t("get_direction")}
+                  </Link>
+                </Button>
+              </div>
+            )}
+          </div>
+        </SectionTextImage>
+      </div>
       <Newsletter />
     </div>
   );

@@ -22,7 +22,6 @@ export default function SingleJob({ data }: any) {
   if (!data) {
     return <NoDataFound />;
   }
-  // console.log("data", data);
   return (
     <>
       <div className='px-4 pt-120'>
@@ -36,8 +35,10 @@ export default function SingleJob({ data }: any) {
                 <LongArrow />
               </Link>
               <div>
-                <h6 className='text-xl text-green'>Jobs in La Poire</h6>
-                <h1 className='text-[25px] md:text-[60px] font-semibold'>
+                <h6 className='text-xl text-green text-nowrap'>
+                  Jobs in La Poire
+                </h6>
+                <h1 className='text-[21px] md:text-[60px] text-nowrap font-semibold'>
                   {data.Name}
                 </h1>
               </div>

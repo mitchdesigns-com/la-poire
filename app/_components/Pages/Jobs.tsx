@@ -11,6 +11,7 @@ import { useLocale } from "next-intl";
 
 export default function Jobs({ data }: any) {
   const mediaUrl = process.env.NEXT_PUBLIC_API_URL;
+
   const locale = useLocale();
 
   const [dataJobs, setDataJobs] = useState<any | null>(null);
@@ -36,8 +37,8 @@ export default function Jobs({ data }: any) {
         subtitle={data.Subtitle}
         description={""}
         max_width
-        height_auto
         subtitle_max_width='max-w-[485px]'
+        height_auto={false}
       />
       <div className='container mx-auto px-2 pb-100'>
         <div className='flex justify-center gap-5'>
@@ -110,7 +111,11 @@ export default function Jobs({ data }: any) {
                     <span>{item.attributes.Location}</span>
                   </div>
                   <span className='inline-block w-[26px]'>
-                    <LongArrow />
+                    <span className='inline-block w-[26px]'>
+                      <LongArrow
+                        direction={locale === "ar" ? "left" : "right"}
+                      />
+                    </span>
                   </span>
                 </Link>
               </li>
@@ -119,7 +124,7 @@ export default function Jobs({ data }: any) {
         </div>
       </div>
 
-      <div className='px-4 py-[100px] lg:pb-140 lg:pt-[200px]'>
+      <div className='px-4 py-[100px] hidden lg:pb-140 lg:pt-[200px]'>
         <div className='container mx-auto'>
           <section className='text-center text-black'>
             <SectionTitles

@@ -18,7 +18,9 @@ const sendRequest = async (
         // "Access-Control-Request-Headers": "cache-control",
       },
       redirect: "follow",
-      next: { revalidate: 600 }
+      next: { revalidate: 600 },
+
+
     });
 
     if (!response.ok) {
@@ -38,22 +40,24 @@ const sendRequest = async (
   }
 };
 
-export const fetchingAboutPage = async (lang: string = 'en') => {
+export const fetchingAboutPage = async (lang: string = "en") => {
   const endpoint = `about-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
-export const fetchingFranchisePage = async (lang: string = 'en') => {
+export const fetchingFranchisePage = async (lang: string = "en") => {
   const endpoint = `franchise-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
-export const fetchingContactUsPage = async (lang: string = 'en') => {
+export const fetchingContactUsPage = async (lang: string = "en") => {
   const endpoint = `contact-us-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
-export const fetchingJobsPage = async (lang: string = 'en') => {
+export const fetchingJobsPage = async (lang: string = "en") => {
+
   const endpoint = `jobs-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
+
 
 export const fetchingBlogsPage = async (lang: string = 'en') => {
   const endpoint = `blogs?populate=deep&locale=${lang}`;
@@ -63,20 +67,22 @@ export const fetchingAllJobs = async (lang: string) => {
   const endpoint = `jobs?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
-export const fetchingBrandsPage = async (lang: string = 'en') => {
+export const fetchingBrandsPage = async (lang: string = "en") => {
   const endpoint = `brands-page?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
-export const fetchingHomePage = async (lang: string = 'en') => {
+export const fetchingHomePage = async (lang: string = "en") => {
+
   const endpoint = `home?populate=deep&locale=${lang}`;
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   return sendRequest(endpoint);
 };
-export const fetchingAllBrands = async (lang: string = 'en') => {
+export const fetchingAllBrands = async (lang: string = "en") => {
   const endpoint = `our-brands?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
-export const fetchingFAQs = async (lang: string = 'en') => {
+export const fetchingFAQs = async (lang: string = "en") => {
+
   const endpoint = `faqs?populate=deep&locale=${lang}`;
   return sendRequest(endpoint);
 };
@@ -86,36 +92,51 @@ export const fetchingFAQs = async (lang: string = 'en') => {
 //   return sendRequest(endpoint);
 // };
 
-export const fetchingAboutSEO = async (lang: string = 'en') => {
+export const fetchingAboutSEO = async (lang: string = "en") => {
   return sendRequest(`about-page?populate[0]=SEO&locale=${lang}`, {});
 };
-export const fetchingBlogsSEO = async (lang: string = 'en') => {
+export const fetchingBlogsSEO = async (lang: string = "en") => {
   return sendRequest(`blogs-page?populate[0]=SEO&locale=${lang}`, {});
 };
-export const fetchingFranchisePageSEO = async (lang: string = 'en') => {
+export const fetchingFranchisePageSEO = async (lang: string = "en") => {
   return sendRequest(`franchise-page?populate[0]=SEO&locale=${lang}`, {});
 };
-export const fetchingHomeSEO = async (lang: string = 'en') => {
+export const fetchingHomeSEO = async (lang: string = "en") => {
   return sendRequest(`home?populate[0]=SEO&locale=${lang}`, {});
 };
-export const fetchingSingleBrandSEO = async (lang: string = 'en', slug: string) => {
+export const fetchingSingleBrandSEO = async (
+  lang: string = "en",
+  slug: string
+) => {
+
   // return sendRequest("brands-page?populate[0]=SEO", {});
-  return sendRequest(`our-brands?filters[slug][$eq]=${slug}&populate[0]=SEO&locale=${lang}`, {});
+  return sendRequest(
+    `our-brands?filters[slug][$eq]=${slug}&populate[0]=SEO&locale=${lang}`,
+    {}
+  );
 };
-export const fetchingJobsSEO = async (lang: string = 'en') => {
+export const fetchingJobsSEO = async (lang: string = "en") => {
   return sendRequest(`jobs-page?populate[0]=SEO&locale=${lang}`, {});
 };
-const fetchingBrandsSEO = async (lang: string = 'en') => {
+const fetchingBrandsSEO = async (lang: string = "en") => {
   return sendRequest(`brands-page?populate[0]=SEO&locale=${lang}`, {});
 };
-const fetchingSingleBrand = async (slug: string, lang: string = 'en') => {
-  return sendRequest(`our-brands?filters[slug][$eq]=${slug}&populate=deep&locale=${lang}`, {});
+const fetchingSingleBrand = async (slug: string, lang: string = "en") => {
+  return sendRequest(
+    `our-brands?filters[slug][$eq]=${slug}&populate=deep&locale=${lang}`,
+    {}
+  );
+
 };
 export const fetchingSingleBlog = async (slug: string) => {
   return sendRequest(`blogs?filters[slug][$eq]=${slug}&populate=deep`, {});
 };
-export const fetchingSingleJob = async (slug: string, lang: string = 'en') => {
-  return sendRequest(`jobs?filters[slug][$eq]=${slug}&populate=deep&locale=${lang}`, {});
+export const fetchingSingleJob = async (slug: string, lang: string = "en") => {
+  return sendRequest(
+    `jobs?filters[slug][$eq]=${slug}&populate=deep&locale=${lang}`,
+    {}
+  );
+
 };
 
 export const fetchingGeneralPage = async () => {

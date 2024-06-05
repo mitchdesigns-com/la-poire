@@ -5,8 +5,8 @@ import HeroWithTitles from "../HeroWithTitles";
 import List from "../Brands/List";
 import ExtraMoreAbout from "../ExtraMoreAbout";
 import Newsletter from "../Newsletter";
-import brandsMock from "./brands.json"
-import brandsAllMock from "../Brands/mockData.json"
+import brandsMock from "./brands.json";
+import brandsAllMock from "../Brands/mockData.json";
 import { useLocale, useTranslations } from "next-intl";
 
 export default function Brands() {
@@ -52,11 +52,12 @@ export default function Brands() {
         title={brandsData?.Title ?? ""}
         subtitle={brandsData?.Subtitle ?? ""}
         description={brandsData?.Description ?? ""}
+        height_auto={true}
       />
       <List data={brands?.data} />
-      <div className="container mx-auto h-[5px] bg-gray3" />
+      <div className='container mx-auto h-[5px] bg-gray3' />
       <ExtraMoreAbout
-        title={t('common.about')+' '+t('common.la_poire_brands')}
+        title={t("common.about") + " " + t("common.la_poire_brands")}
         content={brandsData?.MoreAbout ?? ""}
       />
       <Newsletter />

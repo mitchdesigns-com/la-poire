@@ -9,6 +9,7 @@ export default function RequestSection() {
   const locale = useLocale();
   return (
     <div
+      id='requestForm'
       className={`px-4 py-32 bg-gold ${
         locale === "ar" ? arfont.className : roboto.className
       }`}>

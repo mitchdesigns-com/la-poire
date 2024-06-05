@@ -104,6 +104,7 @@ export default function About({ data }: any) {
         title={data.Title}
         subtitle={data.Subtitle}
         description={data.Description}
+        height_auto={true}
       />
       {/* <TimeLine data={timeLineData} /> */}
 

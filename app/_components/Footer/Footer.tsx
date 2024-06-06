@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
       </div>
       <span className='block h-[2px] w-full  bg-gray5 opacity-50' />
-      <p className='flex flex-col md:flex-row pb-4 pt-4 px-2 text-sm tracking-normal items-center justify-center text-gray5 opacity-50'>
+      <p className='flex flex-col md:flex-row pb-4 pt-4 px-2 text-sm tracking-normal items-center justify-center rtl:flex-row-reverse text-gray5 opacity-50'>
         © {new Date().getFullYear()} La Poire Group • All Rights Reserved •{" "}
         <Link
           href='https://www.mitchdesigns.com/'

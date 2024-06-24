@@ -37,7 +37,7 @@ export default function Franchise({ data }: any) {
         height_auto={true}
       />
 
-      <div className='bg-greenBlack px-4 pt-72 pb-72 lg:py-72'>
+      <div className='bg-greenBlack px-4 pb-72 pt-72 lg:py-72'>
         <div className='container mx-auto'>
           <div className='flex flex-col gap-50'>
             <section className='text-center text-white'>
@@ -72,7 +72,7 @@ export default function Franchise({ data }: any) {
         </div>
       </div>
 
-      <div className='mb-[152px] md:mb-[278px] bg-goldLight pb-[170px] px-4 pt-[72px] md:py-64'>
+      <div className='mb-[152px] bg-goldLight px-4 pb-[170px] pt-[72px] md:mb-[278px] md:py-64'>
         <div className='container mx-auto'>
           <div className='mb-7 flex flex-col items-center justify-center gap-20'>
             <section className='text-center text-black'>
@@ -83,7 +83,7 @@ export default function Franchise({ data }: any) {
                 sub_title={data.FranchiseSectionTitle.Subtitle}
               />
             </section>
-            <p className='mx-auto max-w-3xl text-center text-[12px] md:text-sm text-gray5'>
+            <p className='mx-auto max-w-3xl text-center text-[12px] text-gray5 md:text-sm'>
               {data.FranchiseSectionTitle.Description}
             </p>
           </div>
@@ -110,18 +110,24 @@ export default function Franchise({ data }: any) {
       </div>
 
       <OurBrands
-        title={t("our_franchised_brands")}
+        title={data.BrandsTitle}
         brandsList={data.brands.data}
       />
 
-      <div className='container hidden lg:block  mx-auto mb-30 mt-30 md:mb-95'>
-        <span className='lg:block h-[5px] w-full hidden bg-gray3 ' />
+      <div className='container mx-auto mb-30 mt-30 hidden md:mb-95 lg:block'>
+        <span className='hidden h-[5px] w-full bg-gray3 lg:block' />
       </div>
       {/* <Testimonials /> */}
 
-      <RequestSection />
+      <RequestSection
+      subTitle={data.RequestSubTitle}
+      title={data.RequestTitle}
+      paragraph={data.RequestParagraph}
+      />
 
-      <FAQsSection />
+      <FAQsSection 
+      subTitle={data.FAQSubtitle}
+      title={data.FAQTitle}/>
 
       <Newsletter />
     </div>

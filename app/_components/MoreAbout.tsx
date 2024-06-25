@@ -51,6 +51,9 @@ export default function MoreAbout({ data }: any) {
   return (
     <div className='px-4 pt-20 md:px-70 md:pt-100'>
       <div className='container mx-auto'>
+        {data.VideoTitle&&(
+          <h3 className="mx-auto mb-4 text-center text-2xl font-bold">{data.VideoTitle}</h3>
+        )}
         {hasWindow && (
           <div className='aspect-video w-full'>
             <ReactPlayer
@@ -72,12 +75,12 @@ export default function MoreAbout({ data }: any) {
           </div>
         )}
         <div className='flex flex-col gap-70 py-30'>
-          <div className='flex flex-wrap items-center justify-between gap-x-4 gap-20 text-black lg:flex-nowrap md:gap-0'>
+          <div className='flex flex-wrap items-center justify-between gap-20 gap-x-4 text-black md:gap-0 lg:flex-nowrap'>
             <div>
               <h3 className='text-[18px] font-bold md:text-2xl'>
                 {data.FeatureTitle}
               </h3>
-              <p className='text-[14px] md:text-xl font-light'>
+              <p className='text-[14px] font-light md:text-xl'>
                 {data.FeatureSubtitle}
               </p>
             </div>
@@ -90,7 +93,7 @@ export default function MoreAbout({ data }: any) {
               </p>
             </div>
           </div>
-          <div className='flex grid-cols-2 flex-wrap justify-evenly  gap-5 gap-y-26 lg:grid-cols-3 lg:gap-x-56'>
+          <div className='grid grid-cols-2 flex-wrap justify-evenly gap-5 gap-y-26 lg:grid-cols-3 lg:gap-x-56'>
             {data.FeatureItem.map((item: any, index: number) => (
               <motion.div
                 key={index}

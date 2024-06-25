@@ -1,31 +1,46 @@
 "use client";
 import Image from "next/image";
 import { motion } from "@/app/lib/motion";
+import { arfont, pt_serif } from "@/app/fonts";
 import { Link } from "@/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 export default function OurBrands({
   title,
+  description,
   brandsList,
   noLinks,
 }: {
   title?: string;
+  description?: string;
   brandsList?: any;
   noLinks?: boolean;
 }) {
   const t = useTranslations("common");
+  const locale = useLocale();
   let mainTitle = t("our_brands");
   if (title) {
     mainTitle = title;
   }
 
   return (
-    <div className="container  mx-auto flex flex-col  md:pt-100 gap-20 text-center pt-26 pb-[64px] md:gap-40 lg:py-100">
+    <div className="container mx-auto flex flex-col gap-20 pb-[64px] pt-26 text-center md:gap-40 md:pt-100 lg:py-100">
       <h4 className="text-xl font-light text-black">{mainTitle}</h4>
-      <div className="flex flex-nowrap items-center justify-center lg:p-[30px] px-4   lg:gap-40 gap-20 ">
+      {description && (
+        <div
+          className={`${
+            locale === "ar"
+              ? `${arfont.className} leading-[28px] space-y-22`
+              : `${pt_serif.className} leading-[28px] space-y-34 max-w-688 text-center mx-auto`
+          } text-greenBlack`}
+        >
+          {description}
+        </div>
+      )}
+      <div className="flex flex-nowrap items-center justify-center gap-20 px-4 lg:gap-40 lg:p-[30px]">
         {brandsList?.map((card: any, index: number) => (
           <motion.div
             key={index}
-            className="relative lg:h-[124px] h-[114px] w-[calc(100%/2-20px)] lg:w-[142px]"
+            className="relative h-[114px] w-[calc(100%/2-20px)] lg:h-[124px] lg:w-[142px]"
             initial={{ opacity: 0, x: -100 * (index + 1) }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.2, delay: index * 0.5 }}
@@ -43,7 +58,7 @@ export default function OurBrands({
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 // style={{ objectFit: "contain" }}
-                className="max-w-[120px] object-contain m-auto" 
+                className="m-auto max-w-[120px] object-contain"
               />
             ) : (
               <Image
@@ -56,7 +71,7 @@ export default function OurBrands({
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 // style={{ objectFit: "contain" }}
-                className="max-w-[120px] object-contain m-auto"
+                className="m-auto max-w-[120px] object-contain"
               />
             )}
             {!noLinks && (

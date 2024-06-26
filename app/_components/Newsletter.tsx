@@ -34,9 +34,9 @@ export default function Newsletter() {
   return (
     <div className="bg-black p-10">
       <div className="mx-auto w-full max-w-full px-10 md:w-[100vw] md:max-w-[1490px] md:px-0">
-        <div className="flex w-full flex-wrap gap-10 md:flex-nowrap ">
+        <div className="flex w-full flex-wrap gap-10 md:flex-nowrap">
           <motion.div
-            className="flex w-full flex-col gap-10 md:w-1/3 "
+            className="flex w-full flex-col gap-10 md:w-1/3"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 1 * 0.4 }}
@@ -104,8 +104,8 @@ export default function Newsletter() {
               />
             </motion.div>
             <div className="flex h-[362px] flex-col items-center justify-center bg-white px-4 text-center md:px-30">
-              <h3 className="px-5 text-3xl md:text-[22px] md:leading-[31px] ms:max-w-[290px] lg:text-3xl lg:w-320 ">
-                {t("newsletter_title")} <span>{t("brand_name")}!</span>
+              <h3 className="ms:max-w-[290px] px-5 text-3xl md:text-[22px] md:leading-[31px] lg:w-320 lg:text-3xl">
+                {t("newsletter_title")}
               </h3>
               <p className="mt-5 text-sm text-greenBlack">
                 {t("newsletter_desc")}

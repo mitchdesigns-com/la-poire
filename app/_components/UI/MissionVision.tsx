@@ -1,5 +1,5 @@
 "use client";
-import { arfont, pt_serif } from "@/app/fonts";
+import { arfont, poppins, pt_serif } from "@/app/fonts";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
@@ -13,10 +13,10 @@ export default function MissionVision({ data }: any) {
   if (!data) {
     return null;
   }
-  console.log(data)
+  // console.log(data);
   return (
-    <div className="mx-auto flex max-w-[960px] flex-col items-center justify-center gap-20 lg:gap-50 text-center">
-      <div className="bg-goldDarker  w-[280px] mx-auto flex justify-center gap-2 rounded-full p-[6px]">
+    <div className="mx-auto flex max-w-[960px] flex-col items-center justify-center text-center">
+      <div className="bg-goldDarker mx-auto mb-20 flex w-[280px] justify-center gap-2 rounded-full p-[6px]">
         <div>
           <input
             type="radio"
@@ -53,14 +53,38 @@ export default function MissionVision({ data }: any) {
             </label>
           </div>
         )}
-
       </div>
       {selectedRadio === "visionRadio" ? (
-        <h2 className={`${locale === "ar" ? arfont.className : pt_serif.className} text-gray5 text-[24px] md:text-[32px] lg:text-[36px]`}>
+        <h5
+          className={`${
+            locale === "ar" ? arfont.className : poppins.className
+          } text-gray5 text-xl mb-5 font-light`}
+        >
+          {data.visionTitle}
+        </h5>
+      ) : (
+        <h5
+          className={`${
+            locale === "ar" ? arfont.className : poppins.className
+          } text-gray5 text-xl mb-5 font-light`}
+        >
+          {data.missionTitle}
+        </h5>
+      )}
+      {selectedRadio === "visionRadio" ? (
+        <h2
+          className={`${
+            locale === "ar" ? arfont.className : pt_serif.className
+          } text-gray5 text-[24px] md:text-[32px] lg:text-[36px]`}
+        >
           {data.visionDescription}
         </h2>
       ) : (
-        <h2 className={`${locale === "ar" ? arfont.className : pt_serif.className} text-gray5 text-[36px]`}>
+        <h2
+          className={`${
+            locale === "ar" ? arfont.className : pt_serif.className
+          } text-gray5 text-[36px]`}
+        >
           {data.missionDescription}
         </h2>
       )}

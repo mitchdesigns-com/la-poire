@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "@/app/lib/motion";
-import { arfont, pt_serif } from "@/app/fonts";
+import { arfont, poppins, pt_serif } from "@/app/fonts";
 import { Link } from "@/navigation";
 import { useLocale, useTranslations } from "next-intl";
 export default function OurBrands({
@@ -29,9 +29,9 @@ export default function OurBrands({
         <div
           className={`${
             locale === "ar"
-              ? `${arfont.className} leading-[28px] space-y-22`
-              : `${pt_serif.className} leading-[28px] space-y-34 max-w-688 text-center mx-auto`
-          } text-greenBlack`}
+              ? `${arfont.className} space-y-22`
+              : `${poppins.className} space-y-34 text-center mx-auto`
+          } text-greenBlack max-w-[540px] text-sm font-light`}
         >
           {description}
         </div>

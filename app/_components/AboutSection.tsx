@@ -21,7 +21,7 @@ export default function AboutSection({ color, description }: any) {
         <div className="flex flex-wrap-reverse items-center justify-center gap-40 md:gap-0 lg:flex-nowrap lg:justify-between">
           <div className="w-auto">
             <p
-              className={`md:text-2xl lg:text-4xl text-[21px] md:pt-40 lg:pt-0 ${
+              className={`md:text-2xl lg:text-[38px] lg:leading-relaxed text-[21px] md:pt-40 lg:pt-0 ${
                 locale === "ar" ? arfont.className : pt_serif.className
               } text-white md:w-[700px] w-full font-normal`}
             >

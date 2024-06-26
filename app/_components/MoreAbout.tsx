@@ -49,16 +49,18 @@ export default function MoreAbout({ data }: any) {
     },
   ];
   return (
-    <div className='px-4 pt-20 md:px-70 md:pt-100'>
-      <div className='container mx-auto'>
-        {data.VideoTitle&&(
-          <h3 className="mx-auto mb-4 text-center text-2xl font-bold">{data.VideoTitle}</h3>
+    <div className="px-4 pt-20 md:px-70 md:pt-100">
+      <div className="container mx-auto">
+        {data.VideoTitle && (
+          <h3 className="mx-auto mb-40 text-center text-xl font-light">
+            {data.VideoTitle}
+          </h3>
         )}
         {hasWindow && (
-          <div className='aspect-video w-full'>
+          <div className="aspect-video w-full">
             <ReactPlayer
-              width='100%'
-              height='100%'
+              width="100%"
+              height="100%"
               url={`https://www.youtube.com/watch?v=${data.YoutubeID}`}
               playing
               // light="/images/more-about.webp"
@@ -67,41 +69,43 @@ export default function MoreAbout({ data }: any) {
                 data.YoutubeCover.data?.attributes.url
               }
               playIcon={
-                <span className='z-10 h-[100px] w-[100px] md:h-[141px] md:w-[140px]'>
+                <span className="z-10 h-[100px] w-[100px] md:h-[141px] md:w-[140px]">
                   <PlayBtn />
                 </span>
               }
             />
           </div>
         )}
-        <div className='flex flex-col gap-70 py-30'>
-          <div className='flex flex-wrap items-center justify-between gap-20 gap-x-4 text-black md:gap-0 lg:flex-nowrap'>
+        <div className="flex flex-col gap-70 py-30">
+          <div className="flex flex-wrap items-center justify-between gap-20 gap-x-4 text-black md:gap-0 lg:flex-nowrap">
             <div>
-              <h3 className='text-[18px] font-bold md:text-2xl'>
+              <h3 className="text-[18px] font-bold md:text-2xl">
                 {data.FeatureTitle}
               </h3>
-              <p className='text-[14px] font-light md:text-xl'>
+              <p className="text-[14px] font-light md:text-xl">
                 {data.FeatureSubtitle}
               </p>
             </div>
-            <div className='w-634'>
+            <div className="w-634">
               <p
                 className={`italic text-[12px] md:text-base ${
                   locale === "ar" ? arfont.className : pt_serif.className
-                }`}>
+                }`}
+              >
                 {data.FeatureDescription}
               </p>
             </div>
           </div>
-          <div className='grid grid-cols-2 flex-wrap justify-evenly gap-5 gap-y-26 lg:grid-cols-3 lg:gap-x-56'>
+          <div className="grid grid-cols-2 flex-wrap justify-evenly gap-5 gap-y-26 lg:grid-cols-3 lg:gap-x-56">
             {data.FeatureItem.map((item: any, index: number) => (
               <motion.div
                 key={index}
-                className='w-[calc(50%-10px)] md:w-320'
+                className="w-[calc(50%-10px)] md:w-320"
                 initial={{ opacity: 0, y: -10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: index * 0.2 }}
-                viewport={{ once: true }}>
+                viewport={{ once: true }}
+              >
                 {item.Image.data && (
                   <MoreAboutItem
                     img={

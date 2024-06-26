@@ -88,7 +88,9 @@ export default function About({ data }: any) {
   };
   const ourMissionVisionData = {
     missionDescription: data.OurMissionDescription,
+    missionTitle: data.OurMissionTitle,
     visionDescription: data.OurVisionDescription,
+    visionTitle: data.OurVisionTitle,
   };
 
   const storyParagraphs = data.StoryDescription.split("\n\n").map(
@@ -108,7 +110,7 @@ export default function About({ data }: any) {
       />
       {/* <TimeLine data={timeLineData} /> */}
 
-      <div className='md:mb-[278px] mb-[40%] lg:h-auto bg-goldLight px-4 pt-[45px] pb-[150px] sm:pb-[134px] md:py-64'>
+      <div className='mb-[40%] bg-goldLight px-4 pb-[150px] pt-[45px] sm:pb-[134px] md:mb-[278px] md:py-64 lg:h-auto'>
         <div className='container mx-auto'>
           <div className='flex flex-col items-center justify-center gap-20 lg:gap-50'>
             <Image
@@ -121,7 +123,7 @@ export default function About({ data }: any) {
             />
             <MissionVision data={ourMissionVisionData} />
             {hasWindow && (
-              <div className='-mb-[278px] aspect-video w-full '>
+              <div className='-mb-[278px] aspect-video w-full'>
                 <ReactPlayer
                   width='100%'
                   height='100%'
@@ -143,12 +145,12 @@ export default function About({ data }: any) {
         </div>
       </div>
 
-      <OurBrands brandsList={data.OurBrandsLogos.data} noLinks />
+      <OurBrands brandsList={data.OurBrandsLogos.data} noLinks description={data.BrandsDescription} />
 
-      <div className='container mx-auto  max-w-[1000px]'>
+      <div className='container mx-auto max-w-[1000px]'>
         <div className='px-4 pb-44 lg:py-44'>
-          <div className='flex flex-col lg:flex-row gap-[52px] m-auto lg:m-0'>
-            <div className='lg:w-[312px]  shrink-0 flex-grow-0 pr-5 m-auto lg:m-0 w-auto inline-block '>
+          <div className='m-auto flex flex-col gap-[52px] lg:m-0 lg:flex-row'>
+            <div className='m-auto inline-block w-auto shrink-0 flex-grow-0 pr-5 lg:m-0 lg:w-[312px]'>
               <Image
                 alt=''
                 src={
@@ -157,7 +159,7 @@ export default function About({ data }: any) {
                 }
                 width={data.StoryImage.data.attributes.width}
                 height={data.StoryImage.data.attributes.height}
-                className='object-cover lg:h-[390px] h-[300px] '
+                className='h-[300px] object-cover lg:h-[390px]'
               />
             </div>
             <div>
@@ -177,12 +179,12 @@ export default function About({ data }: any) {
       </div>
 
       <div className='container mx-auto mb-30 mt-30 md:mb-95'>
-        <span className='lg:block hidden h-[5px] w-full bg-gray3' />
+        <span className='hidden h-[5px] w-full bg-gray3 lg:block' />
       </div>
 
       <div className='container mx-auto'>
-        <div className='flex flex-col gap-70 px-3  lg:py-[64px] pb-[55px]'>
-          <div className='flex flex-wrap lg:flex-wrap-reverse items-center justify-between gap-20 text-black md:flex-nowrap md:gap-0'>
+        <div className='flex flex-col gap-70 px-3 pb-[55px] lg:py-[64px]'>
+          <div className='flex flex-wrap items-center justify-between gap-20 text-black md:flex-nowrap md:gap-0 lg:flex-wrap-reverse'>
             <div>
               <h3 className='text-2xl'>{data.FeaturesTitle}</h3>
               <p className='text-xl font-light'>{data.FeaturesSubtitle}</p>
@@ -221,7 +223,7 @@ export default function About({ data }: any) {
         </div>
       </div>
 
-      <AboutSection color='pink' />
+      <AboutSection color='pink' description={data.JoyDescription} />
 
       {/* <OurTeam /> */}
 
@@ -236,18 +238,18 @@ export default function About({ data }: any) {
               : "/images/placeholder.webp"
           }
           color={item.Color}>
-          <div className='flex max-w-[515px] px-3 flex-col text-white'>
-            <h2 className='text-2xl lg:text-5xl md:text-3xl font-semibold'>
+          <div className='flex max-w-[515px] flex-col px-3 text-white'>
+            <h2 className='text-2xl font-semibold md:text-3xl lg:text-5xl'>
               {item.Title}
             </h2>
             <h4 className='mt-10 text-goldLight'>{item.Subtitle}</h4>
-            <p className='mt-30 text-[14px] lg:text-base pb-1 leading-8'>
+            <p className='mt-30 pb-1 text-[14px] leading-8 lg:text-base'>
               {item.Description}
             </p>
 
             {item.Buttonlink && (
               <Link
-                className=' hover:bg-greenDark hover:text-white transition border-greenDark flex-nowrap border-[2px] rounded-full font-semibold uppercase w-fit text-greenDark text-[12px] md:text-xs lg:text-sm py-2 px-3 mt-10'
+                className='mt-10 w-fit flex-nowrap rounded-full border-[2px] border-greenDark px-3 py-2 text-[12px] font-semibold uppercase text-greenDark transition hover:bg-greenDark hover:text-white md:text-xs lg:text-sm'
                 href={`/${
                   locale == "en"
                     ? `${item.Buttonlink}`

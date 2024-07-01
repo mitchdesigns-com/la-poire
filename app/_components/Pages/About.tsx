@@ -99,6 +99,7 @@ export default function About({ data }: any) {
       <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
     )
   );
+  // const format_description = description.replace(/\n\n/g, "</p><p>");
   // console.log("dataAbout", data);
   return (
     <div>
@@ -300,9 +301,12 @@ export default function About({ data }: any) {
               {item.Title}
             </h2>
             <h4 className="mt-10 text-goldLight">{item.Subtitle}</h4>
-            <p className="mt-30 pb-1 text-[14px] leading-8 lg:text-base">
-              {item.Description}
-            </p>
+            <div
+              className="mt-30 pb-1 text-[14px] leading-8 lg:text-base"
+              dangerouslySetInnerHTML={{
+                __html: item.Description.replace(/\n\n/g, "</p><p>"),
+              }}
+            />
 
             {item.Buttonlink && (
               <Link

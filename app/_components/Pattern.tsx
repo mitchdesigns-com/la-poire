@@ -33,7 +33,7 @@ const Pattern = ({ spanWidth = 3, color = "orange" }: any) => {
       }
 
       grid.push(
-        <div key={i} className={`flex ${gap}`}>
+        <div key={i} className={`flex ${gap} ${i >= 5 ? "opacity-50" : ""}`}>
           {row}
         </div>
       );

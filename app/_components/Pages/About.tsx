@@ -17,6 +17,7 @@ import SectionTextImage from "../UI/SectionTextImage";
 import { fetchingAboutPage } from "@/app/api/fetcher";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
+import Pattern from "../Pattern";
 
 export default function About({ data }: any) {
   const t = useTranslations("common");
@@ -110,7 +111,47 @@ export default function About({ data }: any) {
         height_auto={true}
       />
       {/* <TimeLine data={timeLineData} /> */}
-
+      <div className="pb-100">
+        <div className="container relative px-8">
+          <div className="flex">
+            <span
+              className={`pointer-events-none absolute left-[50px] z-10 hidden md:bottom-[-60px] md:block`}
+            >
+              <Pattern spanWidth={6} color="green" />
+            </span>
+            <div className="relative aspect-[977/634] min-h-[60vh] w-full lg:h-auto lg:w-[70%]">
+              <Image
+                src={
+                  process.env.NEXT_PUBLIC_API_URL +
+                  data.HeroImage.data?.attributes.url
+                }
+                alt=""
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="absolute bottom-30 left-4 right-4 z-10 ml-auto mt-auto w-auto bg-bej px-20 py-26 lg:left-0 lg:right-0 lg:w-[60%] lg:px-30 lg:py-30 xl:px-50 xl:py-[60px]">
+              <h2
+                className="pe-2 text-2xl font-semibold lg:text-3xl xl:text-5xl"
+                dangerouslySetInnerHTML={{ __html: data.BejBoxTitle }}
+              />
+              <div className="mt-30 grid gap-4 sm:grid-cols-2 lg:gap-30 xl:gap-56">
+                {data.BejBoxItem &&
+                  data.BejBoxItem.map((item: any, index: number) => (
+                    <div key={index} className="border-l-2 border-l-green pl-4">
+                      <h4 className="text-2xl font-bold text-green lg:text-2xl xl:text-3xl">
+                        {item.Title}
+                      </h4>
+                      <p className="text-sm text-black xl:text-base">
+                        {item.SubTitle}
+                      </p>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="mb-[40%] bg-goldLight px-4 pb-[150px] pt-[45px] sm:pb-[134px] md:mb-[278px] md:py-64 lg:h-auto">
         <div className="container mx-auto">
           <div className="flex flex-col items-center justify-center gap-20 lg:gap-50">

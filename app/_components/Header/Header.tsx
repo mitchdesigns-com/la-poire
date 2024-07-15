@@ -85,11 +85,11 @@ export default function Header() {
                 alt='La Poire Logo'
                 width='166'
                 height='46'
-                className='h-[32px] w-[112px] lg:w-[166px] lg:h-[46px]'
+                className='h-[32px] w-[112px] lg:h-[46px] lg:w-[166px]'
               />
             </Link>
           </div>
-          <div className='hidden max-w-[1004px] gap-x-[68px] items-center justify-between xl:max-w-[calc(100vw-388px)] md:max-w-[calc(100vw-200px)] lg:flex'>
+          <div className='hidden max-w-[1004px] items-center justify-between gap-x-[68px] md:max-w-[calc(100vw-200px)] lg:flex xl:max-w-[calc(100vw-388px)]'>
             <div className='1xl:gap-54 flex items-center gap-4 ltr:-translate-x-34 rtl:translate-x-34'>
               {isHome && <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />}
               <nav
@@ -101,7 +101,7 @@ export default function Header() {
                     : " opacity-0 transition ease pointer-events-none"
                 }`}>
                 <ul
-                  className={`ease 1xl:text-base ml-[20px] flex items-center xl:gap-[48px] gap-20 whitespace-nowrap text-sm uppercase transition`}>
+                  className={`ease 1xl:text-base ml-[20px] flex items-center gap-20 whitespace-nowrap text-sm uppercase transition xl:gap-[48px]`}>
                   <li
                     className={`${
                       isHome
@@ -147,7 +147,7 @@ export default function Header() {
                       {t("brands")}
                     </Link>
                   </li>
-                  <li
+                  {/* <li
                     className={`${
                       isHome
                         ? "text-white hover:text-gold"
@@ -161,7 +161,7 @@ export default function Header() {
                       onClick={handleLinkClick}>
                       {t("franchise")}
                     </Link>
-                  </li>
+                  </li> */}
                   {/* <li
                     className={`${
                       isHome
@@ -218,7 +218,7 @@ export default function Header() {
               <div className='relative h-full w-full'>
                 <nav className='relative z-10 bg-white pb-[77px] pt-[45px]'>
                   <ul
-                    className={`ease 1xl:text-base ml-[20px]  flex flex-col items-center gap-[50px] whitespace-nowrap pb-34 text-sm uppercase`}>
+                    className={`ease 1xl:text-base ml-[20px] flex flex-col items-center gap-[50px] whitespace-nowrap pb-34 text-sm uppercase`}>
                     <li className='hover:text-gold'>
                       <Link
                         prefetch={false}
@@ -243,14 +243,14 @@ export default function Header() {
                         {t("brands")}
                       </Link>
                     </li>
-                    <li className='hover:text-gold'>
+                    {/* <li className='hover:text-gold'>
                       <Link
                         prefetch={false}
                         href={"/franchise"}
                         onClick={handleLinkClick}>
                         {t("franchise")}
                       </Link>
-                    </li>
+                    </li> */}
                     <li className='hover:text-gold'>
                       <Link
                         prefetch={false}

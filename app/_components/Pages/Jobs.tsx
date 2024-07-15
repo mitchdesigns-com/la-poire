@@ -116,7 +116,7 @@ export default function Jobs({ data }: any) {
           </div>
         </div>
       </div>
-
+      {dataJobs.lenght > 1 && (
       <div className="bg-gold px-3 py-[80px] text-white md:py-[150px]">
         <div className="">
           <h2 className="mb-40 text-center text-3xl font-bold md:text-5xl">
@@ -152,6 +152,7 @@ export default function Jobs({ data }: any) {
           </ul>
         </div>
       </div>
+      )}
 
       <div className="hidden px-4 py-[100px] lg:pb-140 lg:pt-[200px]">
         <div className="container mx-auto">

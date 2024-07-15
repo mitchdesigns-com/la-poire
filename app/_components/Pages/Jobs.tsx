@@ -116,7 +116,7 @@ export default function Jobs({ data }: any) {
           </div>
         </div>
       </div>
-      {dataJobs.lenght > 1 && (
+      {dataJobs?.length > 1 && (
       <div className="bg-gold px-3 py-[80px] text-white md:py-[150px]">
         <div className="">
           <h2 className="mb-40 text-center text-3xl font-bold md:text-5xl">

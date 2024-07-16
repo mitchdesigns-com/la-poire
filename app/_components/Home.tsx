@@ -40,7 +40,7 @@ export default function Home({ data }: any) {
       </div>
       {/* <Testimonials /> */}
 
-      {/* {data.attributes.FranchiseBox.map((item: any, index: number) => (
+      {data.attributes.FranchiseBox.map((item: any, index: number) => (
         <SectionTextImage
           key={index}
           image_position={item.image_position}
@@ -59,7 +59,7 @@ export default function Home({ data }: any) {
             <p className='mt-30 pb-3 text-[12px] md:text-base'>
               {item.Description}
             </p>
-            <h4 className='mr-2 mt-10 text-gray5 hover:text-greenBlack md:mr-0'>
+            {/* <h4 className='mr-2 mt-10 text-gray5 hover:text-greenBlack md:mr-0'>
               <div className='flex flex-col gap-10 lg:w-[332px] lg:flex-row-reverse'>
                 <Link href={`/franchise/#requestForm`}>
                   <button className='false mt-10 w-full whitespace-nowrap rounded-full bg-gold px-34 py-2 text-sm font-medium uppercase tracking-[0.02em] text-white transition duration-300 ease-in-out hover:bg-goldHover focus:outline-none focus:ring-2 focus:ring-gold focus:ring-opacity-50 md:text-sm md:leading-[21px]'>
@@ -73,10 +73,10 @@ export default function Home({ data }: any) {
                   </button>
                 </Link>
               </div>
-            </h4>
+            </h4> */}
           </div>
         </SectionTextImage>
-      ))} */}
+      ))}
 
       {/* <div className="container mx-auto flex flex-col gap-40 py-72">
       <section>

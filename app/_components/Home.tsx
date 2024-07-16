@@ -40,7 +40,7 @@ export default function Home({ data }: any) {
       </div>
       {/* <Testimonials /> */}
 
-      {data.attributes.FranchiseBox.map((item: any, index: number) => (
+      {/* {data.attributes.FranchiseBox.map((item: any, index: number) => (
         <SectionTextImage
           key={index}
           image_position={item.image_position}
@@ -76,7 +76,7 @@ export default function Home({ data }: any) {
             </h4>
           </div>
         </SectionTextImage>
-      ))}
+      ))} */}
 
       {/* <div className="container mx-auto flex flex-col gap-40 py-72">
       <section>

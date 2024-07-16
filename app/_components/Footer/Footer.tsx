@@ -17,7 +17,7 @@ export default function Footer() {
             height={46}
           />
         </Link>
-        <div className='flex flex-wrap pl-2 justify-center gap-4 md:gap-8'>
+        <div className='flex flex-wrap justify-center gap-4 pl-2 md:gap-8'>
           <Link
             href='/'
             className='my-2 inline-block text-white'
@@ -36,12 +36,12 @@ export default function Footer() {
             prefetch={false}>
             {t("brands")}
           </Link>
-          <Link
+          {/* <Link
             href='/franchise'
             className='my-2 inline-block text-white'
             prefetch={false}>
             {t("franchise")}
-          </Link>
+          </Link> */}
           <Link
             href='/job'
             className='my-2 inline-block text-white'
@@ -56,14 +56,14 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <span className='block h-[2px] w-full  bg-gray5 opacity-50' />
-      <p className='flex flex-col md:flex-row pb-4 pt-4 px-2 text-sm tracking-normal items-center justify-center sm:rtl:flex-row-reverse text-gray5 opacity-50'>
+      <span className='block h-[2px] w-full bg-gray5 opacity-50' />
+      <p className='flex flex-col items-center justify-center px-2 pb-4 pt-4 text-sm tracking-normal text-gray5 opacity-50 md:flex-row sm:rtl:flex-row-reverse'>
         © {new Date().getFullYear()} La Poire Group • All Rights Reserved •{" "}
         <Link
           href='https://www.mitchdesigns.com/'
           target='_blank'
           rel='noreferrer'
-          className='flex  items-center'>
+          className='flex items-center'>
           Designed by MitchDesigns
         </Link>
       </p>

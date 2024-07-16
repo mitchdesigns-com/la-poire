@@ -194,9 +194,9 @@ export default function Header() {
               </nav>
             </div>
             <div className='flex items-center gap-2'>
-              <LangSwitcher
+              {/* <LangSwitcher
                 headerTransparent={(isBrandsPage && brandSlug) || isHome}
-              />
+              /> */}
               <Button variant='primary' size='normalSm' pill uppercase>
                 <Link
                   prefetch={false}
@@ -273,10 +273,10 @@ export default function Header() {
                       </Link>
                     </Button>
 
-                    <LangSwitcher
+                    {/* <LangSwitcher
                       className='fill-black'
                       headerTransparent={(isBrandsPage && brandSlug) || isHome}
-                    />
+                    /> */}
                   </ul>
 
                   <div className='mx-auto'></div>

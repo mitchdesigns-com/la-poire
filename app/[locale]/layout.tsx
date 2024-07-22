@@ -8,10 +8,10 @@ import Footer from "@/app/_components/Footer/Footer";
 // import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "La Poire",
-  description: "La Poire Landing Page",
-};
+// export const metadata: Metadata = {
+//   title: "La Poire",
+//   description: "La Poire Landing Page",
+// };
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -24,6 +24,43 @@ async function getMessages(locale: string) {
   } catch (error) {
     notFound();
   }
+}
+
+export async function generateMetadata() {
+  return {
+    meta: [
+      {
+        name: "apple-mobile-web-app-capable",
+        content: "yes",
+      },
+      {
+        name: "mobile-web-app-capable",
+        content: "yes",
+      },
+      {
+        httpEquiv: "X-Content-Type-Options",
+        content: "nosniff",
+      },
+      {
+        httpEquiv: "Strict-Transport-Security",
+        content: "max-age=31536000; includeSubDomains; preload",
+      },
+    ],
+    robots: {
+      index: true,
+      follow: true,
+      nocache: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        notranslate: false,
+        noimageindex: false,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+  };
 }
 
 export default async function RootLayout({

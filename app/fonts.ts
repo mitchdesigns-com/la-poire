@@ -23,7 +23,7 @@ export const pt_serif = PT_Serif({
 export const gabarito = Gabarito({
     subsets: ["latin"],
     style: ["normal"],
-    // display: "swap",
+    display: "swap",
     variable: "--font-gabarito",
     weight: ["400", "500"],
 })

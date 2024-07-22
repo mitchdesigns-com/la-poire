@@ -10,7 +10,7 @@ import { useLocale } from "next-intl";
 
 const HeroText = ({ title }: any) => (
   <motion.h1
-    className="text-center text-3xl text-white md:text-6xl"
+    className='text-center text-3xl text-white md:text-4xl lg:text-6xl'
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.2, delay: 1 * 0.2 }}
@@ -19,12 +19,14 @@ const HeroText = ({ title }: any) => (
   />
 );
 
-const CompanyInfo = ({ cardData, brandBrief,locale }: any) => (
-  <div className="flex w-full flex-col justify-between gap-4 px-4 py-14 md:flex-row md:px-0">
-    <div className="flex">
+const CompanyInfo = ({ cardData, brandBrief, locale }: any) => (
+  <div className='flex w-full flex-col justify-between gap-4 px-4 py-14 md:flex-row md:px-0'>
+    <div className='flex'>
       <div className={`text-center md:w-28 md:text-start`}>
         <motion.p
-          className={`text-base ${locale === "ar"?arfont.className:pt_serif.className} italic`}
+          className={`text-base pb-4  ${
+            locale === "ar" ? arfont.className : pt_serif.className
+          } italic`}
           initial={{ opacity: 0, x: 10 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.2, delay: 1 * 0.2 }}
@@ -33,15 +35,14 @@ const CompanyInfo = ({ cardData, brandBrief,locale }: any) => (
         />
       </div>
     </div>
-    <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto p-4 md:m-0 md:-mr-4 md:p-0 md:pr-4">
+    <div className='no-scrollbar w-full flex-nowrap  -mx-4 flex gap-2 overflow-x-auto flex-row  p-4 md:m-0 md:-mr-4 md:p-0 md:pr-4'>
       {cardData?.map((card: any, index: number) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, x: -200 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.2, delay: index * 0.2 }}
-          viewport={{ once: true }}
-        >
+          initial={{ opacity: 0, scale: 1, x: 10 }}
+          whileInView={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 0.1 }}
+          viewport={{ once: true }}>
           <CardBackground
             img={
               card.attributes.thumbnail.data
@@ -67,7 +68,7 @@ export default function LandingHero({
   locationsNum,
   numbersTitle,
   numbersDescription,
-  brandBrief
+  brandBrief,
 }: any) {
   const locale = useLocale();
   const cardData = [
@@ -96,28 +97,30 @@ export default function LandingHero({
   const brands = brandsList;
   // console.log("brands", brands);
   return (
-    <div className="px-4">
-      <div className="container mx-auto">
-        <div className="h-460 bg-[url(/images/landing-hero.webp)] bg-cover md:h-688">
-          <div className="flex h-full w-full items-center justify-center px-4 py-8 md:px-240">
+    <div className='sm:px-4'>
+      <div className='container mx-auto'>
+        <div className=' h-[284px] bg-[url(/images/landing-hero.webp)] bg-cover md:h-688'>
+          <div className='flex h-full w-full items-center justify-center px-4 py-8 lg:px-240'>
             <HeroText title={title} />
           </div>
         </div>
-        <div className="relative flex flex-col items-end">
+        <div className='relative flex flex-col items-end'>
           <CompanyInfo
             cardData={brands}
             brandBrief={brandBrief}
             locale={locale}
           />
-          <div className="1xl:max-w-[calc(100vw-388px)] relative flex w-[1004px] max-w-full justify-end bg-black p-4 md:max-w-[calc(100vw-276px)] md:pb-56 md:pt-22 ltr:pr-0 md:ltr:pl-48 rtl:pl-0 md:rtl:pr-48">
-            <span className="pointer-events-none absolute bottom-0 z-[-1] hidden h-[3000vh] w-[100vw] select-none bg-black md:block ltr:left-0 rtl:right-0" />
-            <CompanyStats
-              brandsNum={brandsNum}
-              employeesNum={employeesNum}
-              locationsNum={locationsNum}
-              numbersTitle={numbersTitle}
-              numbersDescription={numbersDescription}
-            />
+          <div className='container mx-auto pl-[52px] md:pl-320'>
+            <div className='1xl:max-w-[calc(100vw-388px)] relative flex max-w-full md:justify-end  p-4 md:max-w-[calc(100vw-276px)] md:pb-56 md:pt-22 ltr:pr-0 md:ltr:pl-48 rtl:pl-0 md:rtl:pr-48'>
+              <span className='pointer-events-none absolute bottom-0 z-[-1]  md:h-[3000vh] w-[100vw] select-none bg-black h-[691px] ltr:left-[-42px] md:rtl:right-[193px]' />
+              <CompanyStats
+                brandsNum={brandsNum}
+                employeesNum={employeesNum}
+                locationsNum={locationsNum}
+                numbersTitle={numbersTitle}
+                numbersDescription={numbersDescription}
+              />
+            </div>
           </div>
         </div>
       </div>

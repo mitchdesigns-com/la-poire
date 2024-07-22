@@ -126,7 +126,7 @@ const config: Config = {
         'pinkLight': '#FFCFEA',
         'pinkDark': '#DF5574',
         'gold': '#B3903E',
-        'goldHover': '#B3903E',
+        'goldHover': '#917431',
         'goldLight': '#EAD388',
         'white': '#FFFFFF',
         'black': '#000000',

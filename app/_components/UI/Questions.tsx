@@ -8,20 +8,20 @@ export default function Questions({ data }: any) {
     setActiveIndex(activeIndex === index ? -1 : index);
   };
   return (
-    <div className="flex flex-col gap-10 w-[700px] max-w-full mx-auto select-none">
+    <div className='mx-auto flex w-[700px] max-w-full select-none flex-col gap-10'>
       {data?.map((item: any, index: number) => (
         <div
-          className="flex flex-col p-20 transition-all border cursor-pointer border-goldLight rounded-3xl"
+          className='flex cursor-pointer flex-col rounded-3xl border border-goldLight p-20 transition-all'
           key={index}
-          onClick={() => toggleContent(index)}
-        >
-          <div className="flex items-center justify-between">
-            <h5 className="text-[15px] font-medium">{item.question}</h5>
+          onClick={() => toggleContent(index)}>
+          <div className='flex items-center gap-x-[40px]  justify-between'>
+            <h5 className='text-[15px] font-medium'>
+              {item.attributes.question}
+            </h5>
             <span
               className={`text-gold w-32 h-32 bg-bej rounded-full flex justify-center items-center ${
                 activeIndex === index ? "rotate-180" : ""
-              }`}
-            >
+              }`}>
               <ChevronDown />
             </span>
           </div>
@@ -29,7 +29,7 @@ export default function Questions({ data }: any) {
             className={`text-sm mt-30 text-grayMed flex flex-col gap-30 ${
               activeIndex === index ? "block" : "hidden"
             }`}
-            dangerouslySetInnerHTML={{ __html: item.answer }}
+            dangerouslySetInnerHTML={{ __html: item.attributes.answer }}
           />
         </div>
       ))}

@@ -10,7 +10,6 @@ const Pattern = ({ spanWidth = 3, color = "orange" }: any) => {
     gap = "gap-[7px]";
     width = "w-[6px] h-[6px]";
   }
-
   const generateGrid = () => {
     const rows = 12;
     const columns = 13;
@@ -27,14 +26,14 @@ const Pattern = ({ spanWidth = 3, color = "orange" }: any) => {
           <span
             key={j}
             className={`inline-block ${width} ${
-              isOpaque ? "opacity-50" : "opacity-100"
+              isOpaque ? "opacity1-50" : "opacity-100"
             } bg-${color}`}
           />
         );
       }
 
       grid.push(
-        <div key={i} className={`flex ${gap}`}>
+        <div key={i} className={`flex ${gap} ${i >= 5 ? "opacity-50" : ""}`}>
           {row}
         </div>
       );

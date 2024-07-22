@@ -1,15 +1,21 @@
-import { roboto } from "@/app/fonts";
+import { arfont, roboto } from "@/app/fonts";
+import { useLocale } from "next-intl";
 import Image from "next/image";
-import React from "react";
 import RequestForm from "../RequestForm";
 
-export default function RequestSection() {
+export default function RequestSection({ subTitle, title, paragraph }: any) {
+  const locale = useLocale();
   return (
-    <div className={`px-4 py-32 bg-gold ${roboto.className}`}>
+    <div
+      id="requestForm"
+      className={`px-4 py-32 bg-gold ${
+        locale === "ar" ? arfont.className : roboto.className
+      }`}
+    >
       <div className="container mx-auto">
-        <div className="flex items-center justify-center gap-[80px] flex-wrap">
-          <div className="w-[474px]">
-            <div className="w-full px-32 bg-white rounded-xl py-26 shadow-md shadow-[#034A3080]">
+        <div className="flex flex-col-reverse flex-wrap items-center justify-center gap-[71px] md:max-lg:flex-col-reverse lg:flex-row">
+          <div className="w-full md:w-[474px]">
+            <div className="w-full rounded-xl bg-white px-32 py-26 shadow-md shadow-[#034A3080]">
               <RequestForm />
             </div>
           </div>
@@ -20,18 +26,12 @@ export default function RequestSection() {
               width="205"
               height="57"
             />
-            <div className="flex flex-col gap-10 max-w-[550px]">
-              <h6 className="text-xl text-goldLight">
-                Ready to Embark on this Venture?
-              </h6>
-              <h2 className="text-[76px] font-bold text-white leading-[90px]">
-                {"Let's Shape the Future Together"}
+            <div className="flex max-w-[550px] flex-col gap-10 md:max-w-[384px]">
+              <h6 className="text-xl text-goldLight">{subTitle}</h6>
+              <h2 className="text-[30px] font-bold leading-[56px] text-white md:text-[53px] lg:text-[76px] lg:leading-[90px]">
+                {title}
               </h2>
-              <p className="text-sm text-gray3 leading-[21px]">
-                {
-                  "Have questions? Eager to get started? Reach out to our franchising team today. We're here to assist, guide, and collaborate, ensuring a prosperous and fulfilling journey ahead."
-                }
-              </p>
+              <p className="text-sm leading-[21px] text-gray3">{paragraph}</p>
             </div>
           </div>
         </div>

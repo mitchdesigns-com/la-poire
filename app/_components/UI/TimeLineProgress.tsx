@@ -114,7 +114,7 @@ const ProgressItem = ({ data, active, onItemClick, index }: any) => {
     return null;
   }
   return (
-    <div className={`inline-block pb-[316px] pr-[130px] pt-[400px]`}>
+    <div className={`inline-block pb-[316px] pe-[130px] pt-[400px]`}>
       <div className="group relative cursor-pointer py-22">
         <span
           className={`text-2xl font-bold leading-[36px] px-14 w-[90px] flex justify-center items-center rounded-full group-hover:opacity-100 ${
@@ -125,15 +125,15 @@ const ProgressItem = ({ data, active, onItemClick, index }: any) => {
           {data.Year}
         </span>
         {index === 0 && (
-          <span className="absolute bottom-full right-full flex translate-x-[45px] gap-[50px]">
+          <span className="absolute bottom-full flex gap-[50px] ltr:right-full ltr:translate-x-[45px] rtl:left-full rtl:-translate-x-[45px]">
             <span className="h-36 w-[2px] rounded-full bg-goldLight bg-opacity-50" />
             <span className="h-36 w-[2px] rounded-full bg-goldLight bg-opacity-50" />
             <span className="h-36 w-[2px] rounded-full bg-goldLight bg-opacity-50" />
           </span>
         )}
-        <span className="absolute bottom-full left-full flex -translate-x-[45px] gap-[50px]">
+        <span className="absolute bottom-full flex gap-[50px] ltr:left-full ltr:-translate-x-[47px] rtl:right-full rtl:translate-x-[47px]">
           <span
-            className={`w-[2px] h-36 bg-goldLight group-hover:before:opacity-100 relative before:absolute before:w-10 before:h-10 before:bg-goldLight before:opacity-0 before:transition-all transition-all before:rounded-full before:-left-[4px] rounded-full ${
+            className={`w-[2px] h-36 bg-goldLight group-hover:before:opacity-100 relative before:absolute before:w-10 before:h-10 before:bg-goldLight before:opacity-0 before:transition-all transition-all before:rounded-full ltr:before:-left-[4px] rtl:before:-right-[4px] rounded-full ${
               active ? "bg-opacity-100 before:opacity-100" : "bg-opacity-70"
             } ${
               even
@@ -146,17 +146,17 @@ const ProgressItem = ({ data, active, onItemClick, index }: any) => {
           <span className="h-36 w-[2px] rounded-full bg-goldLight bg-opacity-50" />
         </span>
         <div
-          className={`absolute ${
-            even ? "top-full left-4" : "bottom-full mb-[90px] left-4"
+          className={`absolute ltr:left-4 rtl:right-4 ${
+            even ? "top-full" : "bottom-full mb-[90px]"
           }`}
         >
           <div
-            className={`relative flex gap-20 pr-50 ${
+            className={`relative flex gap-20 pe-50 ${
               even ? "flex-col" : "flex-col-reverse"
             }`}
           >
             <Image
-              className={`absolute ${even ? "top-36" : "bottom-36"} right-0 ${
+              className={`absolute ${even ? "top-36" : "bottom-36"} ltr:right-0 rtl:left-0 ${
                 active ? "opacity-100" : "opacity-0"
               } transition-all`}
               alt=""

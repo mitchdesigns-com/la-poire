@@ -7,14 +7,14 @@ import SectionTitles from "../UI/SectionTitles";
 import ReactPlayer from "react-player";
 import PlayBtn from "../Icons/PlayBtn";
 import OurBrands from "../OurBrands";
-import Testimonials from "../Testimonials";
+// import Testimonials from "../Testimonials";
 import RequestSection from "../UI/RequestSection";
 import FAQsSection from "../UI/FAQsSection";
 import Newsletter from "../Newsletter";
-import { fetchingFranchisePage } from "@/app/api/fetcher";
+import { useTranslations } from "next-intl";
 
-export default function Franchise({data}:any) {
-  // const [data, setData] = useState<any | null>(null);
+export default function Franchise({ data }: any) {
+  const t = useTranslations("common");
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -22,22 +22,10 @@ export default function Franchise({data}:any) {
     }
   }, []);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const result = await fetchingFranchisePage();
-  //       setData(result.data.attributes);
-  //     } catch (error) {
-  //       console.error("Error fetching home page data:", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
   if (!data) {
     return null;
   }
-  
+
   return (
     <div>
       <HeroWithTitles
@@ -46,9 +34,10 @@ export default function Franchise({data}:any) {
         subtitle={data.Subtitle}
         description={data.Description}
         max_width
+        height_auto={true}
       />
 
-      <div className="bg-greenBlack py-72">
+      <div className="bg-greenBlack px-4 pb-72 pt-72 lg:py-72">
         <div className="container mx-auto">
           <div className="flex flex-col gap-50">
             <section className="text-center text-white">
@@ -59,7 +48,7 @@ export default function Franchise({data}:any) {
               />
             </section>
             <div className="flex grid-cols-2 flex-wrap justify-between gap-5 gap-y-[80px] md:grid-cols-3 md:gap-x-56">
-              {data.MoreAboutData.map((item:any, index:number) => (
+              {data.MoreAboutData.map((item: any, index: number) => (
                 <motion.div
                   key={index}
                   className="w-[calc(50%-10px)] md:w-320"
@@ -69,8 +58,10 @@ export default function Franchise({data}:any) {
                   viewport={{ once: true }}
                 >
                   <MoreAboutItem
-                    img={process.env.NEXT_PUBLIC_API_URL +
-                      item.Image.data?.attributes.url}
+                    img={
+                      process.env.NEXT_PUBLIC_API_URL +
+                      item.Image.data?.attributes.url
+                    }
                     title={item.Title}
                     desc={item.Description}
                     colorAlt
@@ -82,7 +73,7 @@ export default function Franchise({data}:any) {
         </div>
       </div>
 
-      <div className="mb-[278px] bg-goldLight px-4 py-64">
+      <div className="mb-[152px] bg-goldLight px-4 pb-[170px] pt-[72px] md:mb-[278px] md:py-64">
         <div className="container mx-auto">
           <div className="mb-7 flex flex-col items-center justify-center gap-20">
             <section className="text-center text-black">
@@ -93,7 +84,7 @@ export default function Franchise({data}:any) {
                 sub_title={data.FranchiseSectionTitle.Subtitle}
               />
             </section>
-            <p className="mx-auto max-w-3xl text-center text-sm text-gray5">
+            <p className="mx-auto max-w-3xl text-center text-[12px] text-gray5 md:text-sm">
               {data.FranchiseSectionTitle.Description}
             </p>
           </div>
@@ -119,16 +110,20 @@ export default function Franchise({data}:any) {
         </div>
       </div>
 
-      <OurBrands title="Our Franchised Brands" brandsList={data.brands.data} />
+      <OurBrands title={data.BrandsTitle} brandsList={data.brands.data} />
 
-      <div className="container mx-auto mb-30 mt-30 md:mb-95">
-        <span className="block h-[5px] w-full bg-gray3" />
+      <div className="container mx-auto mb-30 mt-30 hidden md:mb-95 lg:block">
+        <span className="hidden h-[5px] w-full bg-gray3 lg:block" />
       </div>
-      <Testimonials />
+      {/* <Testimonials /> */}
 
-      <RequestSection />
+      <RequestSection
+        subTitle={data.RequestSubTitle}
+        title={data.RequestTitle}
+        paragraph={data.RequestParagraph}
+      />
 
-      <FAQsSection />
+      <FAQsSection subTitle={data.FAQSubtitle} title={data.FAQTitle} />
 
       <Newsletter />
     </div>

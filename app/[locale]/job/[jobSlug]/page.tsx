@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: any) {
   const seo = categoryInfo?.data?.attributes?.SEO ?? null;
   const pageTitle = seo?.metaTitle ?? "Jobs Page";
   const pageDescription = seo?.metaDescription ?? "Jobs Page";
-  const pageKeywords = `key`;
+  const pageKeywords = seo.keywords;
 
   return {
     title: `${pageTitle}`,

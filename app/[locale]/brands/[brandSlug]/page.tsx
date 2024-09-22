@@ -6,9 +6,9 @@ import { fetchingSingleBrand, fetchingSingleBrandSEO } from "@/app/api/fetcher";
 export async function generateMetadata({ params }: any) {
   const categoryInfo = await fetchingSingleBrandSEO(params.locale, params.brandSlug);
   const seo = categoryInfo?.data[0]?.attributes?.SEO;
-  const pageTitle = seo?.metaTitle??"Single Brand Page";
-  const pageDescription = seo?.metaDescription??"Single Brand metaDescription";
-  const pageKeywords = `key`;
+  const pageTitle = seo?.metaTitle ?? "Single Brand Page";
+  const pageDescription = seo?.metaDescription ?? "Single Brand metaDescription";
+  const pageKeywords = seo.keywords;
 
   return {
     title: `${pageTitle}`,

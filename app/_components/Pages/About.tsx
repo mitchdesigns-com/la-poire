@@ -220,11 +220,10 @@ export default function About({ data }: any) {
               <h3 className="text-2xl font-bold">{data.StoryTitle}</h3>
               <h4 className="text-xl font-light">{data.StorySubTitle}</h4>
               <div
-                className={`mt-34 ${
-                  locale === "ar"
+                className={`mt-34 ${locale === "ar"
                     ? `${arfont.className} leading-[28px] space-y-22`
                     : `${pt_serif.className} leading-[28px] space-y-34`
-                } text-greenBlack`}
+                  } text-greenBlack`}
               >
                 {storyParagraphs}
               </div>
@@ -246,9 +245,8 @@ export default function About({ data }: any) {
             </div>
             <div className="w-634">
               <p
-                className={`${
-                  locale === "ar" ? arfont.className : pt_serif.className
-                } italic text-base`}
+                className={`${locale === "ar" ? arfont.className : pt_serif.className
+                  } italic text-base`}
               >
                 {data.FeaturesDescription}
               </p>
@@ -291,7 +289,7 @@ export default function About({ data }: any) {
           image_src={
             item.Image.data?.attributes.url
               ? process.env.NEXT_PUBLIC_API_URL +
-                item.Image.data?.attributes.url
+              item.Image.data?.attributes.url
               : "/images/placeholder.webp"
           }
           color={item.Color}
@@ -311,11 +309,10 @@ export default function About({ data }: any) {
             {item.Buttonlink && (
               <Link
                 className="mt-10 w-fit flex-nowrap rounded-full border-[2px] border-greenDark px-3 py-2 text-[12px] font-semibold uppercase text-greenDark transition hover:bg-greenDark hover:text-white md:text-xs lg:text-sm"
-                href={`/${
-                  locale == "en"
+                href={`/${locale == "en"
                     ? `${item.Buttonlink}`
                     : `ar/${item.Buttonlink}`
-                }`}
+                  }`}
               >
                 {t("LearnMore")}
               </Link>

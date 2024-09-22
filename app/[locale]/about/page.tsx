@@ -8,11 +8,11 @@ export async function generateMetadata({ params }: any) {
   const categoryInfo = await fetchingAboutSEO(params.locale);
   const seo = categoryInfo?.data?.attributes?.SEO[0];
   // console.log('params.local',params.local)
-  // console.log('seo',seo)
-  const pageTitle = seo.metaTitle??"";
+  // console.log('seo', seo)
+  const pageTitle = seo.metaTitle ?? "";
   const pageDescription = seo.metaDescription;
-  const pageKeywords = `key`;
-  
+  const pageKeywords = seo.keywords;
+
   return {
     title: pageTitle ?? "",
     description: pageDescription ?? "",
@@ -24,7 +24,7 @@ export default async function AboutPage() {
   const result = await fetchingAboutPage(locale);
   return (
     <div>
-      <About data={result?.data?.attributes??AboutData.data.attributes} />
+      <About data={result?.data?.attributes ?? AboutData.data.attributes} />
     </div>
   );
 }

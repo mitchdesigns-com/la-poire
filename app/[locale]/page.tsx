@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: any) {
   const seo = categoryInfo?.data.attributes?.SEO;
   const pageTitle = seo?.metaTitle;
   const pageDescription = seo?.metaDescription;
-  const pageKeywords = `key`;
-  
+  const pageKeywords = seo.keywords;
+
   return {
     title: pageTitle ?? "",
     description: pageDescription ?? "",
@@ -20,5 +20,5 @@ export async function generateMetadata({ params }: any) {
 export default async function page() {
   const locale = await getLocale();
   const dataFetched = await fetchingHomePage(locale);
-  return <Home data={dataFetched?.data??HomeData.data} />;
+  return <Home data={dataFetched?.data ?? HomeData.data} />;
 }

@@ -7,10 +7,10 @@ import FranchiseData from "@/app/api/franchise-page.json"
 
 export async function generateMetadata({ params }: any) {
   const categoryInfo = await fetchingFranchisePageSEO(params.locale);
-  const seo = categoryInfo?.data?.attributes?.SEO??null;
-  const pageTitle = seo?.metaTitle??"Franchise Page";
-  const pageDescription = seo?.metaDescription??"Franchise Page";
-  const pageKeywords = `key`;
+  const seo = categoryInfo?.data?.attributes?.SEO ?? null;
+  const pageTitle = seo?.metaTitle ?? "Franchise Page";
+  const pageDescription = seo?.metaDescription ?? "Franchise Page";
+  const pageKeywords = seo.keywords;
 
   return {
     title: `${pageTitle}`,
@@ -23,7 +23,7 @@ export default async function FranchisePage() {
   const result = await fetchingFranchisePage(locale);
   return (
     <div>
-      <Franchise data={result?.data?.attributes??FranchiseData.data.attributes} />
+      <Franchise data={result?.data?.attributes ?? FranchiseData.data.attributes} />
     </div>
   );
 }

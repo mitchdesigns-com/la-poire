@@ -4,10 +4,10 @@ import { fetchingJobsPage, fetchingJobsSEO } from "@/app/api/fetcher";
 
 export async function generateMetadata({ params }: any) {
   const categoryInfo = await fetchingJobsSEO(params.locale);
-  const seo = categoryInfo?.data?.attributes?.SEO??null;
-  const pageTitle = seo?.metaTitle??"Jobs Page";
-  const pageDescription = seo?.metaDescription??"Jobs Page";
-  const pageKeywords = `key`;
+  const seo = categoryInfo?.data?.attributes?.SEO ?? null;
+  const pageTitle = seo?.metaTitle ?? "Jobs Page";
+  const pageDescription = seo?.metaDescription ?? "Jobs Page";
+  const pageKeywords = seo.keywords;
 
   return {
     title: `${pageTitle}`,

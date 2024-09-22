@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { fetchingAllBrands, fetchingAllJobs, fetchingBlogsPage } from "./api/fetcher";
 
 
-const WEBSITE_HOST_URL = "https://www.lapoire-group.com";
+const WEBSITE_HOST_URL = "https://lapoire-group.com";
 
 type changeFrequency = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
 

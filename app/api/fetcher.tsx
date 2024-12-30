@@ -93,33 +93,36 @@ export const fetchingFAQs = async (lang: string = "en") => {
 // };
 
 export const fetchingAboutSEO = async (lang: string = "en") => {
-  return sendRequest(`about-page?populate[0]=SEO&locale=${lang}`, {});
+  return sendRequest(`about-page?populate[SEO][populate]=*&locale=${lang}`, {});
 };
 export const fetchingBlogsSEO = async (lang: string = "en") => {
-  return sendRequest(`blogs-page?populate[0]=SEO&locale=${lang}`, {});
+  return sendRequest(`blogs-page?populate[SEO][populate]=*&locale=${lang}`, {});
 };
 export const fetchingFranchisePageSEO = async (lang: string = "en") => {
-  return sendRequest(`franchise-page?populate[0]=SEO&locale=${lang}`, {});
+  return sendRequest(`franchise-page?populate[SEO][populate]=*&locale=${lang}`, {});
+};
+export const fetchingContactUsPageSEO = async (lang: string = "en") => {
+  return sendRequest(`contact-us-page?populate[SEO][populate]=*&locale=${lang}`, {});
 };
 export const fetchingHomeSEO = async (lang: string = "en") => {
-  return sendRequest(`home?populate[0]=SEO&locale=${lang}`, {});
+  return sendRequest(`home?populate[SEO][populate]=*&locale=${lang}`, {});
 };
 export const fetchingSingleBrandSEO = async (
   lang: string = "en",
   slug: string
 ) => {
 
-  // return sendRequest("brands-page?populate[0]=SEO", {});
+  // return sendRequest("brands-page?populate[SEO][populate]=*", {});
   return sendRequest(
-    `our-brands?filters[slug][$eq]=${slug}&populate[0]=SEO&locale=${lang}`,
+    `our-brands?filters[slug][$eq]=${slug}&populate[SEO][populate]=*&locale=${lang}`,
     {}
   );
 };
 export const fetchingJobsSEO = async (lang: string = "en") => {
-  return sendRequest(`jobs-page?populate[0]=SEO&locale=${lang}`, {});
+  return sendRequest(`jobs-page?populate[SEO][populate]=*&locale=${lang}`, {});
 };
 const fetchingBrandsSEO = async (lang: string = "en") => {
-  return sendRequest(`brands-page?populate[0]=SEO&locale=${lang}`, {});
+  return sendRequest(`brands-page?populate[SEO][populate]=*&locale=${lang}`, {});
 };
 const fetchingSingleBrand = async (slug: string, lang: string = "en") => {
   return sendRequest(
